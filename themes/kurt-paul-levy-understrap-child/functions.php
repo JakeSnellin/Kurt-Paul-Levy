@@ -98,12 +98,22 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
  */
 
  /**
-  * Add svg support
+  * Add svg support.
   */
 
-  add_filter('upload_mimes', function( $mimes ){
-	$mimes['svg'] = 'image/svg+xml';
+add_filter('upload_mimes', function( $mimes ){
+	$mimes[ 'svg' ] = 'image/svg+xml';
 	return $mimes;
 });
+
+/**
+ * Register primary nav menu.
+ */
+
+function understrap_child_register_nav_menu() {
+	register_nav_menu('primary', esc_html__('Primary Menu', 'understrap-child'));
+}
+
+add_action( 'init', 'understrap_child_register_nav_menu');
 
 

@@ -92,3 +92,18 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+/**
+ * Custom child theme functions.
+ */
+
+ /**
+  * Add svg support
+  */
+
+  add_filter('upload_mimes', function( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+});
+
+

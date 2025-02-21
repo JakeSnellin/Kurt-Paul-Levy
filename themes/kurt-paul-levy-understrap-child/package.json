@@ -19,7 +19,9 @@
     "copy-assets": "node src/build/copy-assets.js",
     "dist": "npm-run-all --parallel css js",
     "dist-build": "node src/build/dist-build.js",
-    "dist-clean": "node src/build/dist-clean.js"
+    "dist-clean": "node src/build/dist-clean.js",
+    "build": "sass src/sass/child-theme.scss css/child-theme.css --source-map && sass src/sass/custom-editor-style.scss css/custom-editor-style.css --source-map",
+    "build:min": "sass src/sass/child-theme.scss css/child-theme.min.css --source-map --style=compressed && sass src/sass/custom-editor-style.scss css/custom-editor-style.min.css --source-map --style=compressed"
   },
   "engines": {
     "node": ">=14"
@@ -41,7 +43,6 @@
     "url": "https://github.com/understrap/understrap-child/issues"
   },
   "homepage": "https://understrap.com",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
@@ -64,7 +65,7 @@
     "postcss-cli": "^10.0.0",
     "postcss-understrap-palette-generator": "git+https://github.com/understrap/postcss-understrap-palette-generator.git",
     "rollup": "^3.2.5",
-    "sass": "^1.56.0",
+    "sass": "^1.85.0",
     "terser": "^5.15.1",
     "understrap": "github:understrap/understrap#develop"
   }

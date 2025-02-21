@@ -3,11 +3,10 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Change this if your default branch is 'master' or something else
+      - '**'  # 👈 This ensures it runs on ANY branch
   pull_request:
     branches:
-      - main
-
+      - '**'
 jobs:
   build:
     runs-on: ubuntu-latest

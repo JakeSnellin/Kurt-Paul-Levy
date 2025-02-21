@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: |
+          cd themes/kurt-paul-levy-understrap-child  # 👈 Change this if package.json is inside a subfolder
+          npm install
+
+      - name: Build SCSS and JS
+        run: |
+          cd  themes/kurt-paul-levy-understrap-child  # 👈 Ensure commands run inside the correct folder
+          npm run build

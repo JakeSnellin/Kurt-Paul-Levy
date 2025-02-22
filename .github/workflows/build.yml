@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add themes/kurt-paul-levy-understrap-child/css
+          git add themes/kurt-paul-levy-understrap-child/css/
           git commit -m "Add generated CSS files"
           git push origin main  # Push to the branch connected with the hosting provider
           

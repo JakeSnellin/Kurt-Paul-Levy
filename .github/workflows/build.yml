@@ -30,6 +30,16 @@ jobs:
           cd  themes/kurt-paul-levy-understrap-child  # 👈 Ensure commands run inside the correct folder
           npm run build    # First, compile the SCSS to CSS
           npm run build:min  # Then, minify the CSS
+
+      # If your hosting supports automatic deployments, you don't need to deploy manually.
+      # Ensure the generated CSS is committed and pushed to the repository.
+      - name: Commit and push generated CSS
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add -f themes/kurt-paul-levy-understrap-child/css/
+          git commit -m "Add generated CSS files"
+          git push origin main  # Push to the branch connected with the hosting provider
           
       - name: Check output folder
         run: |

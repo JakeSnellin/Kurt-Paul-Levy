@@ -29,3 +29,7 @@ jobs:
         run: |
           cd  themes/kurt-paul-levy-understrap-child  # 👈 Ensure commands run inside the correct folder
           npm run build
+          
+      - name: Check output folder
+        run: |
+          ls -l themes/kurt-paul-levy-understrap-child/css/

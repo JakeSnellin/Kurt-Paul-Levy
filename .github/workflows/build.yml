@@ -28,7 +28,8 @@ jobs:
       - name: Build SCSS and JS
         run: |
           cd  themes/kurt-paul-levy-understrap-child  # 👈 Ensure commands run inside the correct folder
-          npm run build
+          npm run build    # First, compile the SCSS to CSS
+          npm run build:min  # Then, minify the CSS
           
       - name: Check output folder
         run: |

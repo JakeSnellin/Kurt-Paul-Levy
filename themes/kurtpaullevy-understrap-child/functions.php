@@ -101,3 +101,12 @@ add_filter('upload_mimes', function( $mimes ){
 	$mimes[ 'svg' ] = 'image/svg+xml';
 	return $mimes;
 });
+
+/**
+ * Register Primary Menu location
+ */
+function understrap_child_register_menu() {
+	register_nav_menu('primary', esc_html__('Primary Menu', 'understrap-child'));
+}
+
+add_action( 'init', 'understrap_child_register_menu');

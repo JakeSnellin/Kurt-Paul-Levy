@@ -19,3 +19,9 @@
     src: url(../fonts/Inter-Regular.ttf);
     font-weight: normal;
 }
+
+
+
+body {
+    margin-top: child_theme_variables.$body-margin;
+}

@@ -21196,6 +21196,30 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+#main-nav {
+  border-bottom: 0.5px solid #848484;
+}
+
+.custom-logo-link {
+  padding-inline-start: 1em;
+  display: block;
+  padding-bottom: 1.25em;
+}
+
+header {
+  transition: all 0.4s ease;
+}
+
+header div.container-fluid, header div.container-sm, header div.container-md, header div.container-lg, header div.container-xl, header div.container-xxl {
+  padding: 1.875rem 0.25rem 0 0.25rem;
+}
+
+@media only screen and (min-width: 1400px) {
+  .custom-logo-link {
+    padding-bottom: 3.375em;
+    padding-inline-start: 0;
+  }
+}
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");
@@ -21211,6 +21235,10 @@ figure.woocommerce-product-gallery__wrapper {
   src: url(../fonts/Inter-Regular.ttf);
   font-weight: normal;
 }
+body {
+  margin-top: 7.883125em;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #000AC9;

@@ -1,3 +1,21 @@
 
 @use 'child_theme_variables';
-@use 'header_navigation'
+@use 'header_navigation';
+
+@font-face {
+    font-family: "DIN-Regular";
+    src: url(../fonts/DIN-Regular.ttf) (format('truetype'));
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AbhayaLibre-Regular";
+    src: url(../fonts/AbhayaLibre-Regular.ttf) (format('truetype'));
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url(../fonts/Inter-Regular.ttf);
+    font-weight: normal;
+}

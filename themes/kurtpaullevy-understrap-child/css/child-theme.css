@@ -21196,6 +21196,21 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+@font-face {
+  font-family: "DIN-Regular";
+  src: url(../fonts/DIN-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "AbhayaLibre-Regular";
+  src: url(../fonts/AbhayaLibre-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Inter-Regular";
+  src: url(../fonts/Inter-Regular.ttf);
+  font-weight: normal;
+}
 .has-blue-color,
 .has-blue-color:visited {
   color: #000AC9;

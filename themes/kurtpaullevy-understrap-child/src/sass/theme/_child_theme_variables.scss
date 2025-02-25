@@ -82,19 +82,19 @@ $line-height-sm: 1.2;
 $small-font-size: 0.75rem;
 // scss-docs-end type-variables
 
-@import "../assets//bootstrap5/functions.scss";
+@import "../assets/bootstrap5/functions.scss";
 @import "../assets/bootstrap5/variables.scss";
 
 // scss-docs-start theme-colors-map
-$theme-colors: (
+$custom-theme-colors: (
   
 );
 
-$theme-colors: map-merge($theme-colors, $theme-colors);
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
 // scss-docs-end theme-colors-map
 
 // scss-docs-start spacer-variables-maps
-$theme-spacers: (
+$custom-theme-spacers: (
   17: $spacer * 1.063, //17px spacer
   11: $spacer * 0.688, //11px spacer
   56: $spacer * 3.5, //56px spacer
@@ -108,5 +108,5 @@ $theme-spacers: (
   50: $spacer * 3.125, //50px spacer
 );
 
-$spacers: map-merge($theme-spacers, $spacers);
+$spacers: map-merge($custom-theme-spacers, $spacers);
 // scss-docs-end spacer-variables-maps

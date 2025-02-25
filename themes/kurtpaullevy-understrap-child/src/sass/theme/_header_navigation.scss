@@ -1,0 +1,21 @@
+@use 'child_theme_variables';
+
+.navbar-nav {
+    white-space: nowrap;
+    overflow-x: auto;
+    flex-direction: row;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.navbar-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.navbar-nav li a {
+    font-family: child_theme_variables.$font-family-base;
+    line-height: 19.33px;
+    letter-spacing: 1.6px;
+    padding: child_theme_variables.$nav-link-padding-x;
+    display: block;
+}

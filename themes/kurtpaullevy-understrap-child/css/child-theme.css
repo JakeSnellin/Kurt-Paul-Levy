@@ -21300,6 +21300,41 @@ body {
   margin-top: 126.13px;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+body:is(.home) div.entry-content {
+  font-size: 0.875rem;
+  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
+  max-width: 31rem;
+  margin: 0;
+}
+body:is(.home) p {
+  margin: 0;
+}
+
+.container-fluid .row, .container-sm .row, .container-md .row, .container-lg .row, .container-xl .row, .container-xxl .row, .container-fluid .row {
+  --bs-gutter-x: 2.5rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-fluid .row, .container-sm .row, .container-md .row, .container-lg .row, .container-xl .row, .container-xxl .row {
+    --bs-gutter-x: 5rem;
+  }
+  div.content-area {
+    padding-left: 3.938rem;
+  }
+  body:is(.home) #content {
+    padding: 1.625em calc(var(--bs-gutter-x) * 0.5);
+    margin-bottom: 1.75em;
+  }
+}
 .has-blue-color,
 .has-blue-color:visited {
   color: #000AC9;

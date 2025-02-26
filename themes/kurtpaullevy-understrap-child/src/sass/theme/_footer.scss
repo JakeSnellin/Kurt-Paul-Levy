@@ -1,0 +1,49 @@
+@use 'child_theme_variables';
+
+#wrapper-footer {
+    .container-fluid {
+            hr {
+                border-top: 4px solid;
+                color: child_theme_variables.$primary;
+                opacity: 1;
+                margin: 3em 0;
+            }
+    }
+}
+
+.site-footer {
+    .site-info {
+        p {
+            font-family: child_theme_variables.$font-family-sans-serif;
+            font-size: 0.5rem;
+            line-height: 1.2;
+        }
+    }
+}
+
+.form-control::placeholder {
+    letter-spacing: child_theme_variables.$input-placeholder-letter-spacing;
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    letter-spacing: child_theme_variables.$input-placeholder-letter-spacing;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    letter-spacing: child_theme_variables.$input-placeholder-letter-spacing;
+}
+
+.form-control {
+    border: none;
+    border-bottom: child_theme_variables.$input-border-width solid child_theme_variables.$input-border-color;
+    border-radius: 0;
+}
+
+#email-help-block {
+    color: child_theme_variables.$gray-300;
+}
+
+#validation-container {
+    max-width: max-content;
+}
+

@@ -115,3 +115,39 @@ add_action( 'init', 'understrap_child_register_menu');
  * Hide admin bar during development 
  */
 add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Set mail content type to HTML
+ */
+function understrap_child_set_html_mail_content_type() {
+	return 'text/html';
+}
+add_filter( 'wp_mail_content_type', 'understrap_child_set_html_mail_content_type' );
+
+
+/**
+ * Register a new user and send admin email notification  
+ */
+function understrap_child_registration_form() {
+	$email = sanitize_email($_POST['ajax_data']);
+
+	$message = "";
+
+	$to = get_bloginfo('admin_email');
+	$subject = 'kurt Paul Levy contact form submitted';
+	$message .= 'Hi Tom, <br /><br />';
+	$message .= 'Someone has subscribed. <br /><br />';
+	$message .= 'There email is ' . $email . '<br /><br />';
+	$message .= 'Thank you!';
+
+	wp_mail($to, $subject, $message);
+
+	$return = [];
+	$return['success'] = 1;
+	$return['message'] = 'Thanks for registering.';
+
+	wp_send_json($return);
+}
+
+add_action('wp_ajax_register_user', "understrap_child_registration_form");
+add_action('wp_ajax_nopriv_register_user', "understrap_child_registration_form");

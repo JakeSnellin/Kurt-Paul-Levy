@@ -21281,6 +21281,118 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   width: 22.36%;
 }
 
+#wrapper-footer .container-fluid hr, #wrapper-footer .container-sm hr, #wrapper-footer .container-md hr, #wrapper-footer .container-lg hr, #wrapper-footer .container-xl hr, #wrapper-footer .container-xxl hr {
+  border-top: 4px solid;
+  color: #000000;
+  opacity: 1;
+  margin: 3em 0;
+}
+
+.site-footer .site-info p {
+  font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.5rem;
+  line-height: 1.2;
+}
+
+.form-control::-moz-placeholder, .wpcf7 .wpcf7-validation-errors::-moz-placeholder, .wpcf7 input[type=text]::-moz-placeholder, .wpcf7 input[type=search]::-moz-placeholder, .wpcf7 input[type=url]::-moz-placeholder, .wpcf7 input[type=tel]::-moz-placeholder, .wpcf7 input[type=number]::-moz-placeholder, .wpcf7 input[type=range]::-moz-placeholder, .wpcf7 input[type=date]::-moz-placeholder, .wpcf7 input[type=month]::-moz-placeholder, .wpcf7 input[type=week]::-moz-placeholder, .wpcf7 input[type=time]::-moz-placeholder, .wpcf7 input[type=datetime]::-moz-placeholder, .wpcf7 input[type=datetime-local]::-moz-placeholder, .wpcf7 input[type=color]::-moz-placeholder, .wpcf7 input[type=email]::-moz-placeholder, .wpcf7 input[type=file]::-moz-placeholder, .wpcf7 input[type=submit]::-moz-placeholder, .wpcf7 select::-moz-placeholder, .wpcf7 textarea::-moz-placeholder {
+  letter-spacing: 0.1em;
+}
+
+.form-control::placeholder, .wpcf7 .wpcf7-validation-errors::placeholder, .wpcf7 input[type=text]::placeholder,
+.wpcf7 input[type=search]::placeholder,
+.wpcf7 input[type=url]::placeholder,
+.wpcf7 input[type=tel]::placeholder,
+.wpcf7 input[type=number]::placeholder,
+.wpcf7 input[type=range]::placeholder,
+.wpcf7 input[type=date]::placeholder,
+.wpcf7 input[type=month]::placeholder,
+.wpcf7 input[type=week]::placeholder,
+.wpcf7 input[type=time]::placeholder,
+.wpcf7 input[type=datetime]::placeholder,
+.wpcf7 input[type=datetime-local]::placeholder,
+.wpcf7 input[type=color]::placeholder,
+.wpcf7 input[type=email]::placeholder,
+.wpcf7 input[type=file]::placeholder,
+.wpcf7 input[type=submit]::placeholder,
+.wpcf7 select::placeholder,
+.wpcf7 textarea::placeholder {
+  letter-spacing: 0.1em;
+}
+
+.form-control:-ms-input-placeholder, .wpcf7 .wpcf7-validation-errors:-ms-input-placeholder, .wpcf7 input[type=text]:-ms-input-placeholder,
+.wpcf7 input[type=search]:-ms-input-placeholder,
+.wpcf7 input[type=url]:-ms-input-placeholder,
+.wpcf7 input[type=tel]:-ms-input-placeholder,
+.wpcf7 input[type=number]:-ms-input-placeholder,
+.wpcf7 input[type=range]:-ms-input-placeholder,
+.wpcf7 input[type=date]:-ms-input-placeholder,
+.wpcf7 input[type=month]:-ms-input-placeholder,
+.wpcf7 input[type=week]:-ms-input-placeholder,
+.wpcf7 input[type=time]:-ms-input-placeholder,
+.wpcf7 input[type=datetime]:-ms-input-placeholder,
+.wpcf7 input[type=datetime-local]:-ms-input-placeholder,
+.wpcf7 input[type=color]:-ms-input-placeholder,
+.wpcf7 input[type=email]:-ms-input-placeholder,
+.wpcf7 input[type=file]:-ms-input-placeholder,
+.wpcf7 input[type=submit]:-ms-input-placeholder,
+.wpcf7 select:-ms-input-placeholder,
+.wpcf7 textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  letter-spacing: 0.1em;
+}
+
+.form-control::-ms-input-placeholder, .wpcf7 .wpcf7-validation-errors::-ms-input-placeholder, .wpcf7 input[type=text]::-ms-input-placeholder,
+.wpcf7 input[type=search]::-ms-input-placeholder,
+.wpcf7 input[type=url]::-ms-input-placeholder,
+.wpcf7 input[type=tel]::-ms-input-placeholder,
+.wpcf7 input[type=number]::-ms-input-placeholder,
+.wpcf7 input[type=range]::-ms-input-placeholder,
+.wpcf7 input[type=date]::-ms-input-placeholder,
+.wpcf7 input[type=month]::-ms-input-placeholder,
+.wpcf7 input[type=week]::-ms-input-placeholder,
+.wpcf7 input[type=time]::-ms-input-placeholder,
+.wpcf7 input[type=datetime]::-ms-input-placeholder,
+.wpcf7 input[type=datetime-local]::-ms-input-placeholder,
+.wpcf7 input[type=color]::-ms-input-placeholder,
+.wpcf7 input[type=email]::-ms-input-placeholder,
+.wpcf7 input[type=file]::-ms-input-placeholder,
+.wpcf7 input[type=submit]::-ms-input-placeholder,
+.wpcf7 select::-ms-input-placeholder,
+.wpcf7 textarea::-ms-input-placeholder { /* Microsoft Edge */
+  letter-spacing: 0.1em;
+}
+
+.form-control, .wpcf7 .wpcf7-validation-errors, .wpcf7 input[type=text],
+.wpcf7 input[type=search],
+.wpcf7 input[type=url],
+.wpcf7 input[type=tel],
+.wpcf7 input[type=number],
+.wpcf7 input[type=range],
+.wpcf7 input[type=date],
+.wpcf7 input[type=month],
+.wpcf7 input[type=week],
+.wpcf7 input[type=time],
+.wpcf7 input[type=datetime],
+.wpcf7 input[type=datetime-local],
+.wpcf7 input[type=color],
+.wpcf7 input[type=email],
+.wpcf7 input[type=file],
+.wpcf7 input[type=submit],
+.wpcf7 select,
+.wpcf7 textarea {
+  border: none;
+  border-bottom: 1px solid #000000;
+  border-radius: 0;
+}
+
+#email-help-block {
+  color: #848484;
+}
+
+#validation-container {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

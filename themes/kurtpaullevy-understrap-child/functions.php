@@ -110,3 +110,8 @@ function understrap_child_register_menu() {
 }
 
 add_action( 'init', 'understrap_child_register_menu');
+
+/**
+ * Hide admin bar during development 
+ */
+add_filter('show_admin_bar', '__return_false');

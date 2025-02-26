@@ -21214,6 +21214,16 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   padding: 1.875rem 0.25rem 0 0.25rem;
 }
 
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+
 @media only screen and (min-width: 1400px) {
   .custom-logo-link {
     padding-bottom: 3.375em;
@@ -21236,7 +21246,7 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   font-weight: normal;
 }
 body {
-  margin-top: 7.883125em;
+  margin-top: 126.13px;
 }
 
 .has-blue-color,

@@ -39,6 +39,14 @@ header {
     transition: all 0.4s ease;
 }
 
+.scrolled-down{
+    transform:translateY(-100%); transition: all .5s ease-in-out;
+  }
+
+.scrolled-up{
+    transform:translateY(0); transition: all .5s ease-in-out;
+  }
+
 @media only screen and (min-width: 1400px) {
     .custom-logo-link {
         padding-bottom: 3.375em;

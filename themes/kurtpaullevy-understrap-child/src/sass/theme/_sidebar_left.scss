@@ -1,0 +1,50 @@
+@use 'child_theme_variables';
+
+.wp-block-page-list {
+    font-size: child_theme_variables.$font-size-sm;
+    visibility: hidden;
+    width: max-content;
+    margin-left: -0.563em;
+    margin-bottom: 0;
+
+    & a {
+        position: relative;
+        padding: 0.563em;
+        display: block;
+        width: max-content;
+    }
+
+    & a::after {
+        opacity: 0;
+        position: absolute;
+        display: inline-block;
+        right: -1.25em;
+        top: 0.773em;
+        content: ""; 
+        background-image: url(https://kurtpaullevytest.local/wp-content/uploads/2025/02/star_icon.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 12px;
+        height: 12px;
+        transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+    }
+
+    & > * {
+        visibility: visible;
+        transition: opacity 500ms;
+    }
+
+    &:hover > :not(:hover) {
+        opacity: 0.2;
+    }
+
+    & a:hover::after {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+#left-sidebar {
+    width: 22.36%;
+}

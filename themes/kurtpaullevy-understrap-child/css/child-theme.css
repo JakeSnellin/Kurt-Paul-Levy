@@ -21446,6 +21446,9 @@ body:is(.home) p {
     padding: 1.625em calc(var(--bs-gutter-x) * 0.5);
     margin-bottom: 1.75em;
   }
+  body {
+    margin-top: 0;
+  }
 }
 .has-blue-color,
 .has-blue-color:visited {

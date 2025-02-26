@@ -21,8 +21,53 @@
     font-weight: normal;
 }
 
-
-
 body {
     margin-top: child_theme_variables.$body-margin;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+body:is(.home) {
+
+    div.entry-content {
+            font-size: $font-size-sm;
+            font-family: $font-family-serif;
+            max-width: 31rem;
+            margin: 0;
+    }
+
+    & p {
+        margin: 0;
+    }
+}
+
+.container-fluid, .container-fluid {
+    .row {
+        --bs-gutter-x: 2.5rem;
+    }
+} 
+
+
+@media only screen and (min-width: 1440px) {
+    .container-fluid, .container-fluid .row {
+        --bs-gutter-x: 5rem;
+    }
+
+    div.content-area {
+        padding-left: 3.938rem;
+    }
+
+    body:is(.home) {
+        #content {
+            padding: 1.625em calc(var(--bs-gutter-x)* .5);
+            margin-bottom: 1.75em;
+        }
+    }
 }

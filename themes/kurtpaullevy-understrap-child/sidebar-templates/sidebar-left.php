@@ -20,4 +20,6 @@ if ( ! is_active_sidebar( 'left-sidebar' ) ) {
 
 	<?php dynamic_sidebar( 'left-sidebar' ); ?>
 
+	<?php get_template_part('icon-templates/icons', 'email'); ?>
+
 </div><!-- #left-sidebar -->

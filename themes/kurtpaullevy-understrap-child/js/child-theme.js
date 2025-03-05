@@ -6872,35 +6872,7 @@
 	}(jQuery);
 
 	// Helper function to create an element and append it to the specified parent
-	/*export var createElement = (function ($) {
 
-	    function privateCreateElement(tag, attributes, content, parent) {
-	        // Create the element using jQuery
-	        var $element = $('<' + tag + '>');
-	    
-	        // Set attributes
-	        $.each(attributes, function(key, value) {
-	            $element.attr(key, value);
-	        });
-	    
-	        // Set content (text or HTML)
-	        $element.html(content);
-	    
-	        // Append the element to the parent (default is body)
-	        $(parent).append($element);
-	    
-	        // Return the created element (for further manipulation if needed)
-	        return $element;
-	    }
-
-	    return {
-	        publicCreateElement: function (tag, attributes = {}, content = '', parent = 'body') { 
-	            privateCreateElement(tag, attributes, content, parent); 
-	        }, 
-	    }
-	})( jQuery );*/
-
-	// helpers/createElement.js
 	function createElement($, tag, attributes = {}, content = '', parent = 'body') {
 	  // Create the element using jQuery
 	  const $element = $('<' + tag + '>');
@@ -6918,39 +6890,7 @@
 	  return $element;
 	}
 
-	/*import { createElement } from "../helpers/createElement";
-
-	export var registerUserAjax = (function ($) {
-
-	    function privateRegisterUserAjax(email) {
-	        // Perform the AJAX request
-	        $.ajax({
-	            type: "post",
-	            url: `${window.location.origin}/wp-admin/admin-ajax.php`,
-	            data: {
-	                action: "register_user",
-	                ajax_data: email,
-	            },
-	            success: function(response) {
-	                // Handle success
-	                console.log(response);
-	                createElement.publicCreateElement('p', { class: 'my-11 lh-sm text-success d-flex align-items-center', id: 'success-text' }, "Registration successful!", '#validation-container');
-	            },
-	            error: function(xhr, status, error) {
-	                // Handle error
-	                console.error('Error:', error);
-	                createElement.publicCreateElement('p', { class: 'my-11 lh-sm text-danger d-flex align-items-center', id: 'error-text' }, "Something went wrong, please try again.", '#validation-container');
-	            }
-	        });
-	    }
-
-	    return {
-	        publicRegisterUserAjax: function (email) { 
-	            privateRegisterUserAjax(email); 
-	        }, 
-	    }
-
-	}) ( jQuery );*/
+	//import { createElement } from "../helpers/createElement.js";
 
 	function registerUserAjax($, email) {
 	  // Perform the AJAX request
@@ -6971,45 +6911,6 @@
 	    }*/
 	  });
 	}
-
-	/*import { createElement } from "../helpers/createElement.js";
-	import { registerUserAjax } from "../ajax/registerUserAjax.js";
-
-	export var validateAndRegisterUser = (function ($) {
-
-	    function privateValidateAndRegisterUser () {
-	        $('#contact-form').on('submit', (e) => {
-	            e.preventDefault();
-	    
-	            var email = $('#email').val();
-
-	            const validationContainer = $('#validation-container');
-	    
-	            // Clear any existing validation messages
-	            validationContainer.text("");
-	    
-	            // Validate email format
-	            if (email === "" || !(/^[^@]+@[^@]+\.[^@]+$/.test(email))) {
-	                createElement.publicCreateElement('p', { class: 'my-11 lh-sm text-warning d-flex align-items-center', id: 'validation-text' }, "", '#validation-container');
-	                createElement.publicCreateElement('small', {}, 'Incorrect email', '#validation-text');
-	                createElement.publicCreateElement('i', { class: "bi bi-exclamation-circle ps-2" }, "", "#validation-text");
-	            } else {
-	                createElement.publicCreateElement('p', { class: 'my-11 lh-sm text-success d-flex align-items-center', id: 'validation-text' }, "", '#validation-container');
-	                createElement.publicCreateElement('small', {}, 'Success', '#validation-text');
-	                createElement.publicCreateElement('i', { class: "bi bi-check-circle ps-2" }, "", "#validation-text");
-	            }
-	    
-	            registerUserAjax.publicRegisterUserAjax(email);
-	        });
-	    }
-
-	    return {
-	        publicValidateAndRegisterUser: function () { 
-	            privateValidateAndRegisterUser(); 
-	        }, 
-	    }
-
-	})( jQuery );*/
 
 	function validateAndRegisterUser($) {
 	  $('#contact-form').on('submit', e => {

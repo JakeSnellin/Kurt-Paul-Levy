@@ -21281,6 +21281,64 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   width: 22.36%;
 }
 
+.icon-button {
+  background: white;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.icon-button:focus {
+  outline: none; /* Optionally remove the default focus outline */
+}
+
+.icon-button svg {
+  display: block; /* Ensure the SVG fills the button area */
+}
+
+#sidebar__contact {
+  position: relative;
+  z-index: 9999;
+  overflow: hidden;
+  padding: 0.563em 0;
+  margin-top: 8.25em;
+  font-size: 0.875rem;
+}
+
+#sidebar__contact figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  position: relative;
+}
+
+.icon-email {
+  position: relative;
+  z-index: 9999;
+  background-color: #ffffff;
+}
+
+.sidebar__contact-email {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  top: 50%; /* Vertically align the icon to the center */
+  left: -184px;
+  transform: translateY(-50%); /* Adjust to ensure it's perfectly centered */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.icon-button:hover ~ .sidebar__contact-email {
+  transform: translate(184px, -50%);
+  opacity: 1;
+  margin-left: 2.125em;
+}
+
 #wrapper-footer .container-fluid hr, #wrapper-footer .container-sm hr, #wrapper-footer .container-md hr, #wrapper-footer .container-lg hr, #wrapper-footer .container-xl hr, #wrapper-footer .container-xxl hr {
   border-top: 4px solid;
   color: #000000;

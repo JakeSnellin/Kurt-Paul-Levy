@@ -22,9 +22,9 @@
   --bs-gray-dark: #343a40;
   --bs-gray-100: #EFEFEF;
   --bs-gray-200: #E5E5E5;
-  --bs-gray-300: #848484;
-  --bs-gray-400: #464646;
-  --bs-gray-500: #adb5bd;
+  --bs-gray-300: #E5E5E5;
+  --bs-gray-400: #848484;
+  --bs-gray-500: #464646;
   --bs-gray-600: #6c757d;
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
@@ -60,7 +60,7 @@
   --bs-body-bg: #fff;
   --bs-border-width: 1px;
   --bs-border-style: solid;
-  --bs-border-color: #848484;
+  --bs-border-color: #E5E5E5;
   --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
   --bs-border-radius: 0.375rem;
   --bs-border-radius-sm: 0.25rem;
@@ -3079,7 +3079,7 @@ textarea.form-control-lg {
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
-  background-color: #848484;
+  background-color: #E5E5E5;
   border-color: transparent;
   border-radius: 1rem;
 }
@@ -3108,7 +3108,7 @@ textarea.form-control-lg {
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
-  background-color: #848484;
+  background-color: #E5E5E5;
   border-color: transparent;
   border-radius: 1rem;
 }
@@ -3116,10 +3116,10 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 .form-range:disabled::-webkit-slider-thumb {
-  background-color: #adb5bd;
+  background-color: #464646;
 }
 .form-range:disabled::-moz-range-thumb {
-  background-color: #adb5bd;
+  background-color: #464646;
 }
 
 .form-floating {
@@ -4535,7 +4535,7 @@ textarea.form-control-lg {
   --bs-dropdown-link-hover-bg: #E5E5E5;
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: #000000;
-  --bs-dropdown-link-disabled-color: #adb5bd;
+  --bs-dropdown-link-disabled-color: #464646;
   --bs-dropdown-item-padding-x: 1rem;
   --bs-dropdown-item-padding-y: 0.25rem;
   --bs-dropdown-header-color: #6c757d;
@@ -4789,18 +4789,18 @@ textarea.form-control-lg {
 }
 
 .dropdown-menu-dark {
-  --bs-dropdown-color: #848484;
+  --bs-dropdown-color: #E5E5E5;
   --bs-dropdown-bg: #343a40;
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
   --bs-dropdown-box-shadow: ;
-  --bs-dropdown-link-color: #848484;
+  --bs-dropdown-link-color: #E5E5E5;
   --bs-dropdown-link-hover-color: #fff;
   --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
   --bs-dropdown-link-hover-bg: rgba(255, 255, 255, 0.15);
   --bs-dropdown-link-active-color: #fff;
   --bs-dropdown-link-active-bg: #000000;
-  --bs-dropdown-link-disabled-color: #adb5bd;
-  --bs-dropdown-header-color: #adb5bd;
+  --bs-dropdown-link-disabled-color: #464646;
+  --bs-dropdown-header-color: #464646;
 }
 
 .btn-group,
@@ -4995,12 +4995,12 @@ textarea.form-control-lg {
 
 .nav-tabs {
   --bs-nav-tabs-border-width: 1px;
-  --bs-nav-tabs-border-color: #848484;
+  --bs-nav-tabs-border-color: #E5E5E5;
   --bs-nav-tabs-border-radius: 0.375rem;
-  --bs-nav-tabs-link-hover-border-color: #E5E5E5 #E5E5E5 #848484;
+  --bs-nav-tabs-link-hover-border-color: #E5E5E5 #E5E5E5 #E5E5E5;
   --bs-nav-tabs-link-active-color: #495057;
   --bs-nav-tabs-link-active-bg: #fff;
-  --bs-nav-tabs-link-active-border-color: #848484 #848484 #fff;
+  --bs-nav-tabs-link-active-border-color: #E5E5E5 #E5E5E5 #fff;
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
 }
 .nav-tabs .nav-link {
@@ -5855,11 +5855,11 @@ textarea.form-control-lg {
   --bs-pagination-color: var(--bs-link-color);
   --bs-pagination-bg: #fff;
   --bs-pagination-border-width: 1px;
-  --bs-pagination-border-color: #848484;
+  --bs-pagination-border-color: #E5E5E5;
   --bs-pagination-border-radius: 0.375rem;
   --bs-pagination-hover-color: var(--bs-link-hover-color);
   --bs-pagination-hover-bg: #E5E5E5;
-  --bs-pagination-hover-border-color: #848484;
+  --bs-pagination-hover-border-color: #E5E5E5;
   --bs-pagination-focus-color: var(--bs-link-hover-color);
   --bs-pagination-focus-bg: #E5E5E5;
   --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
@@ -5868,7 +5868,7 @@ textarea.form-control-lg {
   --bs-pagination-active-border-color: #000000;
   --bs-pagination-disabled-color: #6c757d;
   --bs-pagination-disabled-bg: #fff;
-  --bs-pagination-disabled-border-color: #848484;
+  --bs-pagination-disabled-border-color: #E5E5E5;
   display: flex;
   padding-left: 0;
   list-style: none;
@@ -17862,7 +17862,7 @@ body {
 }
 
 .wrapper#wrapper-sticky {
-  border-bottom: 1px solid #848484;
+  border-bottom: 1px solid #E5E5E5;
 }
 
 #wrapper-footer-full,
@@ -17983,7 +17983,7 @@ a.skip-link:not(:focus):not(:focus-within) {
   background-color: #000000;
 }
 .navbar-dark .navbar-nav .dropdown-menu .nav-link.disabled, .navbar-dark .navbar-nav .dropdown-menu .nav-link:disabled {
-  color: #adb5bd !important;
+  color: #464646 !important;
   background-color: transparent;
 }
 
@@ -21451,39 +21451,30 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   max-width: max-content;
 }
 
-.btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
+button.btn {
   border: none;
-  background-color: #EFEFEF;
-  letter-spacing: 0.1em;
-}
-
-.btn:focus, .wpcf7 input[type=submit]:focus, .woocommerce-notices-wrapper .woocommerce-message a.button:focus, .woocommerce-info a.button:focus, .btn:active:focus, .btn.active:focus {
-  outline: 0 none;
-}
-
-.btn-light {
-  background: #EFEFEF;
-  color: #000000;
-}
-
-.btn-light:hover, .btn-light:focus, .btn-light:active, .btn-light.active, .btn-light .open > .dropdown-toggle.btn-light {
-  background: #E5E5E5;
-}
-
-.btn-light:active, .btn-light.active {
-  background: #E5E5E5;
   box-shadow: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn-light.raised {
+.btn.btn-light, .wpcf7 input.btn-light[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button, .woocommerce-info a.btn-light.button {
   box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.btn-light.raised:active, .btn-light.raised.active {
-  background: #E5E5E5;
-  box-shadow: none;
-  margin-bottom: -2px;
-  margin-top: 2px;
+.btn.btn-light:focus-visible, .wpcf7 input.btn-light[type=submit]:focus-visible, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:focus-visible, .woocommerce-info a.btn-light.button:focus-visible, .btn.btn-light:focus, .wpcf7 input.btn-light[type=submit]:focus, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:focus, .woocommerce-info a.btn-light.button:focus {
+  outline: 1px solid #000AC9;
+  background-color: #EFEFEF;
+}
+
+.btn.btn-light:hover, .wpcf7 input.btn-light[type=submit]:hover, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:hover, .woocommerce-info a.btn-light.button:hover, .btn.btn-light:active, .wpcf7 input.btn-light[type=submit]:active, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:active, .woocommerce-info a.btn-light.button:active {
+  background-color: #E5E5E5;
+  outline: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn.raised:active, .wpcf7 input.raised[type=submit]:active, .woocommerce-notices-wrapper .woocommerce-message a.raised.button:active, .woocommerce-info a.raised.button:active {
+  box-shadow: none !important;
+  transform: translateY(2px);
 }
 
 @font-face {

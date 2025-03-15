@@ -43,7 +43,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     </div>
 
                     <button
-                        class="btn raised btn-light mb-xxl-auto me-auto mt-xxl-n14"
+                        class="btn btn-light raised mb-xxl-auto me-auto mt-xxl-n14"
                         type="submit"
                         name="submit"
                         id="submit-btn"

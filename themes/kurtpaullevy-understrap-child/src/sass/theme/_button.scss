@@ -13,23 +13,25 @@
   }
 }
 
-button.btn {
+.btn {
   border: none;
   box-shadow: none;
-  transition: transform .15s ease, box-shadow 0.15s ease;
+  outline: none;
+  transition: transform .15s ease, box-shadow .15s ease;
 }
 
 // Base button light styles
-.btn.btn-light {
+.btn-light {
   @include btn-shadow(child_theme_variables.$btn-box-shadow);
 
-  &:focus-visible, &:focus {
+  &:focus {
+    box-shadow: child_theme_variables.$btn-box-shadow;
     outline: 1px solid child_theme_variables.$btn-focus-border-color;
     background-color: child_theme_variables.$light;
   }
 
   &:hover,
-  &:active {
+  &:active, &:focus:active {
     background-color: child_theme_variables.$gray-300;
     outline: none;
     @include btn-shadow(child_theme_variables.$btn-hover-shadow);
@@ -37,6 +39,6 @@ button.btn {
 }
 
 // Raised button specific styles
-.btn.raised {
+button.btn.raised {
   @include raised-btn;
 }

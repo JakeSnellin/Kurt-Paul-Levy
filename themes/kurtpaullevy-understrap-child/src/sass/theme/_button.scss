@@ -1,40 +1,42 @@
 @use '_child_theme_variables';
 
-// button-values-start
-.btn {
+// Mixin for reusable button shadow
+@mixin btn-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Mixin for raised button effect
+@mixin raised-btn {
+  &:active {
+    box-shadow: none !important;
+    transform: translateY(2px);
+  }
+}
+
+button.btn {
   border: none;
-  background-color: child_theme_variables.$light;
-  letter-spacing: child_theme_variables.$btn-letter-spacing;
+  box-shadow: none;
+  transition: transform .15s ease, box-shadow 0.15s ease;
+}
 
-  &:focus, &:active:focus, &.active:focus {
-    outline: 0 none;
+// Base button light styles
+.btn.btn-light {
+  @include btn-shadow(child_theme_variables.$btn-box-shadow);
+
+  &:focus-visible, &:focus {
+    outline: 1px solid child_theme_variables.$btn-focus-border-color;
+    background-color: child_theme_variables.$light;
+  }
+
+  &:hover,
+  &:active {
+    background-color: child_theme_variables.$gray-300;
+    outline: none;
+    @include btn-shadow(child_theme_variables.$btn-hover-shadow);
   }
 }
 
-.btn-light {
-	background: child_theme_variables.$light;
-	color: child_theme_variables.$primary;
-
-  &:hover, &:focus, &:active, &.active, .open > .dropdown-toggle.btn-light {
-    background: child_theme_variables.$gray-200;
-  }
-
-  &:active, &.active {
-    background: child_theme_variables.$gray-200;
-	  box-shadow: none;
-  }
+// Raised button specific styles
+.btn.raised {
+  @include raised-btn;
 }
-// button-values-end
-
-//raised-buttons-start
-.btn-light.raised {
-  box-shadow: child_theme_variables.$btn-box-shadow; //0px 2px 0.8px 0px #00000033;
-
-  &:active, &.active {
-    background: child_theme_variables.$gray-200;
-	  box-shadow: none;
-	  margin-bottom: -2px;
-	  margin-top: 2px;
-  }
-}
-//raised-buttons-end

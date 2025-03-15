@@ -423,9 +423,9 @@ progress {
   --bs-gray-dark: #343a40;
   --bs-gray-100: #EFEFEF;
   --bs-gray-200: #E5E5E5;
-  --bs-gray-300: #848484;
-  --bs-gray-400: #464646;
-  --bs-gray-500: #adb5bd;
+  --bs-gray-300: #E5E5E5;
+  --bs-gray-400: #848484;
+  --bs-gray-500: #464646;
   --bs-gray-600: #6c757d;
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
@@ -461,7 +461,7 @@ progress {
   --bs-body-bg: #fff;
   --bs-border-width: 1px;
   --bs-border-style: solid;
-  --bs-border-color: #848484;
+  --bs-border-color: #E5E5E5;
   --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
   --bs-border-radius: 0.375rem;
   --bs-border-radius-sm: 0.25rem;
@@ -863,9 +863,9 @@ progress {
   --bs-gray-dark: #343a40;
   --bs-gray-100: #EFEFEF;
   --bs-gray-200: #E5E5E5;
-  --bs-gray-300: #848484;
-  --bs-gray-400: #464646;
-  --bs-gray-500: #adb5bd;
+  --bs-gray-300: #E5E5E5;
+  --bs-gray-400: #848484;
+  --bs-gray-500: #464646;
   --bs-gray-600: #6c757d;
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
@@ -901,7 +901,7 @@ progress {
   --bs-body-bg: #fff;
   --bs-border-width: 1px;
   --bs-border-style: solid;
-  --bs-border-color: #848484;
+  --bs-border-color: #E5E5E5;
   --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
   --bs-border-radius: 0.375rem;
   --bs-border-radius-sm: 0.25rem;

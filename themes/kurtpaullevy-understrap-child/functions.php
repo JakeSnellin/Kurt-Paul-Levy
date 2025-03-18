@@ -77,8 +77,6 @@ function understrap_default_bootstrap_version() {
 }
 add_filter( 'theme_mod_understrap_bootstrap_version', 'understrap_default_bootstrap_version', 20 );
 
-
-
 /**
  * Loads javascript for showing customizer warning dialog.
  */
@@ -92,7 +90,6 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
-
 
 /**
  * Support SVG mime type
@@ -151,3 +148,12 @@ function understrap_child_registration_form() {
 
 add_action('wp_ajax_register_user', "understrap_child_registration_form");
 add_action('wp_ajax_nopriv_register_user', "understrap_child_registration_form");
+
+/**
+ * Support image post format
+ */
+
+ function childtheme_formats(){
+	add_theme_support( 'post-formats', array('image') ); 
+}
+add_action( 'after_setup_theme', 'childtheme_formats', 11 );

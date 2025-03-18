@@ -21457,28 +21457,30 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   max-width: max-content;
 }
 
-button.btn {
+.btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
   border: none;
   box-shadow: none;
+  outline: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn.btn-light, .wpcf7 input.btn-light[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button, .woocommerce-info a.btn-light.button {
+.btn-light {
   box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
 }
 
-.btn.btn-light:focus-visible, .wpcf7 input.btn-light[type=submit]:focus-visible, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:focus-visible, .woocommerce-info a.btn-light.button:focus-visible, .btn.btn-light:focus, .wpcf7 input.btn-light[type=submit]:focus, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:focus, .woocommerce-info a.btn-light.button:focus {
+.btn-light:focus-visible {
+  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
   outline: 1px solid #000AC9;
   background-color: #EFEFEF;
 }
 
-.btn.btn-light:hover, .wpcf7 input.btn-light[type=submit]:hover, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:hover, .woocommerce-info a.btn-light.button:hover, .btn.btn-light:active, .wpcf7 input.btn-light[type=submit]:active, .woocommerce-notices-wrapper .woocommerce-message a.btn-light.button:active, .woocommerce-info a.btn-light.button:active {
+.btn-light:hover, .btn-light:active, .btn-light:focus:active {
   background-color: #E5E5E5;
   outline: none;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn.raised:active, .wpcf7 input.raised[type=submit]:active, .woocommerce-notices-wrapper .woocommerce-message a.raised.button:active, .woocommerce-info a.raised.button:active {
+button.btn.raised:active {
   box-shadow: none !important;
   transform: translateY(2px);
 }

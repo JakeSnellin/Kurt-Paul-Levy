@@ -24,7 +24,7 @@
 .btn-light {
   @include btn-shadow(child_theme_variables.$btn-box-shadow);
 
-  &:focus {
+  &:focus-visible {
     box-shadow: child_theme_variables.$btn-box-shadow;
     outline: 1px solid child_theme_variables.$btn-focus-border-color;
     background-color: child_theme_variables.$light;

@@ -21230,50 +21230,56 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
     padding-inline-start: 0;
   }
 }
-.wp-block-page-list {
+.menu {
   font-size: 0.875rem;
-  visibility: hidden;
   width: -moz-max-content;
   width: max-content;
   margin-left: -0.563em;
   margin-bottom: 0;
+  /* Targeting all direct children for opacity transition */
+  /* On hover of the menu, reduce opacity of non-hovered items */
+  /* The menu item itself */
 }
 
-.wp-block-page-list a {
+.menu > * {
+  transition: opacity 500ms ease;
+}
+
+.menu:hover .menu-item:not(:hover) {
+  opacity: 0.2;
+}
+
+.menu .menu-item {
+  /* On hover, the icon rotates and becomes visible */
+}
+
+.menu .menu-item a {
   position: relative;
   padding: 0.563em;
   display: block;
   width: -moz-max-content;
-  width: max-content;
+  width: max-content; /* Only set this if necessary */
 }
 
-.wp-block-page-list a::after {
-  opacity: 0;
+.menu .menu-item a::after {
+  content: "";
   position: absolute;
   display: inline-block;
-  right: -1.25em;
-  top: 0.773em;
-  content: "";
+  top: 50%;
+  right: -1.4em;
+  width: 12px;
+  height: 12px;
   background-image: url(https://staging-c2a8-kurtpaullevy.wpcomstaging.com/wp-content/uploads/2025/02/star_icon.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 12px;
-  height: 12px;
-  transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out; /* Grouped transitions */
 }
 
-.wp-block-page-list > * {
-  visibility: visible;
-  transition: opacity 500ms;
-}
-
-.wp-block-page-list:hover > :not(:hover) {
-  opacity: 0.2;
-}
-
-.wp-block-page-list a:hover::after {
-  transform: rotate(360deg);
+.menu .menu-item a:hover::after {
+  transform: translateY(-50%) rotate(360deg);
   opacity: 1;
 }
 

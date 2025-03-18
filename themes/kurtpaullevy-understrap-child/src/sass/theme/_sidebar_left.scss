@@ -1,47 +1,52 @@
 @use 'child_theme_variables';
 
-.wp-block-page-list {
+.menu {
     font-size: child_theme_variables.$font-size-sm;
-    visibility: hidden;
     width: max-content;
     margin-left: -0.563em;
     margin-bottom: 0;
-
-    & a {
-        position: relative;
-        padding: 0.563em;
-        display: block;
-        width: max-content;
-    }
-
-    & a::after {
-        opacity: 0;
-        position: absolute;
-        display: inline-block;
-        right: -1.25em;
-        top: 0.773em;
-        content: ""; 
-        background-image: url(https://staging-c2a8-kurtpaullevy.wpcomstaging.com/wp-content/uploads/2025/02/star_icon.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 12px;
-        height: 12px;
-        transition: transform 1s ease-in-out, opacity 1.5s ease-in-out;
-    }
-
+    
+    /* Targeting all direct children for opacity transition */
     & > * {
-        visibility: visible;
-        transition: opacity 500ms;
+        transition: opacity 500ms ease;
     }
 
-    &:hover > :not(:hover) {
+    /* On hover of the menu, reduce opacity of non-hovered items */
+    &:hover .menu-item:not(:hover) {
         opacity: 0.2;
     }
 
-    & a:hover::after {
-        transform: rotate(360deg);
-        opacity: 1;
+    /* The menu item itself */
+    .menu-item {
+        & a {
+            position: relative;
+            padding: 0.563em;
+            display: block;
+            width: max-content; /* Only set this if necessary */
+        }
+
+        & a::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            right: -1.4em;
+            width: 12px;
+            height: 12px;
+            background-image: url(https://staging-c2a8-kurtpaullevy.wpcomstaging.com/wp-content/uploads/2025/02/star_icon.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+            transform: translateY(-50%);
+            transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out; /* Grouped transitions */
+        }
+
+        /* On hover, the icon rotates and becomes visible */
+        & a:hover::after {
+            transform: translateY(-50%) rotate(360deg);
+            opacity: 1;
+        }
     }
 }
 

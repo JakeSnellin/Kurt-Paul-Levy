@@ -21503,7 +21503,7 @@ button.btn.raised:active {
     gap: 8.625rem;
   }
   #archive-wrapper {
-    margin-top: 1.875rem;
+    padding-top: 3.375rem;
     margin-bottom: 5.188rem;
   }
   .content-image-wrapper .entry-content {
@@ -21573,7 +21573,7 @@ body:is(.home) p {
     padding-left: 3.938rem;
   }
   #index-wrapper {
-    margin-top: 1.875rem;
+    padding-top: 3.375rem;
     margin-bottom: 5.188rem;
   }
   body {

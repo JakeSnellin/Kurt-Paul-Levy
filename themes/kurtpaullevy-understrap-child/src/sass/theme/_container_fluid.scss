@@ -1,0 +1,20 @@
+@use 'child_theme_variables';
+
+.container-fluid {
+    --bs-gutter-x: child_theme_variables.$grid-gutter-width;
+    --bs-gutter-y: 0; /* No vertical gutter */
+    width: 100%;
+    padding-right: 1.25rem; /* Set 1.25rem (20px) padding on the right */
+    padding-left: 1.25rem; /* Set 1.25rem (20px) padding on the left */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@media only screen and (min-width: 1440px) {
+    .container-fluid {
+        --bs-gutter-x: $grid-gutter-width-lg;
+        padding-right: 2.5rem; /* Set 1.25rem (20px) padding on the right */
+        padding-left: 2.5rem; /* Set 1.25rem (20px) padding on the left */
+    }
+}

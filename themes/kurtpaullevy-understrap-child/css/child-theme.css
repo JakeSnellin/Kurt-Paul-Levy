@@ -21509,6 +21509,9 @@ button.btn.raised:active {
   .content-image-wrapper .entry-content {
     margin-top: 0;
   }
+  .entry-thumbnail {
+    margin-bottom: 6.063rem;
+  }
 }
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
   --bs-gutter-x: child_theme_variables.$grid-gutter-width;

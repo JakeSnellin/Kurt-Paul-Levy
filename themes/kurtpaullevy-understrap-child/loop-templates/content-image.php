@@ -1,18 +1,6 @@
-<?php
-/**
- * Post rendering content according to caller of get_template_part
- *
- * @package Understrap
- */
-
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
-?>
-
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-    <header class="entry-header">
-
+    <div class="content-image-wrapper">
         <?php
         // Check if the post has a featured image and display it
         if ( has_post_thumbnail() ) : ?>
@@ -21,14 +9,10 @@ defined( 'ABSPATH' ) || exit;
             </div>
         <?php endif; ?>
 
-    </header><!-- .entry-header -->
-
-	<div class="entry-content">
-         <!-- Text to be displayed below the image -->
-		<?php
-        the_content();
-		?>
-
-	</div><!-- .entry-content -->
+          <!-- Text to be displayed beside the image -->
+          <div class="entry-content">
+            <?php the_content(); ?>
+        </div><!-- .entry-content -->
+    </div><!-- .content-image-wrapper -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

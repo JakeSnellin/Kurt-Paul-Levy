@@ -1,0 +1,20 @@
+@use 'child_theme_variables';
+
+.content-image-wrapper {
+    font-size: child_theme_variables.$font-size-xs;
+    line-height: child_theme_variables.$line-height-lg;
+    letter-spacing: child_theme_variables.$letter-spacing-sm;
+}
+
+@media only screen and (min-width: 1400px) {
+    .content-image-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
+        gap: 8.625rem;
+    }
+
+    #archive-wrapper {
+        margin-top: 1.875rem;
+    }
+}

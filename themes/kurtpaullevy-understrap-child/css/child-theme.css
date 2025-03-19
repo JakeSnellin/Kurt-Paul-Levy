@@ -215,7 +215,7 @@ strong {
 }
 
 small, .small {
-  font-size: 0.75rem;
+  font-size: 0.875em;
 }
 
 mark, .mark {
@@ -265,7 +265,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  font-size: 0.75rem;
+  font-size: 0.875em;
 }
 pre code {
   font-size: inherit;
@@ -274,7 +274,7 @@ pre code {
 }
 
 code {
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: var(--bs-code-color);
   word-wrap: break-word;
 }
@@ -284,7 +284,7 @@ a > code {
 
 kbd {
   padding: 0.1875rem 0.375rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: var(--bs-body-bg);
   background-color: var(--bs-body-color);
   border-radius: 0.25rem;
@@ -570,7 +570,7 @@ progress {
 }
 
 .initialism {
-  font-size: 0.75rem;
+  font-size: 0.875em;
   text-transform: uppercase;
 }
 
@@ -585,7 +585,7 @@ progress {
 .blockquote-footer, .wp-block-quote cite {
   margin-top: -1rem;
   margin-bottom: 1rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #6c757d;
 }
 .blockquote-footer::before, .wp-block-quote cite::before {
@@ -619,7 +619,7 @@ progress {
 
 .figure-caption, figure.wp-block-image figcaption,
 .wp-block-image > figure figcaption {
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #6c757d;
 }
 
@@ -2534,7 +2534,7 @@ progress {
 
 .form-text {
   margin-top: 0.25rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #6c757d;
 }
 
@@ -3578,7 +3578,7 @@ textarea.form-control-lg {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #198754;
 }
 
@@ -3824,7 +3824,7 @@ textarea.form-control-lg {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #dc3545;
 }
 
@@ -10461,7 +10461,7 @@ textarea.form-control-lg {
 }
 
 .lh-lg {
-  line-height: 2 !important;
+  line-height: 1.7 !important;
 }
 
 .text-start {
@@ -21485,6 +21485,23 @@ button.btn.raised:active {
   transform: translateY(2px);
 }
 
+.content-image-wrapper {
+  font-size: 0.75em;
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+}
+
+@media only screen and (min-width: 1400px) {
+  .content-image-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    gap: 8.625rem;
+  }
+  #archive-wrapper {
+    margin-top: 1.875rem;
+  }
+}
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

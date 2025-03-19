@@ -140,7 +140,7 @@ strong {
 }
 
 small, .small {
-  font-size: 0.75rem;
+  font-size: 0.875em;
 }
 
 mark, .mark {
@@ -190,7 +190,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  font-size: 0.75rem;
+  font-size: 0.875em;
 }
 pre code {
   font-size: inherit;
@@ -199,7 +199,7 @@ pre code {
 }
 
 code {
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: var(--bs-code-color);
   word-wrap: break-word;
 }
@@ -209,7 +209,7 @@ a > code {
 
 kbd {
   padding: 0.1875rem 0.375rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: var(--bs-body-bg);
   background-color: var(--bs-body-color);
   border-radius: 0.25rem;
@@ -725,7 +725,7 @@ progress {
 
 .figure-caption, figure.wp-block-image figcaption,
 .wp-block-image > figure figcaption {
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #6c757d;
 }
 
@@ -818,7 +818,7 @@ progress {
 }
 
 .initialism {
-  font-size: 0.75rem;
+  font-size: 0.875em;
   text-transform: uppercase;
 }
 
@@ -833,7 +833,7 @@ progress {
 .blockquote-footer, .wp-block-quote cite {
   margin-top: -1rem;
   margin-bottom: 1rem;
-  font-size: 0.75rem;
+  font-size: 0.875em;
   color: #6c757d;
 }
 .blockquote-footer::before, .wp-block-quote cite::before {
@@ -3430,7 +3430,7 @@ progress {
 }
 
 .lh-lg {
-  line-height: 2 !important;
+  line-height: 1.7 !important;
 }
 
 .text-start {

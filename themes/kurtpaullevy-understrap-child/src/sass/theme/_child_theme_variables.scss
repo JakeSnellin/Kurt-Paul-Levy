@@ -80,11 +80,10 @@ $btn-focus-border-color: $blue;
 
 // scss-docs-start font-variables
 $line-height-sm: 1.2;
+$line-height-lg: 1.7;
+$font-size-xs: 0.75em;
+$letter-spacing-sm: 0.1em;
 // scss-docs-end font-variables
-
-// scss-docs-start type-variables
-$small-font-size: 0.75rem;
-// scss-docs-end type-variables
 
 @import "../assets/bootstrap5/functions.scss";
 @import "../assets/bootstrap5/variables.scss";

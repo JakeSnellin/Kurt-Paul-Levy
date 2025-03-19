@@ -85,6 +85,11 @@ $font-size-xs: 0.75em;
 $letter-spacing-sm: 0.1em;
 // scss-docs-end font-variables
 
+//scss-docs-start gutter-width
+$grid-gutter-width: 1.25rem;
+$grid-gutter-width-lg: 2.5rem;
+////scss-docs-end gutter-width
+
 @import "../assets/bootstrap5/functions.scss";
 @import "../assets/bootstrap5/variables.scss";
 

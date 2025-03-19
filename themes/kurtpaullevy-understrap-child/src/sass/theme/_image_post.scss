@@ -6,6 +6,10 @@
     letter-spacing: child_theme_variables.$letter-spacing-sm;
 }
 
+.content-image-wrapper .entry-content {
+    margin-top: 0.563rem;
+}
+
 @media only screen and (min-width: 1400px) {
     .content-image-wrapper {
         display: flex;
@@ -16,5 +20,10 @@
 
     #archive-wrapper {
         margin-top: 1.875rem;
+        margin-bottom: 5.188rem;
+    }
+
+    .content-image-wrapper .entry-content {
+        margin-top: 0;
     }
 }

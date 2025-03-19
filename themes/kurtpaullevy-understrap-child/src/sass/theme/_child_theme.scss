@@ -5,6 +5,7 @@
 @use 'footer';
 @use 'button';
 @use 'image_post';
+@use 'container_fluid';
 
 @font-face {
     font-family: "DIN-Regular";
@@ -51,27 +52,15 @@ body:is(.home) {
     }
 }
 
-.container-fluid, .container-fluid {
-    .row {
-        --bs-gutter-x: 2.5rem;
-    }
-} 
-
-
 @media only screen and (min-width: 1440px) {
-    .container-fluid, .container-fluid .row {
-        --bs-gutter-x: 5rem;
-    }
 
     div.content-area {
         padding-left: 3.938rem;
     }
 
-    body:is(.home) {
-        #content {
-            padding: 1.625em calc(var(--bs-gutter-x)* .5);
-            margin-bottom: 1.75em;
-        }
+    #index-wrapper {
+        margin-top: 1.875rem;
+        margin-bottom: 5.188rem;
     }
 
     body {

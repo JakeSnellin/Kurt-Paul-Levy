@@ -630,7 +630,7 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 1.25rem;
   --bs-gutter-y: 0;
   width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -665,7 +665,7 @@ progress {
   }
 }
 .row {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 1.25rem;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -5516,7 +5516,7 @@ textarea.form-control-lg {
   --bs-card-color: ;
   --bs-card-bg: #fff;
   --bs-card-img-overlay-padding: 1rem;
-  --bs-card-group-margin: 0.75rem;
+  --bs-card-group-margin: 0.625rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -6517,7 +6517,7 @@ textarea.form-control-lg {
   --bs-toast-zindex: 1090;
   --bs-toast-padding-x: 0.75rem;
   --bs-toast-padding-y: 0.5rem;
-  --bs-toast-spacing: 1.5rem;
+  --bs-toast-spacing: 1.25rem;
   --bs-toast-max-width: 350px;
   --bs-toast-font-size: 0.875rem;
   --bs-toast-color: ;
@@ -17846,7 +17846,7 @@ body {
 }
 
 .wrapper {
-  padding: 1.5rem 0;
+  padding: 1.25rem 0;
 }
 
 #wrapper-hero {
@@ -18045,7 +18045,7 @@ a.skip-link:not(:focus):not(:focus-within) {
 }
 
 .wp-block-search .wp-block-search__button {
-  margin-left: 0.75rem;
+  margin-left: 0.625rem;
 }
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
   border: none;
@@ -21491,6 +21491,10 @@ button.btn.raised:active {
   letter-spacing: 0.1em;
 }
 
+.content-image-wrapper .entry-content {
+  margin-top: 0.563rem;
+}
+
 @media only screen and (min-width: 1400px) {
   .content-image-wrapper {
     display: flex;
@@ -21500,6 +21504,27 @@ button.btn.raised:active {
   }
   #archive-wrapper {
     margin-top: 1.875rem;
+    margin-bottom: 5.188rem;
+  }
+  .content-image-wrapper .entry-content {
+    margin-top: 0;
+  }
+}
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  --bs-gutter-x: child_theme_variables.$grid-gutter-width;
+  --bs-gutter-y: 0; /* No vertical gutter */
+  width: 100%;
+  padding-right: 1.25rem; /* Set 1.25rem (20px) padding on the right */
+  padding-left: 1.25rem; /* Set 1.25rem (20px) padding on the left */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 1440px) {
+  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+    --bs-gutter-x: $grid-gutter-width-lg;
+    padding-right: 2.5rem; /* Set 1.25rem (20px) padding on the right */
+    padding-left: 2.5rem; /* Set 1.25rem (20px) padding on the left */
   }
 }
 @font-face {
@@ -21540,20 +21565,13 @@ body:is(.home) p {
   margin: 0;
 }
 
-.container-fluid .row, .container-sm .row, .container-md .row, .container-lg .row, .container-xl .row, .container-xxl .row, .container-fluid .row {
-  --bs-gutter-x: 2.5rem;
-}
-
 @media only screen and (min-width: 1440px) {
-  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .container-fluid .row, .container-sm .row, .container-md .row, .container-lg .row, .container-xl .row, .container-xxl .row {
-    --bs-gutter-x: 5rem;
-  }
   div.content-area {
     padding-left: 3.938rem;
   }
-  body:is(.home) #content {
-    padding: 1.625em calc(var(--bs-gutter-x) * 0.5);
-    margin-bottom: 1.75em;
+  #index-wrapper {
+    margin-top: 1.875rem;
+    margin-bottom: 5.188rem;
   }
   body {
     margin-top: 0;
@@ -21883,7 +21901,7 @@ body.understrap-no-sidebar .alignwide .wp-block-cover__inner-container,
 body.understrap-no-sidebar .alignfull .wp-block-cover__inner-container,
 body.understrap-no-sidebar .wp-block-cover.alignwide .wp-block-cover__inner-container,
 body.understrap-no-sidebar .wp-block-cover.alignfull .wp-block-cover__inner-container {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 1.25rem;
   --bs-gutter-y: 0;
   width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);

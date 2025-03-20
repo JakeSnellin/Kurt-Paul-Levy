@@ -52,6 +52,10 @@
 
 #left-sidebar {
     width: 22.36%;
+    max-height: max-content;
+    position: sticky;
+    top: 3.375rem;
+    bottom: 0;
 }
 
 .icon-button {

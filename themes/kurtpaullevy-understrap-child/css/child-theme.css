@@ -21285,6 +21285,11 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
 
 #left-sidebar {
   width: 22.36%;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  position: sticky;
+  top: 3.375rem;
+  bottom: 0;
 }
 
 .icon-button {
@@ -21504,7 +21509,6 @@ button.btn.raised:active {
   }
   #archive-wrapper {
     padding-top: 3.375rem;
-    margin-bottom: 5.188rem;
   }
   .content-image-wrapper .entry-content {
     margin-top: 0;
@@ -21586,7 +21590,6 @@ body:is(.home) p {
   }
   #index-wrapper {
     padding-top: 3.375rem;
-    margin-bottom: 5.188rem;
   }
   body {
     margin-top: 0;

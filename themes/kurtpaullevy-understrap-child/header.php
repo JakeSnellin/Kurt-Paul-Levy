@@ -33,6 +33,12 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 			<?php esc_html_e( 'Skip to content', 'understrap' ); ?>
 		</a>
 
+		<!-- check if we are on the category or home page -->
+		<!-- if we are then include the progress bar template part -->
+		<?php if ( is_home() || is_category() ) : ?>
+    		<?php get_template_part( 'global-templates/progress-bar' ); ?>
+		<?php endif; ?>
+
 		<?php get_template_part( 'global-templates/navbar', 'primary' ) ?>
 
 	</header><!-- #wrapper-navbar -->

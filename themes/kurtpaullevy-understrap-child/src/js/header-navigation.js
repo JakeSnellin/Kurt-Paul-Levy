@@ -13,11 +13,11 @@ export var header = (function ($) {
                 if(scrollTop < lastScrollTop) {
                     navBar.removeClass('scrolled-down');
                     navBar.addClass('scrolled-up');
-                    console.log('Scrolling up');
+                    //console.log('Scrolling up');
                 }else {
                     navBar.removeClass('scrolled-up');
                     navBar.addClass('scrolled-down');
-                    console.log('Scrolling down');
+                    //console.log('Scrolling down');
                 }
                 lastScrollTop = scrollTop;
             });

@@ -21530,6 +21530,18 @@ button.btn.raised:active {
     padding-left: 2.5rem; /* Set 1.25rem (20px) padding on the left */
   }
 }
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 0.688rem;
+  border-top: 0.375rem solid black;
+  border-bottom: 0.063rem solid black;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

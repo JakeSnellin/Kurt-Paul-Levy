@@ -1,0 +1,13 @@
+/* Add fade-out effect to the body */
+body {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+  
+/* When the page is ready (loaded), make it visible */
+body.loaded {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+}

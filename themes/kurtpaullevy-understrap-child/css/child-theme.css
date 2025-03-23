@@ -21354,7 +21354,7 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   border-top: 4px solid;
   color: #000000;
   opacity: 1;
-  margin: 3em 0;
+  margin: 0;
 }
 
 .site-footer .site-info p {
@@ -21509,6 +21509,7 @@ button.btn.raised:active {
   }
   #archive-wrapper {
     padding-top: 3.375rem;
+    padding-bottom: 5.688rem;
   }
   .content-image-wrapper .entry-content {
     margin-top: 0;
@@ -21625,6 +21626,7 @@ body:is(.home) p {
   }
   #index-wrapper {
     padding-top: 3.375rem;
+    padding-bottom: 5.688rem;
   }
   body {
     margin-top: 0;

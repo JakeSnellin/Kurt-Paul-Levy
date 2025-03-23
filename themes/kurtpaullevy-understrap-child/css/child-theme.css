@@ -21560,6 +21560,27 @@ body.loaded {
   transition: opacity 0.5s ease, visibility 0s 0s;
 }
 
+/* Initially hide the images (they are invisible before they load) */
+article.format-image {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0s 0.5s;
+}
+
+article.format-image.fade-in {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease, visibility 0s 0s;
+}
+
+/*.lazy-load {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Fade-in transition over 1 second 
+}*/
+/* Once the image has loaded and the fade-in class is added, make it visible 
+/*.lazy-load.fade-in {
+    opacity: 1;
+}*/
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

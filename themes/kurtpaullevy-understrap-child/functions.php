@@ -102,11 +102,14 @@ add_filter('upload_mimes', function( $mimes ){
 /**
  * Register Primary Menu location
  */
-function understrap_child_register_menu() {
-	register_nav_menu('primary', esc_html__('Primary Menu', 'understrap-child'));
+function understrap_child_register_menus() {
+	register_nav_menus(array(
+		'primary' => esc_html__('Primary Menu', 'understrap-child'),
+		'sidebar' => esc_html__('Sidebar Menu', 'understrap-child'),
+	));
 }
 
-add_action( 'init', 'understrap_child_register_menu');
+add_action( 'init', 'understrap_child_register_menus');
 
 /**
  * Hide admin bar during development 
@@ -157,3 +160,45 @@ add_action('wp_ajax_nopriv_register_user', "understrap_child_registration_form")
 	add_theme_support( 'post-formats', array('image') ); 
 }
 add_action( 'after_setup_theme', 'childtheme_formats', 11 );
+
+function understrap_child_add_post_count_to_menu_items( $items, $args ) {
+    if ( isset( $args->menu ) && is_a( $args->menu, 'WP_Term' ) ) {
+		
+		$menu_slug = $args->menu->slug;
+
+		if( 'sidebar-menu' === $menu_slug ) {
+			$menu_labels_to_count = array(
+				'All work' => array(
+					'post_type' => 'post',
+					'category' => '',      
+				),
+				'Selected work' => array(
+					'post_type' => 'post',
+					'category' => 'selected-work',
+				),
+			);
+	
+			// Loop through all menu items and modify the title
+			foreach ( $items as $item ) {
+				foreach( $menu_labels_to_count as $label => $args ){
+					if( $label === $item->title ){
+						$args_query = array(
+							'post_type'=>$args[ 'post_type' ],
+							'category_name'=>$args[ 'category' ],
+							'post_status'=>'publish'
+						);
+						$query = new WP_Query( $args_query );
+						$post_count = $query->found_posts;
+					}
+				}
+				if( $item->title !== 'Full biography' ){
+					$item->title .= ' [' . $post_count . ']';
+				}
+			}
+		}
+    }
+
+    return $items; // Return the modified menu items
+}
+
+add_filter( 'wp_nav_menu_objects', 'understrap_child_add_post_count_to_menu_items', 10, 2 );

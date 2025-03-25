@@ -9,6 +9,7 @@
 @use 'progress_bar';
 @use 'page_transition';
 @use 'lazy_load';
+@use 'image_grid';
 
 @font-face {
     font-family: "DIN-Regular";
@@ -62,8 +63,8 @@ body:is(.home) {
     }
 
     #index-wrapper {
-        padding-top: 3.375rem;
-        padding-bottom: 5.688rem;
+        padding-top: child_theme_variables.$wrapper-padding-top;
+        padding-bottom: child_theme_variables.$wrapper-padding-bottom;
     }
 
     body {

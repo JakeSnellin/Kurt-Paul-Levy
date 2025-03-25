@@ -1,6 +1,17 @@
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-    <div class="content-image-wrapper">
+    <?php
+    // Determine the classes for the content wrapper
+    $content_wrapper_classes = '';
+    if ( is_home() ) {
+        $content_wrapper_classes = 'home-page';
+    } elseif ( is_category() ) {
+        $content_wrapper_classes = 'category-page';
+    }
+    ?>
+
+    <div class="content-image-wrapper <?php echo esc_attr( $content_wrapper_classes ); ?>">
+
         <?php
         // Check if the post has a featured image and display it
         if ( has_post_thumbnail() ) : ?>
@@ -9,10 +20,31 @@
             </div>
         <?php endif; ?>
 
-          <!-- Text to be displayed beside the image -->
-          <div class="entry-content">
+        <!-- Text to be displayed beside the image -->
+        <div class="entry-content">
             <?php the_content(); ?>
         </div><!-- .entry-content -->
+
+        <?php if ( is_home() ) : ?>
+            <!-- Display category pill below the image -->
+            <?php 
+            $categories = get_the_category();
+            ?>
+            <div class="category-pill-container">
+            <?php
+            foreach ( $categories as $category ) :
+                // Skip the 'Selected Work' category by name or slug
+                if ( $category->name === 'Selected Work' || $category->slug === 'selected-work' ) {
+                    continue;
+                }
+            ?>
+                <div class="category-pill <?php echo esc_attr( $category->slug ); ?>">
+                    <?php echo esc_html( $category->name ); ?>
+                </div>
+            <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
     </div><!-- .content-image-wrapper -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

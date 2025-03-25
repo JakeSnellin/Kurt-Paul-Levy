@@ -81,14 +81,40 @@ $btn-focus-border-color: $blue;
 // scss-docs-start font-variables
 $line-height-sm: 1.2;
 $line-height-lg: 1.7;
-$font-size-xs: 0.75em;
+$font-size-xs: 0.75rem;
+$font-size-xxs: 0.625rem;
 $letter-spacing-sm: 0.1em;
 // scss-docs-end font-variables
+
+
+//scss-docs-start category-pill-variables
+$pill-font-size: $font-size-xxs;
+$pill-bg-color: $light;
+$pill-padding-x: 0.813rem;
+$pill-padding-y: 0.594rem;
+$pill-border-radius: 1.688rem;
+$pill-gap: 0.625rem;
+//scss-docs-end category-pill-variables
 
 //scss-docs-start gutter-width
 $grid-gutter-width: 1.25rem;
 $grid-gutter-width-lg: 2.5rem;
 ////scss-docs-end gutter-width
+
+//scss-docs-start content-image-wrapper-variables
+$img-wrapper-margin-top: 0.563rem;
+$entry-thumbnail-margin-bottom: 6.063rem;
+$entry-thumbnail-margin-bottom-sm: 1.438rem;
+//scss-docs-end content-image-wrapper-variables
+
+//scss-docs-start category-page-content-image-wrapper-variables
+$category-page-content-image-wrapper-gap: 8.625rem;
+//scss-docs-end category-page-content-image-wrapper-variables
+
+//scss-docs-start archive-wrapper-variables
+$wrapper-padding-top: 3.375rem;
+$wrapper-padding-bottom: 5.688rem;
+//scss-docs-end archive-wrapper-variables
 
 @import "../assets/bootstrap5/functions.scss";
 @import "../assets/bootstrap5/variables.scss";

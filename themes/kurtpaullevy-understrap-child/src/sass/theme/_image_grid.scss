@@ -1,0 +1,12 @@
+.image-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.938rem;
+}
+
+@media only screen and (min-width: 1400px) {
+    .image-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.438rem;
+    }
+}

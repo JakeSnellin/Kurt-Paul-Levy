@@ -1,33 +1,68 @@
 @use 'child_theme_variables';
 
+// General Styles for Content Image Wrapper
+//
+// Shared styles for both category and home page content image wrapper
 .content-image-wrapper {
     font-size: child_theme_variables.$font-size-xs;
     line-height: child_theme_variables.$line-height-lg;
     letter-spacing: child_theme_variables.$letter-spacing-sm;
+
+    .entry-content {
+        margin-top: child_theme_variables.$img-wrapper-margin-top;
+    }
 }
 
-.content-image-wrapper .entry-content {
-    margin-top: 0.563rem;
+.content-image-wrapper {
+    .category-pill {
+        display: none;
+    }
 }
 
+// Media Queries for Large Screens (min-width: 1400px)
 @media only screen and (min-width: 1400px) {
     .content-image-wrapper {
-        display: flex;
-        justify-content: flex-end;
-        flex-direction: row-reverse;
-        gap: 8.625rem;
+        // Category Page specific styles
+        &.category-page {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            gap: child_theme_variables.$category-page-content-image-wrapper-gap;
+        }
+
+        // General content styles for both home and category pages
+        .entry-content {
+            margin-top: 0;
+        }
     }
 
+    // Archive Wrapper padding styles
     #archive-wrapper {
-        padding-top: 3.375rem;
-        padding-bottom: 5.688rem;
+        padding-top: child_theme_variables.$wrapper-padding-top;
+        padding-bottom: child_theme_variables.$wrapper-padding-bottom;
     }
 
-    .content-image-wrapper .entry-content {
-        margin-top: 0;
+    // Home Page Only
+    //
+    // Styles for the content image wrapper on the home page
+
+    .entry-thumbnail {
+        margin-bottom: child_theme_variables.$entry-thumbnail-margin-bottom-sm;
     }
 
-    .entry-thumbnail{
-        margin-bottom: 6.063rem;
+    .content-image-wrapper.home-page {
+        .category-pill {
+            background-color: child_theme_variables.$pill-bg-color;
+            border-radius: child_theme_variables.$pill-border-radius;
+            padding: child_theme_variables.$pill-padding-y child_theme_variables.$pill-padding-x;
+            width: fit-content;
+            font-size: child_theme_variables.$pill-font-size;
+            display: block;
+        }
+    }
+
+    .category-pill-container {
+        display: flex;
+        gap: child_theme_variables.$pill-gap;
     }
 }

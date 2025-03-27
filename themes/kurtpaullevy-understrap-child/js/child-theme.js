@@ -7043,6 +7043,12 @@
 	  });
 	}
 
+	function categoryDropdown($) {
+	  $('#dropdownMenuButton').on('click', function () {
+	    $('.caret-icon').toggleClass('rotated');
+	  });
+	}
+
 	// Add your custom JS here.
 
 	(function ($) {
@@ -7052,6 +7058,7 @@
 	    progressBar($);
 	    header.publicToggleShowNav();
 	    validateAndRegisterUser($);
+	    categoryDropdown($);
 	  });
 	})(jQuery);
 

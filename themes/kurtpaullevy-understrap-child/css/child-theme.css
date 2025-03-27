@@ -21605,13 +21605,15 @@ article.format-image.fade-in {
 .category-dropdown {
   margin-bottom: 1.063rem;
   width: 100%;
+  position: relative;
 }
 
 .category-dropdown button {
   width: 100%;
   display: flex;
-  padding-right: 14px;
-  padding-left: 14px;
+  padding: 17px 15px;
+  z-index: 2;
+  position: relative;
 }
 
 .category-dropdown button > span {
@@ -21620,6 +21622,29 @@ article.format-image.fade-in {
 
 .category-dropdown .dropdown-toggle::after {
   content: none;
+}
+
+.dropdown-menu.show {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-menu.show > :nth-child(-n+2) {
+  border-bottom: 0.5px solid #CFCFCF;
+}
+
+.dropdown-menu.show .menu-item {
+  display: flex;
+  width: 100%;
+  padding: 17px 15px;
+}
+
+.dropdown-menu.show .menu-item a {
+  width: -moz-min-content;
+  width: min-content;
+  margin: 0 auto;
 }
 
 @font-face {

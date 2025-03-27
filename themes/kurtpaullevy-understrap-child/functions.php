@@ -203,3 +203,42 @@ function understrap_child_add_post_count_to_menu_items( $items, $args ) {
 }
 
 add_filter( 'wp_nav_menu_objects', 'understrap_child_add_post_count_to_menu_items', 10, 2 );
+
+function filter_posts_ajax_handler() {
+    // Check if we received a valid category
+    if (isset($_POST['category'])) {
+        $category_slug = sanitize_text_field($_POST['category']);
+		
+        // Define query parameters to filter by category
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => -1, // You can set a limit here
+            'category_name' => $category_slug,
+        );
+
+        // Query the posts
+        $query = new WP_Query($args);
+
+        // Check if there are posts
+        if ($query->have_posts()) :
+            while ($query->have_posts()) : $query->the_post();
+                // Output the content image template part here
+                get_template_part('loop-templates/content', get_post_format());
+            endwhile;
+        else :
+            echo '<p>No posts found for this category.</p>';
+        endif;
+
+        // Always reset post data after custom query
+        wp_reset_postdata();
+    }
+
+    // Don't forget to call wp_die() to terminate AJAX correctly
+    wp_die();
+}
+
+// Hook for logged-in users
+add_action('wp_ajax_filter_work_by_category', 'filter_posts_ajax_handler');
+
+// Hook for non-logged-in users
+add_action('wp_ajax_nopriv_filter_work_by_category', 'filter_posts_ajax_handler');

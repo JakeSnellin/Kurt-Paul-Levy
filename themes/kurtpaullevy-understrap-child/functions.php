@@ -104,8 +104,9 @@ add_filter('upload_mimes', function( $mimes ){
  */
 function understrap_child_register_menus() {
 	register_nav_menus(array(
-		'primary' => esc_html__('Primary Menu', 'understrap-child'),
-		'sidebar' => esc_html__('Sidebar Menu', 'understrap-child'),
+		'primary' 			=> esc_html__('Primary Menu', 'understrap-child'),
+		'sidebar' 			=> esc_html__('Sidebar Menu', 'understrap-child'),
+		'category_dropdown' => esc_html__('Dropdown Menu', 'understrap-child'),
 	));
 }
 

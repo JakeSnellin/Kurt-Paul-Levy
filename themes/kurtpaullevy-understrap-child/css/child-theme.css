@@ -21579,18 +21579,17 @@ body.loaded {
 }
 
 /* Initially hide the images (they are invisible before they load) */
-article.format-image {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.5s ease, visibility 0s 0.5s;
+/*article.format-image {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
 }
 
 article.format-image.fade-in {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.5s ease, visibility 0s 0s;
-}
-
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+}*/
 .image-grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -21603,6 +21602,26 @@ article.format-image.fade-in {
     gap: 2.438rem;
   }
 }
+.category-dropdown {
+  margin-bottom: 1.063rem;
+  width: 100%;
+}
+
+.category-dropdown button {
+  width: 100%;
+  display: flex;
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+.category-dropdown button > span {
+  margin: 0 auto;
+}
+
+.category-dropdown .dropdown-toggle::after {
+  content: none;
+}
+
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

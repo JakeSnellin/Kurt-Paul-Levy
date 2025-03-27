@@ -1,0 +1,18 @@
+.category-dropdown {
+    margin-bottom: 1.063rem;
+    width: 100%;
+    & button {
+        width: 100%;
+        display: flex;
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    & button > span {
+        margin: 0 auto;
+    }
+
+    & .dropdown-toggle::after {
+       content: none;
+    }
+}

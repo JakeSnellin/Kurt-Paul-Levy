@@ -21616,6 +21616,14 @@ article.format-image.fade-in {
   position: relative;
 }
 
+.category-dropdown button .caret-icon {
+  transition: transform 0.3s ease;
+}
+
+.category-dropdown button .caret-icon.rotated {
+  transform: rotate(180deg);
+}
+
 .category-dropdown button > span {
   margin: 0 auto;
 }

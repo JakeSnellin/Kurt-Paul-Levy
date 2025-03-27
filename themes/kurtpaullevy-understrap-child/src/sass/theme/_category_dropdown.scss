@@ -10,6 +10,14 @@
         position: relative;
     }
 
+    & button .caret-icon {
+        transition: transform 0.3s ease;
+    }
+
+    & button .caret-icon.rotated {
+        transform: rotate(180deg);
+    }
+
     & button > span {
         margin: 0 auto;
     }
@@ -24,7 +32,6 @@
     border: none;
     border-radius: 5px;
     z-index: 1;
-
     
     & > :nth-child(-n+2) {
         border-bottom: .5px solid #CFCFCF;
@@ -40,5 +47,4 @@
         width: min-content;
         margin: 0 auto;
     }
-
 }

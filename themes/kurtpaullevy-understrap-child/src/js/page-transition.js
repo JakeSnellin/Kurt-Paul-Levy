@@ -13,7 +13,8 @@ export function pageTransition ($) {
   pageFadeIn();
 
   // Add page transition when navigating between pages
-  $('a').on('click', function(event) {
+  
+  $('#menu-sidebar-menu a, #main-menu a, .custom-logo-link').on('click', function(event) {
     var targetLink = this;
     event.preventDefault(); // Prevent default behavior (navigation)
 

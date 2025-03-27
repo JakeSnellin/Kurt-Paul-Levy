@@ -1,20 +1,17 @@
+import { createObserver } from "./helpers/createObserver";
+import { initialiseObserver } from "./helpers/initialiseObserver";
+
 export function lazyLoadImages ($) {
 
         var images = $('article.format-image');
+        var observer = createObserver();
 
-        console.log(images);
+        initialiseObserver(images, observer);
 
-        var observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var $img = $(entry.target);
-                    $img.addClass('fade-in');
-                    observer.unobserve(entry.target); // Stop observing after image is loaded
-                }
-            });
-        }, { threshold: 0.2 });
-
-        images.each(function() {
-            observer.observe(this);
+        $(document).on('newContentLoaded', function() {
+            observer.disconnect();
+            var images = $('article.format-image');
+            observer = createObserver();
+            initialiseObserver(images, observer);
         });
 }

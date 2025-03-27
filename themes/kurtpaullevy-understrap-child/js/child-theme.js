@@ -7010,9 +7010,7 @@
 	  });
 	}
 
-	function lazyLoadImages($) {
-	  var images = $('article.format-image');
-	  console.log(images);
+	function createObserver() {
 	  var observer = new IntersectionObserver(function (entries, observer) {
 	    entries.forEach(function (entry) {
 	      if (entry.isIntersecting) {
@@ -7024,8 +7022,24 @@
 	  }, {
 	    threshold: 0.2
 	  });
+	  return observer;
+	}
+
+	function initialiseObserver(images, observer) {
 	  images.each(function () {
 	    observer.observe(this);
+	  });
+	}
+
+	function lazyLoadImages($) {
+	  var images = $('article.format-image');
+	  var observer = createObserver();
+	  initialiseObserver(images, observer);
+	  $(document).on('newContentLoaded', function () {
+	    observer.disconnect();
+	    var images = $('article.format-image');
+	    observer = createObserver();
+	    initialiseObserver(images, observer);
 	  });
 	}
 

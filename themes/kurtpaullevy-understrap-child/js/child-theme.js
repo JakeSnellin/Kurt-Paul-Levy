@@ -6915,10 +6915,11 @@
 	//import { createElement } from "../helpers/createElement.js";
 
 	function registerUserAjax($, email) {
+	  const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
 	  // Perform the AJAX request
 	  $.ajax({
 	    type: "post",
-	    url: `${window.location.origin}/wp-admin/admin-ajax.php`,
+	    url: ajaxUrl,
 	    data: {
 	      action: "register_user",
 	      ajax_data: email
@@ -7043,10 +7044,52 @@
 	  });
 	}
 
+	function filterContentByCategoryAjax($, category) {
+	  const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
+	  $.ajax({
+	    type: "post",
+	    url: ajaxUrl,
+	    data: {
+	      action: 'filter_work_by_category',
+	      category: category
+	    },
+	    success: function (response) {
+	      // Update the content area with the new posts
+	      $('#image-grid-container').html(response);
+	    },
+	    error: function (error) {
+	      console.log('Error:', error);
+	    }
+	  });
+	}
+
 	function categoryDropdown($) {
 	  $('#dropdownMenuButton').on('click', function () {
 	    $('.caret-icon').toggleClass('rotated');
 	  });
+	  $('.menu-item-object-category a').on('click', function (e) {
+	    e.preventDefault();
+
+	    // Get the href value of the clicked link
+	    var url = $(this).attr('href');
+
+	    // Use the URLPattern API to extract the category
+	    var category = getCategoryFromUrl(url);
+	    if (!category) return;
+	    var upperCaseCategory = category.charAt(0).toUpperCase() + category.slice(1);
+	    $('#dropdown-btn-text').text(upperCaseCategory);
+	    filterContentByCategoryAjax($, category);
+	  });
+	  function getCategoryFromUrl(url) {
+	    // Create a URL object from the given URL string
+	    const currentUrl = new URL(url);
+
+	    // Split the pathname into segments by '/'
+	    const pathSegments = currentUrl.pathname.split('/');
+
+	    // The category is in the second position of the path (e.g., '/category/abstract/')
+	    return pathSegments[2] || null; // 'abstract' for /category/abstract/
+	  }
 	}
 
 	// Add your custom JS here.

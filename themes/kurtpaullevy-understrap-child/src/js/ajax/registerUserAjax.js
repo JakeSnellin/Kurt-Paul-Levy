@@ -1,10 +1,11 @@
 //import { createElement } from "../helpers/createElement.js";
 
 export function registerUserAjax($, email) {
+    const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
     // Perform the AJAX request
     $.ajax({
         type: "post",
-        url: `${window.location.origin}/wp-admin/admin-ajax.php`,
+        url: ajaxUrl,
         data: {
             action: "register_user",
             ajax_data: email,

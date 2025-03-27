@@ -4,14 +4,14 @@ import { initialiseObserver } from "./helpers/initialiseObserver";
 export function lazyLoadImages ($) {
 
         var images = $('article.format-image');
-        var observer = createObserver();
+        var observer = createObserver($);
 
         initialiseObserver(images, observer);
 
         $(document).on('newContentLoaded', function() {
             observer.disconnect();
             var images = $('article.format-image');
-            observer = createObserver();
+            observer = createObserver($);
             initialiseObserver(images, observer);
         });
 }

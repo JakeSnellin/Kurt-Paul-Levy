@@ -1,4 +1,4 @@
-export function createObserver() {
+export function createObserver($) {
     var observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {

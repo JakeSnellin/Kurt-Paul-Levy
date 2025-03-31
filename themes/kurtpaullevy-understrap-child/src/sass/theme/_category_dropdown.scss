@@ -33,18 +33,28 @@
     border-radius: 5px;
     z-index: 1;
     
-    & > :nth-child(-n+2) {
+    & > :nth-child(-n+3) {
         border-bottom: .5px solid #CFCFCF;
     }
 
     & .menu-item {
         display: flex;
         width: 100%;
-        padding: 17px 15px;
     }
 
     & .menu-item a {
-        width: min-content;
-        margin: 0 auto;
+        width: 100%;
+        padding: 17px 15px;
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .hidden {
+        display: none;
+    }   
+
+    .visible {
+        display: flex;
     }
 }

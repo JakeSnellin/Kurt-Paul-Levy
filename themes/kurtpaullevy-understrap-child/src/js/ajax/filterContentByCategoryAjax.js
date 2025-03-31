@@ -10,6 +10,7 @@ export function filterContentByCategoryAjax ($, category) {
         success: function(response) {
             // Update the content area with the new posts
             $('#image-grid-container').html(response);
+            $(document).trigger('newContentLoaded');
         },
         error: function(error) {
             console.log('Error:', error);

@@ -192,10 +192,14 @@ function understrap_child_add_post_count_to_menu_items( $items, $args ) {
 						$post_count = $query->found_posts;
 					}
 				}
+
 				if( $item->title !== 'Full biography' ){
 					$item->title .= ' [' . $post_count . ']';
 				}
 			}
+
+			// Always reset post data after custom query
+			wp_reset_postdata();
 		}
     }
 
@@ -233,7 +237,7 @@ function filter_posts_ajax_handler() {
         wp_reset_postdata();
     }
 
-    // Don't forget to call wp_die() to terminate AJAX correctly
+    // Terminate AJAX correctly
     wp_die();
 }
 
@@ -242,3 +246,26 @@ add_action('wp_ajax_filter_work_by_category', 'filter_posts_ajax_handler');
 
 // Hook for non-logged-in users
 add_action('wp_ajax_nopriv_filter_work_by_category', 'filter_posts_ajax_handler');
+
+function add_class_to_specific_menu_item( $classes, $item, $args ) {
+	// Check if the menu item ID is 65
+	if( $item->ID === 65 ){
+		// Add custom hidden class to menu item
+		$classes[] = 'hidden';
+	}
+	return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'add_class_to_specific_menu_item', 10, 3 );
+
+function add_span_to_menu_item($items, $args) {
+	if($args->theme_location === 'category_dropdown'){
+		$items = preg_replace_callback('/(<a.*?>)(.*?)(<\/a>)/', function ($matches) {
+			return $matches[1] . '<span>' . $matches[2] . '</span>' . $matches[3];
+		}, $items);
+	}
+	return $items;
+}
+
+add_filter('wp_nav_menu_items', 'add_span_to_menu_item', 10, 2);
+

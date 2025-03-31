@@ -8,6 +8,8 @@ export function categoryDropdown($) {
     $('.dropdown-menu .menu-item').on('click', function (e) {
         e.preventDefault();
 
+        $('.caret-icon').toggleClass('rotated');
+
          // Make all items visible again before hiding the clicked one
          $('.dropdown-menu .menu-item').removeClass('hidden').addClass('visible');
 

@@ -236,7 +236,7 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #6c757d;
+  color: #F5F5F5;
   text-align: left;
 }
 
@@ -419,19 +419,19 @@ progress {
   --bs-cyan: #0dcaf0;
   --bs-black: #000000;
   --bs-white: #fff;
-  --bs-gray: #6c757d;
+  --bs-gray: #F5F5F5;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #EFEFEF;
   --bs-gray-200: #E5E5E5;
   --bs-gray-300: #E5E5E5;
   --bs-gray-400: #848484;
   --bs-gray-500: #464646;
-  --bs-gray-600: #6c757d;
-  --bs-gray-700: #495057;
+  --bs-gray-600: #F5F5F5;
+  --bs-gray-700: #E6E6E6;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #000000;
-  --bs-secondary: #6c757d;
+  --bs-secondary: #F5F5F5;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #D97700;
@@ -439,7 +439,7 @@ progress {
   --bs-light: #EFEFEF;
   --bs-dark: #212529;
   --bs-primary-rgb: 0, 0, 0;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-secondary-rgb: 245, 245, 245;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 217, 119, 0;
@@ -567,13 +567,13 @@ progress {
 
 .table-secondary {
   --bs-table-color: #000000;
-  --bs-table-bg: rgb(225.6, 227.4, 229);
-  --bs-table-border-color: rgb(203.04, 204.66, 206.1);
-  --bs-table-striped-bg: rgb(214.32, 216.03, 217.55);
+  --bs-table-bg: #fdfdfd;
+  --bs-table-border-color: rgb(227.7, 227.7, 227.7);
+  --bs-table-striped-bg: rgb(240.35, 240.35, 240.35);
   --bs-table-striped-color: #000000;
-  --bs-table-active-bg: rgb(203.04, 204.66, 206.1);
+  --bs-table-active-bg: rgb(227.7, 227.7, 227.7);
   --bs-table-active-color: #000000;
-  --bs-table-hover-bg: rgb(208.68, 210.345, 211.825);
+  --bs-table-hover-bg: rgb(234.025, 234.025, 234.025);
   --bs-table-hover-color: #000000;
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
@@ -726,7 +726,7 @@ progress {
 .figure-caption, figure.wp-block-image figcaption,
 .wp-block-image > figure figcaption {
   font-size: 0.875em;
-  color: #6c757d;
+  color: #F5F5F5;
 }
 
 .lead {
@@ -834,7 +834,7 @@ progress {
   margin-top: -1rem;
   margin-bottom: 1rem;
   font-size: 0.875em;
-  color: #6c757d;
+  color: #F5F5F5;
 }
 .blockquote-footer::before, .wp-block-quote cite::before {
   content: "— ";
@@ -859,19 +859,19 @@ progress {
   --bs-cyan: #0dcaf0;
   --bs-black: #000000;
   --bs-white: #fff;
-  --bs-gray: #6c757d;
+  --bs-gray: #F5F5F5;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #EFEFEF;
   --bs-gray-200: #E5E5E5;
   --bs-gray-300: #E5E5E5;
   --bs-gray-400: #848484;
   --bs-gray-500: #464646;
-  --bs-gray-600: #6c757d;
-  --bs-gray-700: #495057;
+  --bs-gray-600: #F5F5F5;
+  --bs-gray-700: #E6E6E6;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #000000;
-  --bs-secondary: #6c757d;
+  --bs-secondary: #F5F5F5;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #D97700;
@@ -879,7 +879,7 @@ progress {
   --bs-light: #EFEFEF;
   --bs-dark: #212529;
   --bs-primary-rgb: 0, 0, 0;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-secondary-rgb: 245, 245, 245;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 217, 119, 0;
@@ -927,8 +927,8 @@ progress {
 }
 
 .text-bg-secondary {
-  color: #fff !important;
-  background-color: RGBA(108, 117, 125, var(--bs-bg-opacity, 1)) !important;
+  color: #000000 !important;
+  background-color: RGBA(245, 245, 245, var(--bs-bg-opacity, 1)) !important;
 }
 
 .text-bg-success {
@@ -969,10 +969,10 @@ progress {
 }
 
 .link-secondary {
-  color: #6c757d !important;
+  color: #F5F5F5 !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: rgb(86.4, 93.6, 100) !important;
+  color: #f7f7f7 !important;
 }
 
 .link-success {
@@ -3541,7 +3541,7 @@ progress {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #6c757d !important;
+  color: #F5F5F5 !important;
 }
 
 .text-black-50 {
@@ -10980,16 +10980,16 @@ progress {
 
 .has-gray-color,
 .has-gray-color:visited {
-  color: #6c757d;
+  color: #F5F5F5;
 }
 
 .has-gray-background-color {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-gray-color {
-  color: #6c757d;
+  color: #F5F5F5;
 }
 
 .has-gray-dark-color,
@@ -11022,16 +11022,16 @@ progress {
 
 .has-secondary-color,
 .has-secondary-color:visited {
-  color: #6c757d;
+  color: #F5F5F5;
 }
 
 .has-secondary-background-color {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
 }
 
 .wp-block-button:hover .wp-block-button__link.has-white-background-color.has-secondary-color {
-  color: #6c757d;
+  color: #F5F5F5;
 }
 
 .has-success-color,

@@ -3,6 +3,17 @@ import { filterContentByCategoryAjax } from './ajax/filterContentByCategoryAjax.
 export function categoryDropdown($) {
     $('#dropdownMenuButton').on('click', function () {
         $('.caret-icon').toggleClass('rotated');
+        const dropdownMenu = $('.category-dropdown-menu');
+        if(dropdownMenu.hasClass('show-menu')){
+            $('.category-dropdown').css('background-color', '');
+            dropdownMenu.removeClass('show-menu');
+            dropdownMenu.attr('aria-expanded', 'false');
+        }else {
+            dropdownMenu.addClass('show-menu');
+            $('.category-dropdown').css('background-color', '#f5f5f5');
+            dropdownMenu.attr('aria-expanded', 'true');
+
+        }
     });
 
     $('.dropdown-menu .menu-item').on('click', function (e) {

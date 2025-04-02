@@ -1,3 +1,15 @@
+<?php
+/**
+ * Hero setup
+ *
+ * @package Understrap
+ */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <div class="category-dropdown">
   <button class="btn btn-light raised" type="button" id="dropdownMenuButton" aria-expanded="false">
     <span id="dropdown-btn-text"><?php esc_html_e('All work', 'understrap-child') ?></span>

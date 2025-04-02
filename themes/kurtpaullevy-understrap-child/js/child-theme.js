@@ -7044,7 +7044,7 @@
 	  });
 	}
 
-	function filterContentByCategoryAjax($, category) {
+	function filterContentByCategoryAjax($, category = "All work") {
 	  const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
 	  $.ajax({
 	    type: "post",
@@ -7115,7 +7115,7 @@
 	    var categoryText = $(this).text();
 	    $('.widget-area #dropdown-btn-text').text(categoryText);
 	    if (categoryText === 'All work') {
-	      console.log(categoryText);
+	      filterContentByCategoryAjax($);
 	    }
 	    filterContentByCategoryAjax($, categoryText);
 	  });
@@ -7131,7 +7131,7 @@
 	    var categoryText = $(this).text();
 	    $('.site-main #dropdown-btn-text').text(categoryText);
 	    if (categoryText === 'All work') {
-	      console.log(categoryText);
+	      filterContentByCategoryAjax($);
 	    }
 	    filterContentByCategoryAjax($, categoryText);
 	  });

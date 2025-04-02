@@ -217,13 +217,13 @@ function filter_posts_ajax_handler() {
 			// Define query parameters for all posts
 			$args = array(
 				'post_type' => 'post',
-				'posts_per_page' => -1, // You can set a limit here
+				'posts_per_page' => -1, // set a limit here
 			);
 		}else{
 			// Define query parameters to filter by category
 			$args = array(
 				'post_type' => 'post',
-				'posts_per_page' => -1, // You can set a limit here
+				'posts_per_page' => -1, // set a limit here
 				'category_name' => $category_slug,
 			);
 		}

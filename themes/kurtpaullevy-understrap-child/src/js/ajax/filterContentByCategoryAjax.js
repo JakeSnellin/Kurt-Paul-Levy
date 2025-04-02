@@ -1,4 +1,4 @@
-export function filterContentByCategoryAjax ($, category) {
+export function filterContentByCategoryAjax ($, category = "All work") {
     const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
     $.ajax({
         type: "post",

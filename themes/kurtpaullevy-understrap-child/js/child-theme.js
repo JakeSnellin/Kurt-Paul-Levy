@@ -7101,6 +7101,8 @@
 	      dropdownButtonHeaderVariant.attr('aria-expanded', 'false');
 	    }
 	  });
+
+	  //no need to repeat these functions with event delegation. 
 	  $('.widget-area .category-dropdown-menu .menu-item').on('click', function (e) {
 	    e.preventDefault();
 	    $('widget-area .caret-icon').toggleClass('rotated');
@@ -7112,6 +7114,9 @@
 	    $(this).addClass('hidden').removeClass('visible');
 	    var categoryText = $(this).text();
 	    $('.widget-area #dropdown-btn-text').text(categoryText);
+	    if (categoryText === 'All work') {
+	      console.log(categoryText);
+	    }
 	    filterContentByCategoryAjax($, categoryText);
 	  });
 	  $('.site-main .category-dropdown-menu .menu-item').on('click', function (e) {
@@ -7125,6 +7130,9 @@
 	    $(this).addClass('hidden').removeClass('visible');
 	    var categoryText = $(this).text();
 	    $('.site-main #dropdown-btn-text').text(categoryText);
+	    if (categoryText === 'All work') {
+	      console.log(categoryText);
+	    }
 	    filterContentByCategoryAjax($, categoryText);
 	  });
 	}

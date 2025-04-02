@@ -21607,6 +21607,8 @@ article.format-image.fade-in {
   margin-bottom: 1.063rem;
   width: 100%;
   position: relative;
+  border-top-left-radius: 2.063rem;
+  border-top-right-radius: 2.063rem;
 }
 
 .category-dropdown button {

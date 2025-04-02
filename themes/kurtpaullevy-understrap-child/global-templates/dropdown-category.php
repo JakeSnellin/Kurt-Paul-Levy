@@ -1,5 +1,5 @@
 <div class="category-dropdown">
-  <button class="btn btn-light" type="button" id="dropdownMenuButton" aria-expanded="false">
+  <button class="btn btn-light raised" type="button" id="dropdownMenuButton" aria-expanded="false">
     <span id="dropdown-btn-text"><?php esc_html_e('All work', 'understrap-child') ?></span>
     <?php get_template_part('icon-templates/icons', 'caret'); ?>
   </button>

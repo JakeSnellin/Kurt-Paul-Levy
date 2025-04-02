@@ -43,7 +43,7 @@ export function categoryDropdown($) {
     });
 
     
-
+    //no need to repeat these functions with event delegation. 
     $('.widget-area .category-dropdown-menu .menu-item').on('click', function (e) {
         e.preventDefault();
 
@@ -58,6 +58,10 @@ export function categoryDropdown($) {
         var categoryText = $(this).text();
 
         $('.widget-area #dropdown-btn-text').text(categoryText);
+
+        if(categoryText === 'All work') {
+            filterContentByCategoryAjax($);
+        }
 
         filterContentByCategoryAjax($, categoryText);
         
@@ -77,6 +81,10 @@ export function categoryDropdown($) {
             var categoryText = $(this).text();
     
             $('.site-main #dropdown-btn-text').text(categoryText);
+
+            if(categoryText === 'All work') {
+                filterContentByCategoryAjax($);
+            }
     
             filterContentByCategoryAjax($, categoryText);
 

@@ -1,57 +1,26 @@
 @use 'child_theme_variables';
 
-@media only screen and (min-width: 1400px) {
-
-    body:is(.blog) {
-        .site-main .category-dropdown {
-            display: none;
-        }
-
-        .widget-area .category-dropdown {
-            display: block;
-        }
-    }
-}
-
-@media only screen and (max-width: 1439px) {
-
-    body:is(.blog) {
-        .site-main .category-dropdown {
-            display: block;
-        }
-    
-        .widget-area .category-dropdown {
-            display: none;
-        }
-    }
-}
-
-.site-main .category-dropdown {
-    display: none;
-}
-
-.widget-area .category-dropdown {
-    display: none;
-}
-
 .category-dropdown {
     margin-bottom: 1.063rem;
     width: 100%;
     position: relative;
-    border-top-left-radius: 2.063rem;
-    border-top-right-radius: 2.063rem;
-    transition: background-color 0.3s ease;
+    //border-top-left-radius: 2.063rem;
+    //border-top-right-radius: 2.063rem;
+    //transition: background-color 0.3s ease;
     & button {
         width: 100%;
         display: flex;
         padding: 17px 15px;
         z-index: 3;
         position: relative;
-        background-color: child_theme_variables.$gray-700;
+        background-color: child_theme_variables.$btn-background-color;
     }
 
     & button .caret-icon {
         transition: transform 0.3s ease;
+        transform-origin: center center; /* Ensure it rotates around its center */
+        display: flex;
+        align-items: center;
     }
 
     & button .caret-icon.rotated {
@@ -68,23 +37,16 @@
 }
 
 .category-dropdown-menu {
-    background-color: child_theme_variables.$gray-600;
+    display: none;
+    background-color: child_theme_variables.$btn-background-color;
     position: absolute; /* Remove the menu from document flow */
     top: 100%; /* Position the dropdown directly below the button */
     left: 0;
-    visibility: hidden; /* Initially hidden */
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
     width: 100%;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
     z-index: 2;
     
 
     &.show-menu {
-        visibility: visible;
-        opacity: 1;
-        max-height: 1000px;
         width: 100%;
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -97,6 +59,10 @@
         & .menu-item {
             display: flex;
             width: 100%;
+        }
+
+        & .menu-item:hover {
+            background-color: child_theme_variables.$gray-300;
         }
 
         & .menu-item a {
@@ -136,17 +102,19 @@
                 width: 67%;
                 margin-top: 4.5rem;
 
-                & .category-dropdown-menu {
-                    font-size: 12px;
+                & button {
+                    padding: 15px 20px;
                 }
 
-                & button {
-                    padding: 15px 16px;
+                & .category-dropdown-menu li a {
+                    font-size: 12px;
+                    letter-spacing: 0.075rem; //change to a mixin
                 }
             }
 
             #dropdown-btn-text {
                 font-size: 12px;
+                letter-spacing: 0.075rem;
             }
         }
     }

@@ -1,5 +1,39 @@
 @use 'child_theme_variables';
 
+@media only screen and (min-width: 1400px) {
+
+    body:is(.blog) {
+        .site-main .category-dropdown {
+            display: none;
+        }
+
+        .widget-area .category-dropdown {
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 1439px) {
+
+    body:is(.blog) {
+        .site-main .category-dropdown {
+            display: block;
+        }
+    
+        .widget-area .category-dropdown {
+            display: none;
+        }
+    }
+}
+
+.site-main .category-dropdown {
+    display: none;
+}
+
+.widget-area .category-dropdown {
+    display: none;
+}
+
 .category-dropdown {
     margin-bottom: 1.063rem;
     width: 100%;
@@ -11,7 +45,7 @@
         width: 100%;
         display: flex;
         padding: 17px 15px;
-        z-index: 2;
+        z-index: 3;
         position: relative;
         background-color: child_theme_variables.$gray-700;
     }
@@ -44,7 +78,7 @@
     overflow: hidden;
     width: 100%;
     transition: opacity 0.3s ease, max-height 0.3s ease;
-    z-index: 1;
+    z-index: 2;
     
 
     &.show-menu {
@@ -79,5 +113,53 @@
 
         .visible {
             display: flex;
+        }
+    }
+    
+    .site-main .category-dropdown {
+        display: none;
+    }
+    
+    .widget-area .category-dropdown {
+        display: none;
+    }
+
+    @media only screen and (min-width: 1400px) {
+
+        body:is(.blog) {
+            .site-main .category-dropdown {
+                display: none;
+            }
+    
+            .widget-area .category-dropdown {
+                display: block;
+                width: 67%;
+                margin-top: 4.5rem;
+
+                & .category-dropdown-menu {
+                    font-size: 12px;
+                }
+
+                & button {
+                    padding: 15px 16px;
+                }
+            }
+
+            #dropdown-btn-text {
+                font-size: 12px;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 1439px) {
+    
+        body:is(.blog) {
+            .site-main .category-dropdown {
+                display: block;
+            }
+        
+            .widget-area .category-dropdown {
+                display: none;
+            }
         }
     }

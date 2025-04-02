@@ -21311,7 +21311,7 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
 
 #sidebar__contact {
   position: relative;
-  z-index: 9999;
+  z-index: 1;
   overflow: hidden;
   padding: 0.563em 0;
   margin-top: 8.25em;
@@ -21330,7 +21330,7 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
 
 .icon-email {
   position: relative;
-  z-index: 9999;
+  z-index: 1;
   background-color: #ffffff;
 }
 
@@ -21603,6 +21603,30 @@ article.format-image.fade-in {
     gap: 2.438rem;
   }
 }
+@media only screen and (min-width: 1400px) {
+  body:is(.blog) .site-main .category-dropdown {
+    display: none;
+  }
+  body:is(.blog) .widget-area .category-dropdown {
+    display: block;
+  }
+}
+@media only screen and (max-width: 1439px) {
+  body:is(.blog) .site-main .category-dropdown {
+    display: block;
+  }
+  body:is(.blog) .widget-area .category-dropdown {
+    display: none;
+  }
+}
+.site-main .category-dropdown {
+  display: none;
+}
+
+.widget-area .category-dropdown {
+  display: none;
+}
+
 .category-dropdown {
   margin-bottom: 1.063rem;
   width: 100%;
@@ -21616,7 +21640,7 @@ article.format-image.fade-in {
   width: 100%;
   display: flex;
   padding: 17px 15px;
-  z-index: 2;
+  z-index: 3;
   position: relative;
   background-color: #E6E6E6;
 }
@@ -21648,7 +21672,7 @@ article.format-image.fade-in {
   overflow: hidden;
   width: 100%;
   transition: opacity 0.3s ease, max-height 0.3s ease;
-  z-index: 1;
+  z-index: 2;
 }
 
 .category-dropdown-menu.show-menu {
@@ -21685,6 +21709,41 @@ article.format-image.fade-in {
   display: flex;
 }
 
+.site-main .category-dropdown {
+  display: none;
+}
+
+.widget-area .category-dropdown {
+  display: none;
+}
+
+@media only screen and (min-width: 1400px) {
+  body:is(.blog) .site-main .category-dropdown {
+    display: none;
+  }
+  body:is(.blog) .widget-area .category-dropdown {
+    display: block;
+    width: 67%;
+    margin-top: 4.5rem;
+  }
+  body:is(.blog) .widget-area .category-dropdown .category-dropdown-menu {
+    font-size: 12px;
+  }
+  body:is(.blog) .widget-area .category-dropdown button {
+    padding: 15px 16px;
+  }
+  body:is(.blog) #dropdown-btn-text {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 1439px) {
+  body:is(.blog) .site-main .category-dropdown {
+    display: block;
+  }
+  body:is(.blog) .widget-area .category-dropdown {
+    display: none;
+  }
+}
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

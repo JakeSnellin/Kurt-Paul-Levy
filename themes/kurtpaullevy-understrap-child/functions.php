@@ -208,12 +208,73 @@ function understrap_child_add_post_count_to_menu_items( $items, $args ) {
 
 add_filter( 'wp_nav_menu_objects', 'understrap_child_add_post_count_to_menu_items', 10, 2 );
 
-function filter_posts_ajax_handler() {
-    // Check if we received a valid category
+function filter_lightbox_content() {
+    if (isset($_POST['category']) && isset($_POST['postId'])) {
+        // Sanitize inputs
+        $category_slug = sanitize_text_field($_POST['category']);
+        $post_id = sanitize_text_field($_POST['postId']);
+
+        // Query for posts in the selected category
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => -1, // Get all posts
+            'category_name' => $category_slug,
+            'orderby' => 'date',
+            'order' => 'ASC', // or DESC based on your needs
+        );
+
+        $query = new WP_Query($args);
+        $posts = $query->get_posts();
+
+        // Initialize previous and next post variables
+        $previous_post = null;
+        $next_post = null;
+
+        if ($query->have_posts()) :
+            foreach ($posts as $index => $post) {
+                // If this is the clicked post, find previous and next posts
+                if ($post->ID === (int)$post_id) {
+                    $previous_post = isset($posts[$index - 1]) ? $posts[$index - 1] : null;
+                    $next_post = isset($posts[$index + 1]) ? $posts[$index + 1] : null;
+                    break;
+                }
+            }
+
+            // Set the global post object for template part rendering
+            $post = $posts[$index]; // Set the current post object
+            setup_postdata($post); // Necessary for get_template_part()
+
+            // Capture the content of the clicked post
+            ob_start();
+            get_template_part('loop-templates/content', get_post_format());
+            $post_content = ob_get_clean();
+
+            // Send the response with content and previous/next post IDs
+            wp_send_json_success([
+                'post_content' => $post_content,
+                'previous_post' => $previous_post ? $previous_post->ID : null,
+                'next_post' => $next_post ? $next_post->ID : null,
+            ]);
+        else :
+            wp_send_json_error(['error' => 'No posts found for this category.']);
+        endif;
+
+        // Reset post data
+        wp_reset_postdata();
+    }
+}
+
+// Hook for lightbox functionality (logged-in users)
+add_action('wp_ajax_filter_lightbox_content', 'filter_lightbox_content');
+// Hook for lightbox functionality (non-logged-in users)
+add_action('wp_ajax_nopriv_filter_lightbox_content', 'filter_lightbox_content');
+
+function filter_category_posts() {
     if (isset($_POST['category'])) {
+        // Sanitize the category input
         $category_slug = sanitize_text_field($_POST['category']);
 
-		if($category_slug === "All work") {
+        if($category_slug === "All work") {
 			// Define query parameters for all posts
 			$args = array(
 				'post_type' => 'post',
@@ -228,32 +289,29 @@ function filter_posts_ajax_handler() {
 			);
 		}
 
-        // Query the posts
         $query = new WP_Query($args);
 
-        // Check if there are posts
         if ($query->have_posts()) :
+            ob_start(); // Start output buffering to capture the HTML
             while ($query->have_posts()) : $query->the_post();
-                // Output the content image template part here
+                // This assumes you're using a template part to render the content
                 get_template_part('loop-templates/content', get_post_format());
             endwhile;
+            $html = ob_get_clean(); // Get the buffered HTML output
+            wp_send_json_success($html); // Return the HTML content as part of a JSON response
         else :
-            echo '<p>No posts found for this category.</p>';
+            wp_send_json_error(array('error' => 'No category specified.'));
         endif;
 
-        // Always reset post data after custom query
+        // Reset post data
         wp_reset_postdata();
     }
-
-    // Terminate AJAX correctly
-    wp_die();
 }
 
-// Hook for logged-in users
-add_action('wp_ajax_filter_work_by_category', 'filter_posts_ajax_handler');
-
-// Hook for non-logged-in users
-add_action('wp_ajax_nopriv_filter_work_by_category', 'filter_posts_ajax_handler');
+// Hook for category filter functionality (logged-in users)
+add_action('wp_ajax_filter_category_posts', 'filter_category_posts');
+// Hook for category filter functionality (non-logged-in users)
+add_action('wp_ajax_nopriv_filter_category_posts', 'filter_category_posts');
 
 function add_class_to_specific_menu_item( $classes, $item, $args ) {
 	// Check if the menu item ID is 65

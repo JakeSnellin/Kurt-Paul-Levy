@@ -60,10 +60,10 @@ export function categoryDropdown($) {
         $('.widget-area #dropdown-btn-text').text(categoryText);
 
         if(categoryText === 'All work') {
-            filterContentByCategoryAjax($);
+            filterContentByCategoryAjax($, { category: 'All work'});
         }
 
-        filterContentByCategoryAjax($, categoryText);
+        filterContentByCategoryAjax($, { category: categoryText });
         
         });
 
@@ -83,10 +83,10 @@ export function categoryDropdown($) {
             $('.site-main #dropdown-btn-text').text(categoryText);
 
             if(categoryText === 'All work') {
-                filterContentByCategoryAjax($);
+                filterContentByCategoryAjax($, { category: "All work" });
             }
     
-            filterContentByCategoryAjax($, categoryText);
+            filterContentByCategoryAjax($, { category: categoryText });
 
         });
 }

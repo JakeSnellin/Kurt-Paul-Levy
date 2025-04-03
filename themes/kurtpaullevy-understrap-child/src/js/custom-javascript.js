@@ -6,6 +6,7 @@ import { validateAndRegisterUser } from "./validation/userValidation.js";
 import { pageTransition } from "./page-transition.js";
 import { lazyLoadImages } from "./lazy-load-images.js";
 import { categoryDropdown } from "./category-dropdown.js";
+import { lightBox } from "./lightbox.js";
 
 (function($) {
 
@@ -16,6 +17,7 @@ import { categoryDropdown } from "./category-dropdown.js";
         header.publicToggleShowNav();
         validateAndRegisterUser($); 
         categoryDropdown($);
+        lightBox($);
     });
 
 })(jQuery);

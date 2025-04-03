@@ -7044,22 +7044,26 @@
 	  });
 	}
 
-	function filterContentByCategoryAjax($, category = "All work") {
+	function filterContentByCategoryAjax($, {
+	  category = 'All work'
+	}) {
 	  const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
 	  $.ajax({
-	    type: "post",
 	    url: ajaxUrl,
+	    // Ensure ajaxurl is defined in your theme or script
+	    method: 'POST',
 	    data: {
-	      action: 'filter_work_by_category',
+	      action: 'filter_category_posts',
 	      category: category
 	    },
 	    success: function (response) {
-	      // Update the content area with the new posts
-	      $('#image-grid-container').html(response);
-	      $(document).trigger('newContentLoaded');
-	    },
-	    error: function (error) {
-	      console.log('Error:', error);
+	      if (response.success) {
+	        // Handle success (e.g., update the grid of posts)
+	        $('#image-grid-container').html(response.data);
+	        $(document).trigger('newContentLoaded');
+	      } else {
+	        console.log('Error: ' + response.data.error);
+	      }
 	    }
 	  });
 	}
@@ -7115,9 +7119,13 @@
 	    var categoryText = $(this).text();
 	    $('.widget-area #dropdown-btn-text').text(categoryText);
 	    if (categoryText === 'All work') {
-	      filterContentByCategoryAjax($);
+	      filterContentByCategoryAjax($, {
+	        category: 'All work'
+	      });
 	    }
-	    filterContentByCategoryAjax($, categoryText);
+	    filterContentByCategoryAjax($, {
+	      category: categoryText
+	    });
 	  });
 	  $('.site-main .category-dropdown-menu .menu-item').on('click', function (e) {
 	    e.preventDefault();
@@ -7131,9 +7139,62 @@
 	    var categoryText = $(this).text();
 	    $('.site-main #dropdown-btn-text').text(categoryText);
 	    if (categoryText === 'All work') {
-	      filterContentByCategoryAjax($);
+	      filterContentByCategoryAjax($, {
+	        category: "All work"
+	      });
 	    }
-	    filterContentByCategoryAjax($, categoryText);
+	    filterContentByCategoryAjax($, {
+	      category: categoryText
+	    });
+	  });
+	}
+
+	function filterLightBoxAjax($, {
+	  postId,
+	  category
+	}) {
+	  const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
+	  $.ajax({
+	    url: ajaxUrl,
+	    // Ensure ajaxurl is defined in your theme or script
+	    method: 'POST',
+	    data: {
+	      action: 'filter_lightbox_content',
+	      postId: postId,
+	      category: category
+	    },
+	    success: function (response) {
+	      if (response.success) {
+	        console.log(response.data.post_content);
+	        // Handle success (e.g., update the lightbox content)
+	        $('.lightbox__content').html(response.data.post_content);
+	        $(document).trigger('newContentLoaded');
+	        // Set up previous/next navigation buttons
+	        //setupLightboxNavigation(response.data.previous_post, response.data.next_post);
+	      } else {
+	        console.log('Error: ' + response.data.error);
+	      }
+	    }
+	  });
+	}
+
+	function lightBox($) {
+	  $('#image-grid-container').on('click', function (e) {
+	    if ($(e.target).closest('.format-image')) {
+	      //
+	      const clickedPostID = $(e.target).closest('.format-image').attr('id').replace('post-', '');
+	      console.log(clickedPostID);
+	      //get the category 
+	      const categoryText = $('#dropdown-btn-text').text();
+
+	      //open the lightbox.
+	      $('.lightbox').addClass('open');
+	      $('body').css('overflow', 'hidden');
+	      filterLightBoxAjax($, {
+	        postId: clickedPostID,
+	        category: categoryText
+	      });
+	    }
 	  });
 	}
 
@@ -7147,6 +7208,7 @@
 	    header.publicToggleShowNav();
 	    validateAndRegisterUser($);
 	    categoryDropdown($);
+	    lightBox($);
 	  });
 	})(jQuery);
 

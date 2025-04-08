@@ -4,13 +4,14 @@
 //
 // Shared styles for both category and home page content image wrapper
 .content-image-wrapper {
-    font-size: child_theme_variables.$font-size-xs;
     line-height: child_theme_variables.$line-height-lg;
     letter-spacing: child_theme_variables.$letter-spacing-sm;
+    cursor: pointer;
+}
 
-    .entry-content {
-        margin-top: child_theme_variables.$img-wrapper-margin-top;
-    }
+.entry-content {
+    margin-top: child_theme_variables.$img-wrapper-margin-top;
+    font-size: child_theme_variables.$font-size-xxs;
 }
 
 .content-image-wrapper {

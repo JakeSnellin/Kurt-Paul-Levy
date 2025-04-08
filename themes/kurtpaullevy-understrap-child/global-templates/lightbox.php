@@ -10,19 +10,19 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<div class="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
-    <div class="lightbox__buttons" >
-        <button class="lightbox__previous" aria-label="Previous image">
-            <?php get_template_part('icon-templates/icons', 'caret') ?>
-        </button>
-        <button class="lightbox__next" aria-label="Next image">
-            <?php get_template_part('icon-templates/icons', 'caret') ?>
-        </button>
-        <button class="lightbox__close" aria-label="Close lightbox">
-            <?php get_template_part('icon-templates/icons', 'close') ?>
-        </button>
+<div class="carousel" aria-label="Image carousel" role="dialog" aria-live="polite"> <!-- aria-hidden="true" -->
+  <div class="carousel__inner">
+    <div class="carousel__slide">
+      <!-- dynamic content -->
     </div>
-    <div class="lightbox__content">
-        <!-- dynamic content -->
-    </div>
+    <button class="carousel__button carousel__button--prev raised btn btn-light" aria-controls="carousel" id="prev-btn">
+	    <?php get_template_part('icon-templates/icons', 'caret'); ?>
+    </button>
+    <button class="carousel__button carousel__button--next raised btn btn-light" aria-controls="carousel" id="next-btn btn btn-light">
+    	<?php get_template_part('icon-templates/icons', 'caret'); ?>
+    </button>
+    <button class="carousel__button carousel__button--close raised btn btn-light" aria-controls="carousel" id="close-btn btn btn-light">
+   	    <?php get_template_part('icon-templates/icons', 'close'); ?> 
+    </button>
+  </div>
 </div>

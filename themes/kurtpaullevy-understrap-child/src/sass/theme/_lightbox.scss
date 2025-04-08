@@ -1,26 +1,68 @@
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 9999;
-    background-color: white;
 
-    &.open {
-        display: block;
+.carousel {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background-color: white;
+	z-index: 9999;
+
+	&.carousel--open {
+		display: block;
+	}
+}
+
+.carousel__inner {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+    overflow: scroll;
+}
+
+.carousel__slide {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.carousel__slide article {
+    flex: 0 0 100%;
+}
+
+.carousel__button {
+	position: absolute;
+	top: 1.25rem;
+}
+
+.carousel__button--prev {
+	left: 1.25rem;
+
+    & .caret-icon {
+        rotate: 90deg;
     }
 }
 
-.lightbox.open {
-    display: block;
-}
+.carousel__button--next {
+	left: 4.625rem;
 
-.lightbox__content {
-    display: flex;
-
-    & article {
-        flex-shrink: 0;
-        width: 100%;
+    & .caret-icon {
+        rotate: -90deg;
     }
 }
+
+.carousel__button--close {
+	right: 1.25rem;
+}
+
+.carousel__button.btn {
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer; 
+	width: 2.75rem;
+	height: 2.75rem;
+	padding: 0; 
+}
+
+

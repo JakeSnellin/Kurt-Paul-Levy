@@ -6967,6 +6967,8 @@
 	}
 
 	function pageTransition($) {
+	  let isTransitioning = false;
+
 	  // Function to trigger page fade-in
 	  function pageFadeIn() {
 	    $('body').addClass('loaded');
@@ -6983,6 +6985,8 @@
 	  // Add page transition when navigating between pages
 
 	  $('#menu-sidebar-menu a, #main-menu a, .custom-logo-link').on('click', function (event) {
+	    if (isTransitioning) return;
+	    isTransitioning = true;
 	    var targetLink = this;
 	    event.preventDefault(); // Prevent default behavior (navigation)
 
@@ -7167,8 +7171,6 @@
 	      // Check if an element with .format-image was found
 	      index = closestFormatImage.index() + 1; // Get the index of the .format-image element
 
-	      //addGalleryLightboxContent(); 
-
 	      createGalleryLightboxItems();
 	      updateTrackPosition();
 	      openGalleryLightbox();
@@ -7240,13 +7242,11 @@
 	  });
 	  galleryLightboxTrack.on('transitionend', function () {
 	    if ($(lightboxImages[index]).attr('id') === 'lastClone') {
-	      console.log('last clone');
 	      galleryLightboxTrack.css("transition", "none");
 	      index = lightboxImages.length - 2;
 	      updateTrackPosition();
 	    }
 	    if ($(lightboxImages[index]).attr('id') === 'firstClone') {
-	      console.log('first clone');
 	      galleryLightboxTrack.css("transition", "none");
 	      index = 1;
 	      updateTrackPosition();
@@ -7260,6 +7260,7 @@
 	    galleryLightbox.focus();
 	  }
 	  closeBtn.on('click', function () {
+	    galleryLightboxTrack.css('transition', 'none');
 	    $(document.body).css('overflow', '');
 	    galleryLightbox.removeClass('lightbox-gallery--open');
 	    galleryLightbox.attr('aria-hidden', 'true');

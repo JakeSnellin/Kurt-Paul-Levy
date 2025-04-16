@@ -1,4 +1,7 @@
 export function pageTransition ($) {
+
+  let isTransitioning = false;
+
   // Function to trigger page fade-in
   function pageFadeIn() {
     $('body').addClass('loaded');
@@ -15,6 +18,9 @@ export function pageTransition ($) {
   // Add page transition when navigating between pages
   
   $('#menu-sidebar-menu a, #main-menu a, .custom-logo-link').on('click', function(event) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
     var targetLink = this;
     event.preventDefault(); // Prevent default behavior (navigation)
 

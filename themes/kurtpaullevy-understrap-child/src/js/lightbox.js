@@ -1,12 +1,11 @@
-export function lightBox ($) {
-    const carousel = $('.carousel');
-    const carouselInner = $('.carousel__inner');
-    const carouselSlide = $('.carousel__slide');
+export function galleryLightboxController ($) {
+    const galleryLightbox = $('.gallery-lightbox');
+    const galleryLightboxTrack = $('.gallery-lightbox__track');
     const imageGridContainer = $('.image-grid-container');
-    const prevBtn = $('.carousel__button--prev');
-    const nextBtn = $('.carousel__button--next');
-    const closeBtn = $('.carousel__button--close');
-    let carouselImages;
+    const prevBtn = $('.gallery-lightbox__btn--prev');
+    const nextBtn = $('.gallery-lightbox__btn--next');
+    const closeBtn = $('.gallery-lightbox__btn--close');
+    let lightboxImages;
     let originalContent;
 
     let index;
@@ -17,17 +16,71 @@ export function lightBox ($) {
     if (closestFormatImage.length) { // Check if an element with .format-image was found
         index = closestFormatImage.index() + 1; // Get the index of the .format-image element
 
-        addSlideContentToCarousel();
+        //addGalleryLightboxContent(); 
 
-        updateCarouselSlidePosition();
+        createGalleryLightboxItems();
+
+        updateTrackPosition();
         
-        openCarousel();
+        openGalleryLightbox();
     }
     });
 
-    function updateCarouselSlidePosition() {
-        carouselSlide.css('transform', 'translateX(' + (-(index * 100)) + '%)');
-        carouselImages.each(function(i, slide) {
+    function createGalleryLightboxItems() {
+        // Select all articles in the image grid container
+        lightboxImages = $('.image-grid-container article');
+        const lightboxHTML = [];
+
+        lightboxImages.each(function() {
+            const article = $(this);
+
+            const imgSrc = article.find('img').attr('src');
+            const imgAlt = article.find('img').attr('alt') || '';
+            const srcset = article.find('img').attr('srcset');
+            const fetchPriority = article.find('img').attr('fetchPriority');
+
+            const metaText = article.find('p').first().html(); // gets inner HTML including <br>
+            const metaParts = metaText.split('<br>').map(item => item.trim());
+
+            // metaParts[0] = "12cm x 21cm", metaParts[1] = "Watercolour", metaParts[2] = "1989"
+            const dimensions = metaParts[0] || '';
+            const medium = metaParts[1] || '';
+            const year = metaParts[2] || '';
+
+            const tags = article.find('.category-pill-container .category-pill');
+            let tagsHTML = '';
+            tags.each(function() {
+                const tagText = $(this).text().trim();
+                tagsHTML += `<div class="tag">${tagText}</div>`;
+            });
+
+            const itemHTML = `
+            <div class="gallery-lightbox__item">
+              <img src="${imgSrc}" alt="${imgAlt}" srcset="${srcset}" fetchPriority="${fetchPriority}" />
+              <div class="gallery-lightbox__info">
+                <div class="gallery-lightbox__meta">
+                  <p>${dimensions} <br> ${medium} <br> ${year}</p>
+                </div>
+                <div class="gallery-lightbox__tags">
+                  ${tagsHTML}
+                </div>
+              </div>
+            </div>
+          `;
+
+            lightboxHTML.push(itemHTML);
+        });
+
+        galleryLightboxTrack.html(lightboxHTML.join(''));
+
+        lightboxImages = galleryLightboxTrack.children();
+
+        cloneGalleryLightboxItems();
+    }
+
+    function updateTrackPosition() {
+        galleryLightboxTrack.css('transform', 'translateX(' + (-(index * 100)) + '%)');
+        lightboxImages.each(function(i, slide) {
             if (i === index) {
                 $(slide).attr('aria-hidden', 'false');  // The active slide should be visible
             } else {
@@ -37,47 +90,46 @@ export function lightBox ($) {
     }
 
     prevBtn.on('click', function () {
-        carouselSlide.css('transition', 'transform 0.4s ease-in-out');
+        galleryLightboxTrack.css('transition', 'transform 0.4s ease-in-out');
         if (index <= 0) return;
         index--;
-        updateCarouselSlidePosition();
+        updateTrackPosition();
     });
 
     nextBtn.on('click', function () {
-        carouselSlide.css('transition', 'transform 0.4s ease-in-out');
-        if (index >= carouselImages.length - 1) return;
+        galleryLightboxTrack.css('transition', 'transform 0.4s ease-in-out');
+        if (index >= lightboxImages.length - 1) return;
         index++;
-        updateCarouselSlidePosition();
+        updateTrackPosition();
     });
 
-    carouselSlide.on('transitionend', function () {
-        if($(carouselImages[index]).attr('id') === 'lastClone') {
+    galleryLightboxTrack.on('transitionend', function () {
+        if($(lightboxImages[index]).attr('id') === 'lastClone') {
             console.log('last clone');
-            carouselSlide.css("transition", "none");
-            //carouselSlide.css("transition", "none");
-            index = carouselImages.length - 2;
-            updateCarouselSlidePosition();	
+            galleryLightboxTrack.css("transition", "none");
+            index = lightboxImages.length - 2;
+            updateTrackPosition();	
         }
-        if($(carouselImages[index]).attr('id') === 'firstClone') {
+        if($(lightboxImages[index]).attr('id') === 'firstClone') {
             console.log('first clone');
-            carouselSlide.css("transition", "none");
+            galleryLightboxTrack.css("transition", "none");
             index = 1;
-            updateCarouselSlidePosition();	
+            updateTrackPosition();	
         }
     })
 
-    function openCarousel () {
+    function openGalleryLightbox () {
         $(document.body).css('overflow', 'hidden');
-        carousel.addClass('carousel--open');
-        carousel.attr('aria-hidden', 'false');
+        galleryLightbox.addClass('lightbox-gallery--open');
+        galleryLightbox.attr('aria-hidden', 'false');
         // Focus on the close button when carousel opens
-        carousel.focus();
+        galleryLightbox.focus();
     };
 
     closeBtn.on('click', function () {
         $(document.body).css('overflow', '');
-        carousel.removeClass('carousel--open');
-        carousel.attr('aria-hidden', 'true');
+        galleryLightbox.removeClass('lightbox-gallery--open');
+        galleryLightbox.attr('aria-hidden', 'true');
         
         // Restore the original content of the image grid
         $('.image-grid-container').html(originalContent);
@@ -85,32 +137,32 @@ export function lightBox ($) {
         $(this).focus();  // Or store and use the original focus element
     });
 
-    function addSlideContentToCarousel() {
+    function cloneGalleryLightboxItems() {
 
         // Save the original content before modifying it
-        originalContent = $('.image-grid-container').html();
+        //originalContent = $('.image-grid-container').html();
 
         // Select all articles in the image grid container
-        carouselImages = $('.image-grid-container article');
+        //lightboxImages = $('.image-grid-container article');
 
         // Replace existing content in carouselSlide with articles.
-        carouselSlide.html(carouselImages);
+        //galleryLightboxTrack.html(lightboxImages);
 
         // Clone the first article and prepend it to the start of the carousel slide
-        let firstClonedArticle = carouselImages.eq(0).clone();  // Cloning the first article
-        carouselSlide.append(firstClonedArticle);
+        let firstClonedArticle = lightboxImages.eq(0).clone();  // Cloning the first article
+        galleryLightboxTrack.append(firstClonedArticle);
 
         // Set the id of the first cloned article
         firstClonedArticle.attr('id', 'firstClone');
 
         // Clone the last article and append it to the end of the carousel slide
-        let lastClonedArticle = carouselImages.eq(carouselImages.length - 1).clone();  // Cloning the last article
+        let lastClonedArticle = lightboxImages.eq(lightboxImages.length - 1).clone();  // Cloning the last article
         lastClonedArticle.attr('id', 'lastClone');
 
         // Append the last cloned article to carouselSlide
-        carouselSlide.prepend(lastClonedArticle);
+        galleryLightboxTrack.prepend(lastClonedArticle);
 
-        carouselImages = carouselSlide.children();
+        lightboxImages = galleryLightboxTrack.children();
     }
 
      // Keyboard Accessibility for arrow keys and Escape key

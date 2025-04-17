@@ -21596,6 +21596,11 @@ article.format-image.fade-in {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.938rem;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.image-grid-container:has(article:hover) article:not(:hover) {
+  opacity: 0.2;
 }
 
 @media only screen and (min-width: 1400px) {

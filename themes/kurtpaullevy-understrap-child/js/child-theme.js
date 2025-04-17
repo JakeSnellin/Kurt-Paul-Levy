@@ -6844,32 +6844,31 @@
 	  }
 	})();
 
-	var header = function ($) {
-	  function privateToggleShowNav() {
-	    var navBar = $('#main-nav');
-	    if (navBar) {
-	      var lastScrollTop = 0;
-	      $(window).on('scroll', function () {
-	        var scrollTop = window.scrollY;
-	        if (scrollTop < lastScrollTop) {
-	          navBar.removeClass('scrolled-down');
-	          navBar.addClass('scrolled-up');
-	          //console.log('Scrolling up');
-	        } else {
-	          navBar.removeClass('scrolled-up');
-	          navBar.addClass('scrolled-down');
-	          //console.log('Scrolling down');
-	        }
-	        lastScrollTop = scrollTop;
-	      });
-	    }
+	function toggleShowNav($) {
+	  if ($('body').hasClass('home')) {
+	    return;
 	  }
-	  return {
-	    publicToggleShowNav: function () {
-	      privateToggleShowNav();
-	    }
-	  };
-	}(jQuery);
+	  const navBar = $('#main-nav');
+	  if (navBar.length === 0) return;
+	  let lastScrollY = window.scrollY;
+	  let currentOffset = 0;
+	  const navHeight = navBar.outerHeight(); // total height of nav bar
+
+	  $(window).on('scroll', function () {
+	    const currentScrollY = window.scrollY;
+	    const delta = currentScrollY - lastScrollY;
+
+	    // Move the nav bar based on scroll direction
+	    currentOffset += delta;
+
+	    // Clamp the offset between 0 (fully visible) and navHeight (fully hidden)
+	    currentOffset = Math.max(0, Math.min(navHeight, currentOffset));
+
+	    // Apply transform
+	    navBar.css('transform', `translateY(-${currentOffset}px)`);
+	    lastScrollY = currentScrollY;
+	  });
+	}
 
 	//Functionality for progress bar
 
@@ -7296,7 +7295,7 @@
 	    pageTransition($);
 	    lazyLoadImages($);
 	    progressBar($);
-	    header.publicToggleShowNav();
+	    toggleShowNav($);
 	    validateAndRegisterUser($);
 	    categoryDropdown($);
 	    galleryLightboxController($);

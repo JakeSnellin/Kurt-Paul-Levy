@@ -1,6 +1,6 @@
 // Add your custom JS here.
 
-import { header } from "./header-navigation.js";
+import { toggleShowNav } from "./header-navigation.js";
 import { progressBar } from "./progress-bar.js";
 import { validateAndRegisterUser } from "./validation/userValidation.js";
 import { pageTransition } from "./page-transition.js";
@@ -14,7 +14,7 @@ import { galleryLightboxController } from "./lightbox.js";
         pageTransition($);
         lazyLoadImages($);
         progressBar($);
-        header.publicToggleShowNav();
+        toggleShowNav($);
         validateAndRegisterUser($); 
         categoryDropdown($);
         galleryLightboxController($);

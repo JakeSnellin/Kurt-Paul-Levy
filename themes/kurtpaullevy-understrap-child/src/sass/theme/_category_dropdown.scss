@@ -128,7 +128,7 @@
     
     @media only screen and (max-width: 1439px) {
     
-        .blog body {
+        body:is(.blog) {
             .site-main .category-dropdown {
                 display: block;
             }

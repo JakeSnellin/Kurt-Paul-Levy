@@ -1,3 +1,8 @@
+@mixin dvh-fallback {
+	top: calc(3vh + 3px); /* fallback for browsers that don't support dvh */
+	top: calc(3dvh + 3px); /* override for modern browsers */
+}
+
 .gallery-lightbox {
 	opacity: 0;
 	visibility: hidden;
@@ -17,10 +22,10 @@
 .gallery-lightbox__controls {
 	position: absolute;
 	left: calc(3vw + 10px);
-	top: calc(3vh + 3px);
+	@include dvh-fallback;
 	pointer-events: auto;
-  	display: flex;
-  	gap: 0.688rem;
+	display: flex;
+	gap: 0.688rem;
 	z-index: 1;
 }
 
@@ -32,11 +37,11 @@
 	cursor: pointer;
 }
 
-.gallery-lightbox__btn--close {
+  .gallery-lightbox__btn--close {
 	position: absolute;
 	right: calc(3vw + 10px);
-	top: calc(3vh + 3px);
-  }
+	@include dvh-fallback;
+}
 
 .gallery-lightbox__content {
 	display: flex;
@@ -61,11 +66,17 @@
 	align-items: center;
 	flex-direction: column;
 	height: calc(
-		100vh 
-		- clamp(94px, 6.5vw, 106px)   /* top padding */
-		- clamp(27px, 6.5vw, 77px)    /* bottom padding */
-		- 112px/*- clamp(102px, 9vw, 130px) this will need to be updated to a dynamic value to avoid overflow */
-	  );
+		100vh
+		- clamp(94px, 6.5vw, 106px)
+		- clamp(27px, 6.5vw, 77px)
+		- 112px
+	); /* fallback */
+	height: calc(
+		100dvh
+		- clamp(94px, 6.5vw, 106px)
+		- clamp(27px, 6.5vw, 77px)
+		- 112px
+	); /* override */
 }
 
 .gallery-lightbox__item img {

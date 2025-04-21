@@ -28,7 +28,7 @@
     }
 
     & button .caret-icon.rotated {
-        transform: rotate(180deg);
+        transform: translateY(-50%) rotate(180deg);
     }
 
     & button > span {

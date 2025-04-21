@@ -21611,9 +21611,9 @@ article.format-image.fade-in {
 
 .category-dropdown button {
   width: 100%;
-  position: relative;
   padding: 17px 15px;
   z-index: 3;
+  position: relative;
   background-color: #EFEFEF;
 }
 
@@ -21718,10 +21718,10 @@ article.format-image.fade-in {
   }
 }
 @media only screen and (max-width: 1439px) {
-  .blog body .site-main .category-dropdown {
+  body:is(.blog) .site-main .category-dropdown {
     display: block;
   }
-  .blog body .widget-area .category-dropdown {
+  body:is(.blog) .widget-area .category-dropdown {
     display: none;
   }
 }

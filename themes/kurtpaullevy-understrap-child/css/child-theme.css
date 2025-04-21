@@ -21611,7 +21611,10 @@ article.format-image.fade-in {
 
 .category-dropdown button {
   width: 100%;
+  position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 17px 15px;
   z-index: 3;
   position: relative;
@@ -21620,9 +21623,10 @@ article.format-image.fade-in {
 
 .category-dropdown button .caret-icon {
   transition: transform 0.3s ease;
-  transform-origin: center center; /* Ensure it rotates around its center */
-  display: flex;
-  align-items: center;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .category-dropdown button .caret-icon.rotated {
@@ -21701,6 +21705,9 @@ article.format-image.fade-in {
   }
   body:is(.blog) .widget-area .category-dropdown button {
     padding: 15px 20px;
+  }
+  body:is(.blog) .widget-area .category-dropdown button .caret-icon {
+    right: 20px;
   }
   body:is(.blog) .widget-area .category-dropdown .category-dropdown-menu li a {
     font-size: 12px;

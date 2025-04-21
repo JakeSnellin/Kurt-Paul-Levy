@@ -7119,6 +7119,7 @@
 	  // Event delegation for dropdown menu item clicks
 	  $('body').on('click', '.category-dropdown-menu .menu-item', function (e) {
 	    e.preventDefault();
+	    $(document).off('click.dropdown');
 	    const $this = $(this);
 	    const isSidebar = $this.closest('.widget-area').length > 0;
 	    const context = isSidebar ? '.widget-area' : '.site-main';

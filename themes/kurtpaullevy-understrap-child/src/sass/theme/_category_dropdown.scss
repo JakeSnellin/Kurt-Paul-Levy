@@ -10,25 +10,25 @@
     & button {
         width: 100%;
         position: relative;
-        /*display: flex;
-        align-items: center;
-        justify-content: center;*/
         padding: 17px 15px;
         z-index: 3;
-        position: relative;
         background-color: child_theme_variables.$btn-background-color;
     }
 
     & button .caret-icon {
-        transition: transform 0.3s ease;
         position: absolute;
         right: 15px;
         top: 50%;
         transform: translateY(-50%);
     }
 
-    & button .caret-icon.rotated {
-        transform: translateY(-50%) rotate(180deg);
+    & button .caret-icon svg {
+        transition: transform 0.3s ease;
+        transform-origin: center;
+    }
+
+    & button .caret-icon.rotated svg {
+        transform: rotate(180deg);
     }
 
     & button > span {
@@ -51,7 +51,6 @@
     
 
     &.show-menu {
-        width: 100%;
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
     }
@@ -129,7 +128,7 @@
     
     @media only screen and (max-width: 1439px) {
     
-        body:is(.blog) {
+        .blog body {
             .site-main .category-dropdown {
                 display: block;
             }

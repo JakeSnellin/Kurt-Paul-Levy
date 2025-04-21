@@ -7097,11 +7097,11 @@
 	        menu.slideUp(300, () => container.css('background-color', ""));
 	        button.attr('aria-expanded', 'false');
 	        container.find('.caret-icon').removeClass('rotated');
-	        $(document).off('click', outsideClickHandler);
+	        $(document).off('click.dropdown', outsideClickHandler);
 	      }
 	    }
 	    setTimeout(() => {
-	      $(document).on('click', outsideClickHandler);
+	      $(document).on('click.dropdown', outsideClickHandler);
 	    }, 0);
 	  }
 
@@ -7127,6 +7127,11 @@
 	    $this.addClass('hidden').removeClass('visible');
 	    const categoryText = $this.text();
 	    $(`${context} #dropdown-btn-text`).text(categoryText);
+	    toggleDropdown({
+	      button: $(this).parent().prev(),
+	      menu: $(`${context} .category-dropdown-menu`),
+	      container: $(`${context} .category-dropdown`)
+	    });
 	    filterContentByCategoryAjax($, {
 	      category: categoryText
 	    });

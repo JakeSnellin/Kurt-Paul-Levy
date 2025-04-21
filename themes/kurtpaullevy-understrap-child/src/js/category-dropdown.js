@@ -27,12 +27,12 @@ export function categoryDropdown($) {
                 button.attr('aria-expanded', 'false');
                 container.find('.caret-icon').removeClass('rotated');
 
-                $(document).off('click', outsideClickHandler);
+                $(document).off('click.dropdown', outsideClickHandler);
             }
         }
 
         setTimeout(() => {
-            $(document).on('click', outsideClickHandler)
+            $(document).on('click.dropdown', outsideClickHandler)
         }, 0)
     }
 
@@ -64,6 +64,12 @@ export function categoryDropdown($) {
 
         const categoryText = $this.text();
         $(`${context} #dropdown-btn-text`).text(categoryText);
+
+        toggleDropdown({
+            button: $(this).parent().prev(),
+            menu: $(`${context} .category-dropdown-menu`),
+            container: $(`${context} .category-dropdown`)
+        });
 
         filterContentByCategoryAjax($, { category: categoryText });
     });

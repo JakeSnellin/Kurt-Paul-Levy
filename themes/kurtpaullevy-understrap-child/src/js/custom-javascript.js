@@ -13,7 +13,7 @@ import { galleryLightboxController } from "./lightbox.js";
     $(document).ready(function() {
         pageTransition($);
         lazyLoadImages($);
-        progressBar($);
+        //progressBar($);
         toggleShowNav($);
         validateAndRegisterUser($); 
         categoryDropdown($);

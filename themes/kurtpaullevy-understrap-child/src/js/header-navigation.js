@@ -11,12 +11,15 @@ export function toggleShowNav($) {
     let ticking = false;
 
     function updateNav() {
-        const currentScrollY = window.scrollY;
+        const currentScrollY = Math.max(0, window.scrollY); // clamp to 0
         const delta = currentScrollY - lastScrollY;
 
         currentOffset += delta;
+
+        // Clamp offset between 0 and navHeight
         currentOffset = Math.max(0, Math.min(navHeight, currentOffset));
 
+        // Apply the transform
         navBar.css('transform', `translateY(-${currentOffset}px)`);
 
         lastScrollY = currentScrollY;

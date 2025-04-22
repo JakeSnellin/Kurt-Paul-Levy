@@ -21875,8 +21875,13 @@ article.format-image.fade-in {
   src: url(../fonts/Inter-Regular.ttf);
   font-weight: normal;
 }
+html body {
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   margin-top: 126.13px;
+  touch-action: manipulation;
 }
 
 a {

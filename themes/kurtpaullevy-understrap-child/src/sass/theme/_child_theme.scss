@@ -31,8 +31,13 @@
     font-weight: normal;
 }
 
+html body {
+    -webkit-overflow-scrolling: touch;
+}
+
 body {
     margin-top: child_theme_variables.$body-margin;
+    touch-action: manipulation;
 }
 
 a {

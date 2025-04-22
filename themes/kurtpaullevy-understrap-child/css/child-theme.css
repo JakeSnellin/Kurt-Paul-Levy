@@ -21231,6 +21231,7 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   /* Targeting all direct children for opacity transition */
   /* On hover of the menu, reduce opacity of non-hovered items */
   /* The menu item itself */
+  /* Define the rotation animation */
 }
 
 .menu > * {
@@ -21241,16 +21242,12 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   opacity: 0.2;
 }
 
-.menu .menu-item {
-  /* On hover, the icon rotates and becomes visible */
-}
-
 .menu .menu-item a {
   position: relative;
   padding: 0.563em;
   display: block;
   width: -moz-max-content;
-  width: max-content; /* Only set this if necessary */
+  width: max-content;
 }
 
 .menu .menu-item a::after {
@@ -21267,14 +21264,22 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   background-position: center;
   opacity: 0;
   transform: translateY(-50%);
-  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out; /* Grouped transitions */
+  transition: opacity 0.3s ease-in-out;
 }
 
 .menu .menu-item a:hover::after {
-  transform: translateY(-50%) rotate(360deg);
   opacity: 1;
+  animation: rotateIcon 1s linear infinite;
 }
 
+@keyframes rotateIcon {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
 #left-sidebar {
   width: -moz-fit-content;
   width: fit-content;

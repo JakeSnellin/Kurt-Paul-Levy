@@ -22,9 +22,9 @@
             position: relative;
             padding: 0.563em;
             display: block;
-            width: max-content; /* Only set this if necessary */
+            width: max-content;
         }
-
+    
         & a::after {
             content: "";
             position: absolute;
@@ -39,13 +39,22 @@
             background-position: center;
             opacity: 0;
             transform: translateY(-50%);
-            transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out; /* Grouped transitions */
+            transition: opacity 0.3s ease-in-out; // Just opacity here
         }
-
-        /* On hover, the icon rotates and becomes visible */
+    
         & a:hover::after {
-            transform: translateY(-50%) rotate(360deg);
             opacity: 1;
+            animation: rotateIcon 1s linear infinite;
+        }
+    }
+    
+    /* Define the rotation animation */
+    @keyframes rotateIcon {
+        from {
+            transform: translateY(-50%) rotate(0deg);
+        }
+        to {
+            transform: translateY(-50%) rotate(360deg);
         }
     }
 }

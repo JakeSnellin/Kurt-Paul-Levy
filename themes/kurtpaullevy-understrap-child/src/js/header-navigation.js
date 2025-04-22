@@ -27,6 +27,6 @@ export function toggleShowNav($) {
             navBar.css('transform', `translateY(-${currentOffset}px)`);
 
             lastScrollY = currentScrollY;
-        }, 10); // Delay the execution by 10ms (you can adjust this value)
+        }, 20); // Delay the execution by 20ms
     });
 }

@@ -6853,28 +6853,45 @@
 	  let lastScrollY = window.scrollY;
 	  let currentOffset = 0;
 	  const navHeight = navBar.outerHeight(); // total height of nav bar
-	  let ticking = false; // For preventing multiple frames
-
+	  let debounceTimer;
 	  $(window).on('scroll', function () {
-	    // Only update when the browser is ready to repaint (using requestAnimationFrame)
-	    if (!ticking) {
-	      window.requestAnimationFrame(function () {
-	        const currentScrollY = window.scrollY;
-	        const delta = currentScrollY - lastScrollY;
+	    clearTimeout(debounceTimer);
+	    debounceTimer = setTimeout(function () {
+	      const currentScrollY = window.scrollY;
+	      const delta = currentScrollY - lastScrollY;
 
-	        // Move the nav bar based on scroll direction
-	        currentOffset += delta;
+	      // Move the nav bar based on scroll direction
+	      currentOffset += delta;
 
-	        // Clamp the offset between 0 (fully visible) and navHeight (fully hidden)
-	        currentOffset = Math.max(0, Math.min(navHeight, currentOffset));
+	      // Clamp the offset between 0 (fully visible) and navHeight (fully hidden)
+	      currentOffset = Math.max(0, Math.min(navHeight, currentOffset));
 
-	        // Apply transform
-	        navBar.css('transform', `translateY(-${currentOffset}px)`);
-	        lastScrollY = currentScrollY;
-	        ticking = false; // Reset ticking after frame
-	      });
-	      ticking = true; // Indicate that we're currently processing a frame
-	    }
+	      // Apply transform
+	      navBar.css('transform', `translateY(-${currentOffset}px)`);
+	      lastScrollY = currentScrollY;
+	    }, 10); // Delay the execution by 10ms (you can adjust this value)
+	  });
+	}
+
+	//Functionality for progress bar
+
+	function progressBar($) {
+	  const progressBar = $('#scroll-progress-bar');
+
+	  // Listen for the scroll event
+	  $(window).on('scroll', function () {
+	    const scrollTop = window.scrollY; // Get the current scroll position
+	    const maxScrollHeight = document.documentElement.scrollHeight; // Total document height
+	    const viewportHeight = window.innerHeight; // Viewport height
+
+	    // Calculate scrollable height (max scroll height - viewport height)
+	    const scrollableHeight = maxScrollHeight - viewportHeight;
+
+	    // Calculate the scroll progress percentage
+	    const percentage = scrollTop / scrollableHeight * 100;
+
+	    // Update the width of the progress bar based on scroll percentage
+	    progressBar.width(percentage + '%');
 	  });
 	}
 
@@ -7286,7 +7303,7 @@
 	  $(document).ready(function () {
 	    pageTransition($);
 	    lazyLoadImages($);
-	    //progressBar($);
+	    progressBar($);
 	    toggleShowNav($);
 	    validateAndRegisterUser($);
 	    categoryDropdown($);

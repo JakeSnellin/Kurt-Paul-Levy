@@ -31,8 +31,9 @@
     font-weight: normal;
 }
 
-html body {
-    -webkit-overflow-scrolling: touch;
+html, body {
+    height: 100%;
+    margin: 0;
 }
 
 body {
@@ -61,8 +62,8 @@ body:is(.home) {
             font-family: $font-family-serif;
             line-height: 141%;
             font-weight: 400;
-            max-width: 31rem;
-            margin: 0;
+            max-width: 34.625rem;
+            margin-top: 1.375rem;
     }
 
     /*& p {
@@ -70,7 +71,27 @@ body:is(.home) {
     }*/
 }
 
+div.post-preview img {
+    max-width: 100%;
+}
+
 @media only screen and (min-width: 1440px) {
+
+    body:is(.home) {
+
+        div.entry-content {
+            margin-top: 1.625rem;
+        }
+
+        div.post-preview {
+            margin-top: 2.125rem;
+        }
+
+        div.post-preview img {
+            max-height: 44vh;
+            width: auto;
+        }
+    }
 
     div.content-area {
         padding-left: 5.813rem;

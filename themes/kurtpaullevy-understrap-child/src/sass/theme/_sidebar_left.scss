@@ -20,7 +20,9 @@
     .menu-item {
         & a {
             position: relative;
-            padding: 0.563em;
+            padding: 0.656rem;
+            letter-spacing: 1.4px;
+            line-height: 120%;
             display: block;
             width: max-content;
         }

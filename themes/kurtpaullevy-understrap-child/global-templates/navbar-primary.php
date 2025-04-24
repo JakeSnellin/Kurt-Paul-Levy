@@ -18,7 +18,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
 	</h2>
 
-
 	<div class="<?php echo esc_attr( $container ); ?>">
 
 		<!-- Your site branding in the menu -->

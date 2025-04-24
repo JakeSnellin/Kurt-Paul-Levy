@@ -12,12 +12,20 @@
     display: none;
 }
 
-.navbar-nav li a {
+.navbar-nav li a, .navbar-nav li.menu-item-email {
     font-family: child_theme_variables.$font-family-base;
     line-height: 19.33px;
     letter-spacing: 1.6px;
     padding: child_theme_variables.$nav-link-padding-x;
     display: block;
+}
+
+.navbar-nav li.menu-item-email {
+    color: #777777;
+}
+
+.navbar-nav li.menu-item-email svg {
+    margin-right: 11px;
 }
 
 #main-nav {

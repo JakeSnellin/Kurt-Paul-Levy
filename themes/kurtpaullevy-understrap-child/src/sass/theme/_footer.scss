@@ -58,12 +58,12 @@
     border: none;
     border-bottom: child_theme_variables.$input-border-width solid child_theme_variables.$input-border-color;
     border-radius: 0;
-    padding: 0 0 0.875rem;
+    padding: 0 0 0.375rem;
     margin-bottom: 0.688rem;
 }
 
 #email-help-block {
-    color: child_theme_variables.$gray-400;
+    color: child_theme_variables.$gray-500;
     font-size: child_theme_variables.$font-size-xs;
     margin-bottom: 0.688rem;
 }

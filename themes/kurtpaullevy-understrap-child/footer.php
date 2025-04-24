@@ -18,14 +18,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper" id="wrapper-footer">
     <div class="<?php echo esc_attr( $container ); ?>">
 
-        <hr class="mb-xxl-22">
+        <hr>
 
         <!-- Footer Section -->
         <footer class="site-footer" id="colophon">
             <div class="d-flex flex-column flex-xxl-row">
 
                 <!-- Email Registration Form -->
-                <form novalidate id="contact-form" class="d-flex mt-xxl-38 flex-column flex-xxl-row mb-56 gap-xxl-4">
+                <form novalidate id="contact-form" class="d-flex flex-column flex-xxl-row gap-xxl-4">
                     <div class="form-group mb-11 mb-xxl-0">
                         <input
                             type="email"
@@ -37,7 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                             placeholder="Your email"
                         >
                         <div id="validation-container"></div>
-                        <p id="email-help-block" class="my-11 lh-sm" role="alert">
+                        <p id="email-help-block" role="alert">
                             <small><?php esc_html_e('Register your email for notifications of upcoming exhibitions.', 'understrap-child'); ?></small>
                         </p>
                     </div>
@@ -54,15 +54,12 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </form>
 
                 <!-- Site Info Section -->
-                <div class="site-info ms-xxl-auto d-flex flex-column justify-content-between">
-                    <p class="lh-sm mb-4 xxl-xxl-0">
+                <div class="site-info ms-xxl-auto">
                         <small><?php esc_html_e('contact@kurtpaullevy.com', 'understrap-child'); ?></small>
-                    </p>
-                    <p class="ms-auto"><?php esc_html_e('copyrightkurtlevy', 'understrap-child'); ?></p>
                     <?php /* understrap_site_info(); */ ?>
                 </div><!-- .site-info -->
-
             </div>
+            <p class="ms-auto footer__copyright-text"><?php esc_html_e('copyrightkurtlevy', 'understrap-child'); ?></p>
         </footer><!-- #colophon -->
     </div><!-- .container(-fluid) -->
 </div><!-- #wrapper-footer -->

@@ -218,6 +218,7 @@ function understrap_child_add_contact_email_to_menu_items($items, $args) {
 		</svg>';
 
 		$items .= '<li class="menu-item menu-item-email">' . $email_icon . '<span>contact@kurtpaullevy.com</span></li>';
+		
 	}
 
 	return $items;

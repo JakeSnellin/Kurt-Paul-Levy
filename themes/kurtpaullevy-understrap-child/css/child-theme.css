@@ -21224,7 +21224,7 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   padding: 1.875rem 0.25rem 0 0.25rem;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1440px) {
   .custom-logo-link {
     padding-bottom: 3.375em;
     padding-inline-start: 0;
@@ -21363,10 +21363,31 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   margin: 0;
 }
 
-.site-footer .site-info p {
+#wrapper-footer {
+  margin-top: 3rem;
+  padding: 0;
+}
+
+.site-footer {
+  padding: 3rem 0 1rem;
+}
+
+.site-footer .site-info small, .site-footer .site-info .small {
   font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.site-info {
+  margin-bottom: 1.438rem;
+}
+
+.footer__copyright-text {
+  font-size: 8px;
+  font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  display: flex;
+  justify-content: flex-end;
 }
 
 .form-control::-moz-placeholder, .wpcf7 .wpcf7-validation-errors::-moz-placeholder, .wpcf7 input[type=text]::-moz-placeholder, .wpcf7 input[type=search]::-moz-placeholder, .wpcf7 input[type=url]::-moz-placeholder, .wpcf7 input[type=tel]::-moz-placeholder, .wpcf7 input[type=number]::-moz-placeholder, .wpcf7 input[type=range]::-moz-placeholder, .wpcf7 input[type=date]::-moz-placeholder, .wpcf7 input[type=month]::-moz-placeholder, .wpcf7 input[type=week]::-moz-placeholder, .wpcf7 input[type=time]::-moz-placeholder, .wpcf7 input[type=datetime]::-moz-placeholder, .wpcf7 input[type=datetime-local]::-moz-placeholder, .wpcf7 input[type=color]::-moz-placeholder, .wpcf7 input[type=email]::-moz-placeholder, .wpcf7 input[type=file]::-moz-placeholder, .wpcf7 input[type=submit]::-moz-placeholder, .wpcf7 select::-moz-placeholder, .wpcf7 textarea::-moz-placeholder {
@@ -21457,10 +21478,18 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   border: none;
   border-bottom: 1px solid #000000;
   border-radius: 0;
+  padding: 0 0 0.875rem;
+  margin-bottom: 0.688rem;
 }
 
 #email-help-block {
   color: #848484;
+  font-size: 0.75rem;
+  margin-bottom: 0.688rem;
+}
+
+.site-footer button {
+  margin-bottom: 3.5rem;
 }
 
 #validation-container {
@@ -21468,6 +21497,30 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   max-width: max-content;
 }
 
+@media only screen and (min-width: 1440px) {
+  #wrapper-footer {
+    margin-top: 10.563rem;
+  }
+  .site-footer .site-info small, .site-footer .site-info .small {
+    font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .site-footer {
+    padding: 1.375rem 0 1.5rem;
+  }
+  #contact-form {
+    margin-top: 3.125rem;
+    margin-bottom: 2.875rem;
+  }
+  .footer__copyright-text {
+    font-size: 10px;
+  }
+  .site-info {
+    margin-bottom: 0;
+  }
+}
 .btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
   border: none;
   box-shadow: none;
@@ -21905,13 +21958,18 @@ p {
   margin: 0;
 }
 
-body:is(.home) div.entry-content {
-  font-size: 0.875rem;
-  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
-  max-width: 31rem;
-  margin: 0;
+body:is(.home) {
+  /*& p {
+      margin: 0;
+  }*/
 }
-body:is(.home) p {
+body:is(.home) div.entry-content {
+  text-indent: 5.3rem;
+  font-size: 1rem;
+  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
+  line-height: 141%;
+  font-weight: 400;
+  max-width: 31rem;
   margin: 0;
 }
 
@@ -21919,10 +21977,10 @@ body:is(.home) p {
   div.content-area {
     padding-left: 5.813rem;
   }
-  #index-wrapper {
-    padding-top: 3.375rem;
-    padding-bottom: 5.688rem;
-  }
+  /*#index-wrapper {
+      padding-top: child_theme_variables.$wrapper-padding-top;
+      padding-bottom: child_theme_variables.$wrapper-padding-bottom;
+  }*/
   body {
     margin-top: 0;
   }

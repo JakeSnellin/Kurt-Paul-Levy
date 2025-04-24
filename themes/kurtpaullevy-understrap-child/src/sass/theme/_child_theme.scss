@@ -56,15 +56,18 @@ p {
 body:is(.home) {
 
     div.entry-content {
-            font-size: $font-size-sm;
+            text-indent: 5.3rem;
+            font-size: $font-size-base;
             font-family: $font-family-serif;
+            line-height: 141%;
+            font-weight: 400;
             max-width: 31rem;
             margin: 0;
     }
 
-    & p {
+    /*& p {
         margin: 0;
-    }
+    }*/
 }
 
 @media only screen and (min-width: 1440px) {
@@ -73,10 +76,10 @@ body:is(.home) {
         padding-left: 5.813rem;
     }
 
-    #index-wrapper {
+    /*#index-wrapper {
         padding-top: child_theme_variables.$wrapper-padding-top;
         padding-bottom: child_theme_variables.$wrapper-padding-bottom;
-    }
+    }*/
 
     body {
         margin-top: 0;

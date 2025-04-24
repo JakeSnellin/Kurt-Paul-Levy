@@ -11,14 +11,14 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<div class="d-flex flex-column flex-xxl-column-reverse">
+	<div class="post-preview">
 
 		<?php
 
 		echo get_the_post_thumbnail( $post->ID, 'full' );
 		?>
 
-		<div class="entry-content mb-xxl-40 mt-22 mt-xxl-0">
+		<div class="entry-content">
 
 			<?php
 			$content = get_the_content(); 

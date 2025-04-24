@@ -21184,12 +21184,15 @@ figure.woocommerce-product-gallery__wrapper {
   scrollbar-width: none; /* Firefox */
 }
 
+.navbar-nav li {
+  font-family: "DIN-Regular", Arial, sans-serif;
+}
+
 .navbar-nav::-webkit-scrollbar {
   display: none;
 }
 
 .navbar-nav li a, .navbar-nav li.menu-item-email {
-  font-family: "DIN-Regular", Arial, sans-serif;
   line-height: 19.33px;
   letter-spacing: 1.6px;
   padding: 1rem;
@@ -21230,6 +21233,14 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
     padding-inline-start: 0;
   }
 }
+body.category-selected-work .current-menu-item {
+  font-family: "DIN-BoldAlternate", Arial, sans-serif;
+}
+
+body.blog .current-menu-item {
+  font-family: "DIN-BoldAlternate", Arial, sans-serif;
+}
+
 .menu {
   font-size: 0.875rem;
   width: -moz-max-content;
@@ -21252,7 +21263,9 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
 
 .menu .menu-item a {
   position: relative;
-  padding: 0.563em;
+  padding: 0.656rem;
+  letter-spacing: 1.4px;
+  line-height: 120%;
   display: block;
   width: -moz-max-content;
   width: max-content;
@@ -21924,6 +21937,11 @@ article.format-image.fade-in {
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "DIN-BoldAlternate";
+  src: url(../fonts/din-alternate-bold.ttf) format("truetype");
   font-weight: normal;
 }
 @font-face {

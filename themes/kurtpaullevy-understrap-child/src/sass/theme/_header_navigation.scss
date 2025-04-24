@@ -8,12 +8,16 @@
     scrollbar-width: none;  /* Firefox */
 }
 
+.navbar-nav li {
+    font-family: child_theme_variables.$font-family-base;
+}
+
+
 .navbar-nav::-webkit-scrollbar {
     display: none;
 }
 
 .navbar-nav li a, .navbar-nav li.menu-item-email {
-    font-family: child_theme_variables.$font-family-base;
     line-height: 19.33px;
     letter-spacing: 1.6px;
     padding: child_theme_variables.$nav-link-padding-x;
@@ -54,4 +58,12 @@ header {
         padding-bottom: 3.375em;
         padding-inline-start: 0;
     }
+}
+
+body.category-selected-work .current-menu-item {
+    font-family: child_theme_variables.$font-family-bold;
+}
+
+body.blog .current-menu-item {
+    font-family: child_theme_variables.$font-family-bold;
 }

@@ -21478,12 +21478,12 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   border: none;
   border-bottom: 1px solid #000000;
   border-radius: 0;
-  padding: 0 0 0.875rem;
+  padding: 0 0 0.375rem;
   margin-bottom: 0.688rem;
 }
 
 #email-help-block {
-  color: #848484;
+  color: #464646;
   font-size: 0.75rem;
   margin-bottom: 0.688rem;
 }

@@ -353,3 +353,5 @@ function add_span_to_menu_item($items, $args) {
 
 add_filter('wp_nav_menu_items', 'add_span_to_menu_item', 10, 2);
 
+
+

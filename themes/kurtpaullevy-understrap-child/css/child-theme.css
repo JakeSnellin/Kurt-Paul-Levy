@@ -21232,6 +21232,9 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
     padding-bottom: 3.375em;
     padding-inline-start: 0;
   }
+  #main-nav {
+    display: none;
+  }
 }
 body.category-selected-work .current-menu-item {
   font-family: "DIN-BoldAlternate", Arial, sans-serif;
@@ -21239,6 +21242,10 @@ body.category-selected-work .current-menu-item {
 
 body.blog .current-menu-item {
   font-family: "DIN-BoldAlternate", Arial, sans-serif;
+}
+
+#left-sidebar {
+  display: none;
 }
 
 .menu {
@@ -21369,6 +21376,11 @@ body.blog .current-menu-item {
   margin-left: 2.125em;
 }
 
+@media only screen and (min-width: 1440px) {
+  #left-sidebar {
+    display: block;
+  }
+}
 #wrapper-footer .container-fluid hr, #wrapper-footer .container-sm hr, #wrapper-footer .container-md hr, #wrapper-footer .container-lg hr, #wrapper-footer .container-xl hr, #wrapper-footer .container-xxl hr {
   border-top: 4px solid;
   color: #000000;

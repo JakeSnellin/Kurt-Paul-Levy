@@ -1,5 +1,9 @@
 @use 'child_theme_variables';
 
+#left-sidebar {
+    display: none;
+}
+
 .menu {
     font-size: child_theme_variables.$font-size-sm;
     width: max-content;
@@ -125,4 +129,10 @@
     transform: translate(184px, -50%);
     opacity: 1;
     margin-left: 2.125em;
+}
+
+@media only screen and (min-width: 1440px) {
+    #left-sidebar {
+        display: block;
+    }
 }

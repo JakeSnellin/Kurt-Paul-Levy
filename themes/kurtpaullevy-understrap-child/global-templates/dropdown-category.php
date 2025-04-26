@@ -1,6 +1,6 @@
 <?php
 /**
- * Hero setup
+ * Dropdown category menu
  *
  * @package Understrap
  */

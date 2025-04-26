@@ -1,6 +1,6 @@
 <?php
 /**
- * Navbar branding
+ * Progress bar
  *
  * @package Understrap
  * @since 1.2.0

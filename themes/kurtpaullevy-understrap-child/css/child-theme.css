@@ -21573,74 +21573,19 @@ button.btn.raised:active {
   transform: translateY(2px);
 }
 
-/*.content-image-wrapper {
-    line-height: child_theme_variables.$line-height-lg;
-    letter-spacing: child_theme_variables.$letter-spacing-sm;
-    cursor: pointer;
+.category-pill-container {
+  display: none;
 }
 
-.entry-content {
-    margin-top: child_theme_variables.$img-wrapper-margin-top;
-    font-size: child_theme_variables.$font-size-xxs;
-}
-
-.content-image-wrapper {
-    .category-pill {
-        display: none;
-    }
-}
-
-// Media Queries for Large Screens (min-width: 1400px)
-@media only screen and (min-width: 1400px) {
-    .content-image-wrapper {
-        // Category Page specific styles
-        &.category-page {
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: row-reverse;
-            gap: child_theme_variables.$category-page-content-image-wrapper-gap;
-        }
-
-        // General content styles for both home and category pages
-        .entry-content {
-            margin-top: 0;
-        }
-    }
-
-    // Archive Wrapper padding styles
-    #archive-wrapper {
-        padding-top: child_theme_variables.$wrapper-padding-top;
-        padding-bottom: child_theme_variables.$wrapper-padding-bottom;
-    }
-
-    // Home Page Only
-    //
-    // Styles for the content image wrapper on the home page
-
-    .entry-thumbnail {
-        margin-bottom: child_theme_variables.$entry-thumbnail-margin-bottom-sm;
-    }
-
-    .content-image-wrapper.home-page {
-        .category-pill {
-            background-color: child_theme_variables.$pill-bg-color;
-            border-radius: child_theme_variables.$pill-border-radius;
-            padding: child_theme_variables.$pill-padding-y child_theme_variables.$pill-padding-x;
-            width: fit-content;
-            font-size: child_theme_variables.$pill-font-size;
-            display: block;
-        }
-    }
-
-    .category-pill-container {
-        display: flex;
-        gap: child_theme_variables.$pill-gap;
-    }
-}*/
 .entry-content p {
   margin-top: 0.563rem;
   margin-bottom: 1.375rem;
   font-size: 0.625rem;
+}
+
+.home-page .entry-content p {
+  margin-top: 0.625rem;
+  margin-bottom: 1rem;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -21662,6 +21607,21 @@ button.btn.raised:active {
     margin: 2.125rem 11vw 0 auto;
     width: -moz-fit-content;
     width: fit-content;
+  }
+  .content-image-wrapper.home-page .entry-content p {
+    margin: 1.5rem 0;
+  }
+  .category-pill-container {
+    display: flex;
+    gap: 0.625rem;
+  }
+  .content-image-wrapper.home-page .category-pill-container .category-pill {
+    background-color: #EFEFEF;
+    border-radius: 1.688rem;
+    padding: 0.594rem 0.813rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 0.625rem;
   }
 }
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
@@ -21731,10 +21691,11 @@ article.format-image.fade-in {
   opacity: 0.7;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1440px) {
   .image-grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.438rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+    gap: 3.5rem;
+    margin-top: 2.125rem;
   }
 }
 .category-dropdown {

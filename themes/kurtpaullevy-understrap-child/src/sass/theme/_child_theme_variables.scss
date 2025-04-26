@@ -104,10 +104,11 @@ $grid-gutter-width-lg: 2.5rem;
 ////scss-docs-end gutter-width
 
 //scss-docs-start content-image-wrapper-variables
+$entry-content-margin-top-sm: 0.625rem;
+$entry-content-margin-bottom-sm: 1rem;
 $entry-content-margin-top: 0.563rem;
 $entry-content-margin-bottom: 1.375rem;
-$entry-thumbnail-margin-bottom: 6.063rem;
-$entry-thumbnail-margin-bottom-sm: 1.438rem;
+$entry-content-margin-y-lg: 1.5rem;
 //scss-docs-end content-image-wrapper-variables
 
 //scss-docs-start category-page-content-image-wrapper-variables

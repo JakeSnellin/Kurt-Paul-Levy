@@ -8,6 +8,7 @@ import { lazyLoadImages } from "./lazy-load-images.js";
 import { categoryDropdown } from "./category-dropdown.js";
 import { galleryLightboxController } from "./lightbox.js";
 import { handleBackToTopButton } from "./back-to-top-btn.js";
+import { calculateImageSizes } from "./calculate-image-sizes.js";
 
 (function($) {
 
@@ -19,7 +20,8 @@ import { handleBackToTopButton } from "./back-to-top-btn.js";
         validateAndRegisterUser($); 
         categoryDropdown($);
         galleryLightboxController($);
-        handleBackToTopButton($)
+        handleBackToTopButton($);
+        calculateImageSizes($);
     });
 
 })(jQuery);

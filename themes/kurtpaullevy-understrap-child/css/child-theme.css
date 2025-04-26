@@ -21561,50 +21561,85 @@ button.btn.raised:active {
   transform: translateY(2px);
 }
 
-.content-image-wrapper {
-  line-height: 1.7;
-  letter-spacing: 0.1em;
-  cursor: pointer;
+/*.content-image-wrapper {
+    line-height: child_theme_variables.$line-height-lg;
+    letter-spacing: child_theme_variables.$letter-spacing-sm;
+    cursor: pointer;
 }
 
 .entry-content {
-  margin-top: 0.563rem;
-  font-size: 0.625rem;
+    margin-top: child_theme_variables.$img-wrapper-margin-top;
+    font-size: child_theme_variables.$font-size-xxs;
 }
 
-.content-image-wrapper .category-pill {
-  display: none;
+.content-image-wrapper {
+    .category-pill {
+        display: none;
+    }
 }
 
+// Media Queries for Large Screens (min-width: 1400px)
 @media only screen and (min-width: 1400px) {
+    .content-image-wrapper {
+        // Category Page specific styles
+        &.category-page {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row-reverse;
+            gap: child_theme_variables.$category-page-content-image-wrapper-gap;
+        }
+
+        // General content styles for both home and category pages
+        .entry-content {
+            margin-top: 0;
+        }
+    }
+
+    // Archive Wrapper padding styles
+    #archive-wrapper {
+        padding-top: child_theme_variables.$wrapper-padding-top;
+        padding-bottom: child_theme_variables.$wrapper-padding-bottom;
+    }
+
+    // Home Page Only
+    //
+    // Styles for the content image wrapper on the home page
+
+    .entry-thumbnail {
+        margin-bottom: child_theme_variables.$entry-thumbnail-margin-bottom-sm;
+    }
+
+    .content-image-wrapper.home-page {
+        .category-pill {
+            background-color: child_theme_variables.$pill-bg-color;
+            border-radius: child_theme_variables.$pill-border-radius;
+            padding: child_theme_variables.$pill-padding-y child_theme_variables.$pill-padding-x;
+            width: fit-content;
+            font-size: child_theme_variables.$pill-font-size;
+            display: block;
+        }
+    }
+
+    .category-pill-container {
+        display: flex;
+        gap: child_theme_variables.$pill-gap;
+    }
+}*/
+@media only screen and (min-width: 1440px) {
   .content-image-wrapper.category-page {
     display: flex;
-    justify-content: flex-end;
     flex-direction: row-reverse;
+    justify-content: flex-end;
     gap: 8.625rem;
   }
-  .content-image-wrapper .entry-content {
-    margin-top: 0;
-  }
-  #archive-wrapper {
-    padding-top: 3.375rem;
-    padding-bottom: 5.688rem;
-  }
-  .entry-thumbnail {
-    margin-bottom: 1.438rem;
-  }
-  .content-image-wrapper.home-page .category-pill {
-    background-color: #EFEFEF;
-    border-radius: 1.688rem;
-    padding: 0.594rem 0.813rem;
+  #selected-work {
+    display: flex;
+    gap: 4.625rem;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 2.125rem 12vw 0 auto;
     width: -moz-fit-content;
     width: fit-content;
-    font-size: 0.625rem;
-    display: block;
-  }
-  .category-pill-container {
-    display: flex;
-    gap: 0.625rem;
   }
 }
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {

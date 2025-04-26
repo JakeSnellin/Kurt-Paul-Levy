@@ -7,6 +7,7 @@ import { pageTransition } from "./page-transition.js";
 import { lazyLoadImages } from "./lazy-load-images.js";
 import { categoryDropdown } from "./category-dropdown.js";
 import { galleryLightboxController } from "./lightbox.js";
+import { handleBackToTopButton } from "./back-to-top-btn.js";
 
 (function($) {
 
@@ -18,6 +19,7 @@ import { galleryLightboxController } from "./lightbox.js";
         validateAndRegisterUser($); 
         categoryDropdown($);
         galleryLightboxController($);
+        handleBackToTopButton($)
     });
 
 })(jQuery);

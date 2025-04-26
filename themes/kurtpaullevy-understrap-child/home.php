@@ -57,4 +57,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #archive-wrapper -->
 
+<button class="back-to-top"><div class="back-to-top__btn-wrapper"><span id="back-to-top__btn-text"><?php esc_html_e('Back to top', 'understrap-child') ?></span><?php get_template_part('icon-templates/icons', 'caret'); ?></div></button>
+
 <?php get_footer(); ?>

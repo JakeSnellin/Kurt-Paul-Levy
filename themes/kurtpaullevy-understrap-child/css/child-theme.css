@@ -21237,11 +21237,11 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   }
 }
 body.category-selected-work .current-menu-item {
-  font-family: "DIN-BoldAlternate", Arial, sans-serif;
+  font-family: "DIN-Black-Regular", Arial, sans-serif;
 }
 
 body.blog .current-menu-item {
-  font-family: "DIN-BoldAlternate", Arial, sans-serif;
+  font-family: "DIN-Black-Regular", Arial, sans-serif;
 }
 
 #left-sidebar {
@@ -22013,8 +22013,8 @@ article.format-image.fade-in {
   font-weight: normal;
 }
 @font-face {
-  font-family: "DIN-BoldAlternate";
-  src: url(../fonts/din-alternate-bold.ttf) format("truetype");
+  font-family: "DIN-Black-Regular";
+  src: url(../fonts/DIN-Black-Regular.ttf) format("truetype");
   font-weight: normal;
 }
 @font-face {

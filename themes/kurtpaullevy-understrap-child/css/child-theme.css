@@ -21588,6 +21588,10 @@ button.btn.raised:active {
   margin-bottom: 1rem;
 }
 
+.content-image-wrapper.home-page {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 1440px) {
   .entry-content p {
     margin: 0;

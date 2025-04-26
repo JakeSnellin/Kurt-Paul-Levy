@@ -15,6 +15,10 @@
    margin-bottom: child_theme_variables.$entry-content-margin-bottom-sm;
 }
 
+.content-image-wrapper.home-page {
+    cursor: pointer;
+}
+
 @media only screen and (min-width: 1440px) {
 
     .entry-content p {

@@ -74,5 +74,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div><!-- #archive-wrapper -->
 
+<?php get_template_part('global-templates/back-to-top-button') ?>
+
 <?php
 get_footer();

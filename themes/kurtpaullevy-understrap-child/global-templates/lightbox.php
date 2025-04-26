@@ -1,6 +1,6 @@
 <?php
 /**
- * Hero setup
+ * Lightbox 
  *
  * @package Understrap
  */

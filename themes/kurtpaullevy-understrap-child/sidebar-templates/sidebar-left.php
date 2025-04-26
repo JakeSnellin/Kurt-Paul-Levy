@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'left-sidebar' ) ) {
 
 ?>
 
-<div class="d-none d-xxl-block widget-area" id="left-sidebar">
+<div class="widget-area" id="left-sidebar">
 
 	<?php get_template_part( 'global-templates/navbar-branding' ); ?>
 

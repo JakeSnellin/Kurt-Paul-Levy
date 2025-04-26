@@ -58,6 +58,10 @@ header {
         padding-bottom: 3.375em;
         padding-inline-start: 0;
     }
+
+    #main-nav {
+        display: none;
+    }
 }
 
 body.category-selected-work .current-menu-item {

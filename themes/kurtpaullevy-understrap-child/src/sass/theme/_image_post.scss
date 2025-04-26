@@ -69,14 +69,15 @@
 }*/
 
 .entry-content p {
-    margin-top: child_theme_variables.$img-wrapper-margin-top;
+    margin-top: child_theme_variables.$entry-content-margin-top;
+    margin-bottom: child_theme_variables.$entry-content-margin-bottom;
     font-size: child_theme_variables.$font-size-xxs;
 }
 
 @media only screen and (min-width: 1440px) {
 
     .entry-content p {
-        margin-top: 0;
+        margin: 0;
         font-size: child_theme_variables.$font-size-xs;
     }
     

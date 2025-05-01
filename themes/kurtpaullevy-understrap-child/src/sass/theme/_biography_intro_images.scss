@@ -1,0 +1,27 @@
+@use 'child_theme_variables';
+
+.bio-image-caption {
+    color: #6B6B6B;
+    font-size: child_theme_variables.$font-size-xs;
+    line-height: 141%;
+    margin-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    border-bottom:  0.5px solid #6B6B6B;
+    max-width: 8.563rem;
+}
+
+.bio-main-images .bio-main-image:first-of-type .bio-image-caption {
+    margin-bottom: 2.5rem;
+}
+
+.bio-main-images {
+    margin-bottom: 4.125rem;
+}
+
+@media only screen and (min-width: 1440px) {
+    .bio-main-images {
+        display: flex;
+        gap: 4.688rem;
+        margin-bottom: 4.938rem;
+    }
+}

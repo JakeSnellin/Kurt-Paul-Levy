@@ -21244,6 +21244,10 @@ body.blog .current-menu-item {
   font-family: "DIN-Black-Regular", Arial, sans-serif;
 }
 
+body.page-id-14 .current-menu-item {
+  font-family: "DIN-Black-Regular", Arial, sans-serif;
+}
+
 #left-sidebar {
   display: none;
 }
@@ -22007,6 +22011,94 @@ article.format-image.fade-in {
   transition: none !important;
 }
 
+.portrait-gallery {
+  display: flex;
+  gap: 0.875rem;
+}
+
+.portrait-gallery__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.portrait-gallery-title {
+  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
+  line-height: 141%;
+  margin-bottom: 2rem;
+}
+
+.portrait-gallery__group--first {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.portrait-gallery__group--second {
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 8vh;
+}
+
+@media only screen and (min-width: 1440px) {
+  .portrait-gallery {
+    display: flex;
+    gap: 2.5rem;
+  }
+  .portrait-gallery__group {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .portrait-gallery-title {
+    margin-bottom: 3.688rem;
+  }
+}
+.bio-intro-text {
+  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
+  line-height: 141%;
+  margin-top: 0.438rem;
+}
+
+.bio-intro-text p {
+  margin-bottom: 1.6rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .bio-intro-text {
+    display: flex;
+    gap: 4.688rem;
+    margin-bottom: 6.125rem;
+    margin-top: 2.125rem;
+  }
+  .intro-wrapper {
+    max-width: 28rem;
+  }
+}
+.bio-image-caption {
+  color: #6B6B6B;
+  font-size: 0.75rem;
+  line-height: 141%;
+  margin-top: 1.3rem;
+  padding-bottom: 1.3rem;
+  border-bottom: 0.5px solid #6B6B6B;
+  max-width: 8.563rem;
+}
+
+.bio-main-images .bio-main-image:first-of-type .bio-image-caption {
+  margin-bottom: 2.5rem;
+}
+
+.bio-main-images {
+  margin-bottom: 4.125rem;
+}
+
+@media only screen and (min-width: 1440px) {
+  .bio-main-images {
+    display: flex;
+    gap: 4.688rem;
+    margin-bottom: 4.938rem;
+  }
+}
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

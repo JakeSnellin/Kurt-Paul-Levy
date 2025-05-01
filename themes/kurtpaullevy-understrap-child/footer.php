@@ -18,7 +18,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper" id="wrapper-footer">
     <div class="<?php echo esc_attr( $container ); ?>">
 
+        <?php
+            if ( is_front_page() ) {
+                $footer_text = get_field( 'footer_intro_text', get_option( 'page_on_front' ) );
+                if ( $footer_text ) {
+                    echo '<div class="footer-intro-text">';
+                    echo wp_kses_post( $footer_text );
+                    echo '</div>';
+                }
+            }
+        ?>
+
+        <?php if( !is_front_page() ) : ?>
+
         <hr>
+
+        <?php endif; ?>
 
         <!-- Footer Section -->
         <footer class="site-footer" id="colophon">

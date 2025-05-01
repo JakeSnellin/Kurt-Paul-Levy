@@ -1,5 +1,20 @@
 @use 'child_theme_variables';
 
+$group-widths: (
+  "first": 78% 100% 74%,
+  "second": 100% 61% 77% 60%
+);
+
+@each $group, $widths in $group-widths {
+  @each $width in $widths {
+    $i: index($widths, $width);
+
+    .portrait-gallery__group--#{$group} img:nth-of-type(#{$i}) {
+      width: $width;
+    }
+  }
+}
+
 .portrait-gallery {
     display: flex;
     gap: 0.875rem;
@@ -36,8 +51,6 @@
     }
 
     .portrait-gallery__group {
-        display: flex;
-        flex-direction: column;
         gap: 2.5rem;
     }
 

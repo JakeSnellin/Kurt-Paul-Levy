@@ -22011,6 +22011,34 @@ article.format-image.fade-in {
   transition: none !important;
 }
 
+.portrait-gallery__group--first img:nth-of-type(1) {
+  width: 78%;
+}
+
+.portrait-gallery__group--first img:nth-of-type(2) {
+  width: 100%;
+}
+
+.portrait-gallery__group--first img:nth-of-type(3) {
+  width: 74%;
+}
+
+.portrait-gallery__group--second img:nth-of-type(1) {
+  width: 100%;
+}
+
+.portrait-gallery__group--second img:nth-of-type(2) {
+  width: 61%;
+}
+
+.portrait-gallery__group--second img:nth-of-type(3) {
+  width: 77%;
+}
+
+.portrait-gallery__group--second img:nth-of-type(4) {
+  width: 60%;
+}
+
 .portrait-gallery {
   display: flex;
   gap: 0.875rem;
@@ -22045,8 +22073,6 @@ article.format-image.fade-in {
     gap: 2.5rem;
   }
   .portrait-gallery__group {
-    display: flex;
-    flex-direction: column;
     gap: 2.5rem;
   }
   .portrait-gallery-title {

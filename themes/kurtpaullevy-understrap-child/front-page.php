@@ -19,56 +19,49 @@ get_header();
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<?php // if ( is_front_page() && is_home() ) : ?>
-	<?php // get_template_part( 'global-templates/hero' ); ?>
-<?php // endif; ?>
+<div class="scroll-wrapper">
 
-<div class="wrapper" id="index-wrapper">
+	<div class="wrapper" id="index-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+		<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
-
-			<?php
-			// Do the left sidebar check and open div#primary.
-			get_template_part( 'global-templates/left-sidebar-check' );
-			?>
-
-			<main class="site-main" id="main">
+			<div class="row">
 
 				<?php
-				if ( have_posts() ) {
-					// Start the Loop.
-					while ( have_posts() ) {
-						the_post();
-
-						/*
-						 * Include the Post-Format-specific template for the content.
-						 * If you want to override this in a child theme, then include a file
-						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-						 */
-						get_template_part( 'loop-templates/content', 'page' );
-					}
-				} else {
-					get_template_part( 'loop-templates/content', 'none' );
-				}
+				// Do the left sidebar check and open div#primary.
+				get_template_part( 'global-templates/left-sidebar-check' );
 				?>
 
-			</main>
+				<main class="site-main" id="main">
 
-			<?php
-			// Display the pagination component.
-			understrap_pagination();
+					<?php
+					if ( have_posts() ) {
+						// Start the Loop.
+						while ( have_posts() ) {
+							the_post();
 
-			// Do the right sidebar check and close div#primary.
-			get_template_part( 'global-templates/right-sidebar-check' );
-			?>
+							get_template_part( 'loop-templates/content', 'page' );
+						}
+					} else {
+						get_template_part( 'loop-templates/content', 'none' );
+					}
+					?>
 
-		</div><!-- .row -->
+				</main>
 
-	</div><!-- #content -->
+				<?php
+				// Do the right sidebar check and close div#primary.
+				get_template_part( 'global-templates/right-sidebar-check' );
+				?>
 
-</div><!-- #index-wrapper -->
+			</div><!-- .row -->
 
-<?php
-get_footer();
+		</div><!-- #content -->
+
+	</div><!-- #index-wrapper -->
+
+	<?php
+	get_footer();
+	?>
+
+</div><!-- #scroll-wrapper -->

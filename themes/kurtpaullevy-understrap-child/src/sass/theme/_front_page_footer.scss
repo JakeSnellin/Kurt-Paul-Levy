@@ -1,0 +1,64 @@
+@use 'child_theme_variables' as *;
+@use 'button_front_page_variant';
+
+body.home {
+
+    & .site-footer {
+        padding: 6.875rem 0 1rem
+    }
+
+    & #wrapper-footer {
+        position: relative;
+        background-color: #DD5902;
+        color: #FFFFFF;
+        font-family: $font-family-light;
+        padding-top: 5.625rem;
+        font-size: $font-size-sm;
+        border-top-left-radius: 0.938rem;
+        border-top-right-radius: 0.938rem;
+        line-height: 141%;
+        z-index: 100;
+    }
+
+    & #wrapper-footer .footer-intro-text {
+        text-indent: 3rem;
+        max-width: 36.25rem;
+    }
+
+    & .form-control {
+        border-bottom: 1px solid #FFFFFF;
+        color: #FFFFFF;
+    }
+
+    & #index-wrapper {
+        //position: fixed;
+    }
+
+    & #wrapper-footer .form-group input {
+        background-color: transparent;
+    }
+
+    & ::placeholder {
+        color: #FFFFFF;
+    }
+
+    & #email-help-block {
+        color: #FFFFFF;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    
+    body.home {
+
+        & .footer-intro-text {
+            margin: 0 8.75vw 0 auto;
+            text-align: justify;
+            font-size: $font-family-base;
+        }
+
+        & #wrapper-footer {
+            margin: 0;
+        }
+    }
+}

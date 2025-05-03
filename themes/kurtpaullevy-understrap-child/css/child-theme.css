@@ -21409,8 +21409,8 @@ body.page-id-14 .current-menu-item {
 }
 
 .footer__copyright-text {
-  font-size: 8px;
-  font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.625rem;
+  font-family: "DIN-Light", Arial, sans-serif;
   display: flex;
   justify-content: flex-end;
 }
@@ -21527,6 +21527,9 @@ body.page-id-14 .current-menu-item {
   .site-footer {
     padding: 1.375rem 0 1.5rem;
   }
+  .site-footer > div:first-of-type {
+    align-items: flex-start;
+  }
   #contact-form {
     margin-top: 3.125rem;
     margin-bottom: 2.875rem;
@@ -21536,6 +21539,9 @@ body.page-id-14 .current-menu-item {
   }
   .site-info {
     margin-bottom: 0;
+  }
+  #contact-form button {
+    margin-top: -0.75rem;
   }
 }
 .btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
@@ -22113,29 +22119,14 @@ article.format-image.fade-in {
     margin-bottom: 4.938rem;
   }
 }
-.btn-home-footer {
-  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
-  color: #FFFFFF;
-  background-color: #ED6606;
-}
-
-.btn-home-footer:focus-visible {
-  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
-  outline: 1px solid #000AC9;
-  background-color: #ED6606;
-}
-
-.btn-home-footer:hover, .btn-home-footer:active, .btn-home-footer:focus:active {
-  background-color: #D95D05;
-  outline: none;
-}
-
 body.home #wrapper-footer {
   position: absolute;
   top: 100vh;
   width: 100%;
-  background-color: #DD5902;
-  color: #FFFFFF;
+  background-color: rgba(230, 230, 230, 0.7);
+  -webkit-backdrop-filter: blur(53px);
+  backdrop-filter: blur(53px);
+  color: #000000;
   font-family: "DIN-Light", Arial, sans-serif;
   padding-top: 5.625rem;
   font-size: 0.875rem;
@@ -22151,59 +22142,12 @@ body.home #wrapper-footer .footer-intro-text {
   line-height: 20px;
 }
 
-body.home .form-control, body.home .wpcf7 .wpcf7-validation-errors, .wpcf7 body.home .wpcf7-validation-errors, body.home .wpcf7 input[type=text], .wpcf7 body.home input[type=text],
-body.home .wpcf7 input[type=search],
-.wpcf7 body.home input[type=search],
-body.home .wpcf7 input[type=url],
-.wpcf7 body.home input[type=url],
-body.home .wpcf7 input[type=tel],
-.wpcf7 body.home input[type=tel],
-body.home .wpcf7 input[type=number],
-.wpcf7 body.home input[type=number],
-body.home .wpcf7 input[type=range],
-.wpcf7 body.home input[type=range],
-body.home .wpcf7 input[type=date],
-.wpcf7 body.home input[type=date],
-body.home .wpcf7 input[type=month],
-.wpcf7 body.home input[type=month],
-body.home .wpcf7 input[type=week],
-.wpcf7 body.home input[type=week],
-body.home .wpcf7 input[type=time],
-.wpcf7 body.home input[type=time],
-body.home .wpcf7 input[type=datetime],
-.wpcf7 body.home input[type=datetime],
-body.home .wpcf7 input[type=datetime-local],
-.wpcf7 body.home input[type=datetime-local],
-body.home .wpcf7 input[type=color],
-.wpcf7 body.home input[type=color],
-body.home .wpcf7 input[type=email],
-.wpcf7 body.home input[type=email],
-body.home .wpcf7 input[type=file],
-.wpcf7 body.home input[type=file],
-body.home .wpcf7 input[type=submit],
-.wpcf7 body.home input[type=submit],
-body.home .wpcf7 select,
-.wpcf7 body.home select,
-body.home .wpcf7 textarea,
-.wpcf7 body.home textarea {
-  border-bottom: 1px solid #FFFFFF;
-  color: #FFFFFF;
-}
-
 body.home #wrapper-footer .form-group input, body.home #wrapper-footer .wpcf7 .wpcf7-form p input, .wpcf7 .wpcf7-form body.home #wrapper-footer p input {
   background-color: transparent;
 }
 
-body.home ::-moz-placeholder {
-  color: #FFFFFF;
-}
-
-body.home ::placeholder {
-  color: #FFFFFF;
-}
-
 body.home #email-help-block {
-  color: #FFFFFF;
+  color: inherit;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -22214,10 +22158,18 @@ body.home #email-help-block {
   }
   body.home #wrapper-footer {
     margin: 0;
+    padding-top: 2.75rem;
+  }
+  body.home .site-footer {
+    margin: 7.188rem 0 1.5rem;
+    padding: 0;
+  }
+  body.home #contact-form {
+    margin-top: 0;
   }
 }
 body.home .post-preview img {
-  max-height: 50vh;
+  max-height: 50.37vh;
   width: auto;
 }
 
@@ -22232,6 +22184,11 @@ body.home #index-wrapper {
   position: fixed;
 }
 
+@media only screen and (min-width: 1440px) {
+  div.content-area {
+    padding-left: 5.188rem;
+  }
+}
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");

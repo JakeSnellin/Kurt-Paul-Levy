@@ -57,12 +57,8 @@ $container = get_theme_mod( 'understrap_container_type' );
                         </div>
                     </div>
 
-                    <?php
-                    $button_class = is_front_page() ? 'btn btn-home-footer' : 'btn btn-light';
-                    ?>
-
                     <button
-                        class="<?php echo esc_attr( $button_class ) ?> raised mb-xxl-auto me-auto mt-xxl-n14"
+                        class="btn btn-light raised mb-xxl-auto me-auto"
                         type="submit"
                         name="submit"
                         id="submit-btn"
@@ -78,7 +74,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <?php /* understrap_site_info(); */ ?>
                 </div><!-- .site-info -->
             </div>
-            <p class="ms-auto footer__copyright-text"><?php esc_html_e('copyrightkurtlevy', 'understrap-child'); ?></p>
+            <p class="ms-auto footer__copyright-text"><?php esc_html_e('© 2025 Kurt Paul Levy', 'understrap-child'); ?></p>
         </footer><!-- #colophon -->
     </div><!-- .container(-fluid) -->
 </div><!-- #wrapper-footer -->

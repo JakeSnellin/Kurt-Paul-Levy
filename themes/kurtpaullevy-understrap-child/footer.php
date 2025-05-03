@@ -41,7 +41,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <!-- Email Registration Form -->
                 <form novalidate id="contact-form" class="d-flex flex-column flex-xxl-row gap-xxl-4">
-                    <div class="form-group mb-11 mb-xxl-0">
+                    <div class="form-group mb-xxl-0">
                         <input
                             type="email"
                             autocomplete="off"
@@ -52,9 +52,9 @@ $container = get_theme_mod( 'understrap_container_type' );
                             placeholder="Your email"
                         >
                         <div id="validation-container"></div>
-                        <p id="email-help-block" role="alert">
-                            <small><?php esc_html_e('Register your email for notifications of upcoming exhibitions.', 'understrap-child'); ?></small>
-                        </p>
+                        <div id="email-help-block" role="alert">
+                            <p><?php esc_html_e('Register your email for notifications of upcoming exhibitions.', 'understrap-child'); ?></p>
+                        </div>
                     </div>
 
                     <?php
@@ -74,7 +74,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <!-- Site Info Section -->
                 <div class="site-info ms-xxl-auto">
-                        <small><?php esc_html_e('contact@kurtpaullevy.com', 'understrap-child'); ?></small>
+                        <p><?php esc_html_e('contact@kurtpaullevy.com', 'understrap-child'); ?></p>
                     <?php /* understrap_site_info(); */ ?>
                 </div><!-- .site-info -->
             </div>

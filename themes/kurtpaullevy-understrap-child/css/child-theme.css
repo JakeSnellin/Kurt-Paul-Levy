@@ -21398,18 +21398,14 @@ body.page-id-14 .current-menu-item {
 }
 
 .site-footer {
-  padding: 3rem 0 1rem;
-}
-
-.site-footer .site-info small, .site-footer .site-info .small {
-  font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.75rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
+  padding: 6.875rem 0 1rem;
 }
 
 .site-info {
   margin-bottom: 1.438rem;
+  font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.75rem;
+  line-height: 12px;
 }
 
 .footer__copyright-text {
@@ -21444,46 +21440,31 @@ body.page-id-14 .current-menu-item {
   letter-spacing: 0.1em;
 }
 
-.form-control:-ms-input-placeholder, .wpcf7 .wpcf7-validation-errors:-ms-input-placeholder, .wpcf7 input[type=text]:-ms-input-placeholder,
-.wpcf7 input[type=search]:-ms-input-placeholder,
-.wpcf7 input[type=url]:-ms-input-placeholder,
-.wpcf7 input[type=tel]:-ms-input-placeholder,
-.wpcf7 input[type=number]:-ms-input-placeholder,
-.wpcf7 input[type=range]:-ms-input-placeholder,
-.wpcf7 input[type=date]:-ms-input-placeholder,
-.wpcf7 input[type=month]:-ms-input-placeholder,
-.wpcf7 input[type=week]:-ms-input-placeholder,
-.wpcf7 input[type=time]:-ms-input-placeholder,
-.wpcf7 input[type=datetime]:-ms-input-placeholder,
-.wpcf7 input[type=datetime-local]:-ms-input-placeholder,
-.wpcf7 input[type=color]:-ms-input-placeholder,
-.wpcf7 input[type=email]:-ms-input-placeholder,
-.wpcf7 input[type=file]:-ms-input-placeholder,
-.wpcf7 input[type=submit]:-ms-input-placeholder,
-.wpcf7 select:-ms-input-placeholder,
-.wpcf7 textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  letter-spacing: 0.1em;
+.form-control::-moz-placeholder, .wpcf7 .wpcf7-validation-errors::-moz-placeholder, .wpcf7 input[type=text]::-moz-placeholder, .wpcf7 input[type=search]::-moz-placeholder, .wpcf7 input[type=url]::-moz-placeholder, .wpcf7 input[type=tel]::-moz-placeholder, .wpcf7 input[type=number]::-moz-placeholder, .wpcf7 input[type=range]::-moz-placeholder, .wpcf7 input[type=date]::-moz-placeholder, .wpcf7 input[type=month]::-moz-placeholder, .wpcf7 input[type=week]::-moz-placeholder, .wpcf7 input[type=time]::-moz-placeholder, .wpcf7 input[type=datetime]::-moz-placeholder, .wpcf7 input[type=datetime-local]::-moz-placeholder, .wpcf7 input[type=color]::-moz-placeholder, .wpcf7 input[type=email]::-moz-placeholder, .wpcf7 input[type=file]::-moz-placeholder, .wpcf7 input[type=submit]::-moz-placeholder, .wpcf7 select::-moz-placeholder, .wpcf7 textarea::-moz-placeholder {
+  letter-spacing: 1.6px;
+  line-height: 16px;
 }
 
-.form-control::-ms-input-placeholder, .wpcf7 .wpcf7-validation-errors::-ms-input-placeholder, .wpcf7 input[type=text]::-ms-input-placeholder,
-.wpcf7 input[type=search]::-ms-input-placeholder,
-.wpcf7 input[type=url]::-ms-input-placeholder,
-.wpcf7 input[type=tel]::-ms-input-placeholder,
-.wpcf7 input[type=number]::-ms-input-placeholder,
-.wpcf7 input[type=range]::-ms-input-placeholder,
-.wpcf7 input[type=date]::-ms-input-placeholder,
-.wpcf7 input[type=month]::-ms-input-placeholder,
-.wpcf7 input[type=week]::-ms-input-placeholder,
-.wpcf7 input[type=time]::-ms-input-placeholder,
-.wpcf7 input[type=datetime]::-ms-input-placeholder,
-.wpcf7 input[type=datetime-local]::-ms-input-placeholder,
-.wpcf7 input[type=color]::-ms-input-placeholder,
-.wpcf7 input[type=email]::-ms-input-placeholder,
-.wpcf7 input[type=file]::-ms-input-placeholder,
-.wpcf7 input[type=submit]::-ms-input-placeholder,
-.wpcf7 select::-ms-input-placeholder,
-.wpcf7 textarea::-ms-input-placeholder { /* Microsoft Edge */
-  letter-spacing: 0.1em;
+.form-control::placeholder, .wpcf7 .wpcf7-validation-errors::placeholder, .wpcf7 input[type=text]::placeholder,
+.wpcf7 input[type=search]::placeholder,
+.wpcf7 input[type=url]::placeholder,
+.wpcf7 input[type=tel]::placeholder,
+.wpcf7 input[type=number]::placeholder,
+.wpcf7 input[type=range]::placeholder,
+.wpcf7 input[type=date]::placeholder,
+.wpcf7 input[type=month]::placeholder,
+.wpcf7 input[type=week]::placeholder,
+.wpcf7 input[type=time]::placeholder,
+.wpcf7 input[type=datetime]::placeholder,
+.wpcf7 input[type=datetime-local]::placeholder,
+.wpcf7 input[type=color]::placeholder,
+.wpcf7 input[type=email]::placeholder,
+.wpcf7 input[type=file]::placeholder,
+.wpcf7 input[type=submit]::placeholder,
+.wpcf7 select::placeholder,
+.wpcf7 textarea::placeholder {
+  letter-spacing: 1.6px;
+  line-height: 16px;
 }
 
 .form-control, .wpcf7 .wpcf7-validation-errors, .wpcf7 input[type=text],
@@ -21507,16 +21488,21 @@ body.page-id-14 .current-menu-item {
   border: none;
   border-bottom: 1px solid #000000;
   border-radius: 0;
-  padding: 0 0 0.375rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0;
   margin-bottom: 0.688rem;
+  line-height: 14px;
+}
+
+.form-group, .wpcf7 .wpcf7-form p {
+  margin-bottom: 0.875rem;
 }
 
 #email-help-block {
   color: #464646;
   font-size: 0.75rem;
-  margin-bottom: 0.688rem;
   max-width: 60vw;
-  line-height: 100%;
+  line-height: 12px;
 }
 
 .site-footer button {
@@ -21532,7 +21518,7 @@ body.page-id-14 .current-menu-item {
   #wrapper-footer {
     margin-top: 10.563rem;
   }
-  .site-footer .site-info small, .site-footer .site-info .small {
+  .site-footer .site-info p {
     font-family: "Inter-Regular", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
     line-height: 1.2;
@@ -22144,10 +22130,6 @@ article.format-image.fade-in {
   outline: none;
 }
 
-body.home .site-footer {
-  padding: 6.875rem 0 1rem;
-}
-
 body.home #wrapper-footer {
   position: relative;
   background-color: #DD5902;
@@ -22157,13 +22139,14 @@ body.home #wrapper-footer {
   font-size: 0.875rem;
   border-top-left-radius: 0.938rem;
   border-top-right-radius: 0.938rem;
-  line-height: 141%;
   z-index: 100;
+  margin: 0;
 }
 
 body.home #wrapper-footer .footer-intro-text {
   text-indent: 3rem;
   max-width: 36.25rem;
+  line-height: 20px;
 }
 
 body.home .form-control, body.home .wpcf7 .wpcf7-validation-errors, .wpcf7 body.home .wpcf7-validation-errors, body.home .wpcf7 input[type=text], .wpcf7 body.home input[type=text],

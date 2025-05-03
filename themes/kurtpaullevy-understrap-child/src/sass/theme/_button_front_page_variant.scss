@@ -1,0 +1,27 @@
+@use 'child_theme_variables';
+
+// Mixin for reusable button shadow
+@mixin btn-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Base button light styles
+.btn-home-footer {
+  @include btn-shadow(child_theme_variables.$btn-box-shadow);
+
+  color: #FFFFFF;
+
+  background-color: #ED6606;
+
+  &:focus-visible {
+    box-shadow: child_theme_variables.$btn-box-shadow;
+    outline: 1px solid child_theme_variables.$btn-focus-border-color;
+    background-color: #ED6606;
+  }
+
+  &:hover,
+  &:active, &:focus:active {
+    background-color: #D95D05;
+    outline: none;
+  }
+}

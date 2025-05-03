@@ -21515,6 +21515,8 @@ body.page-id-14 .current-menu-item {
   color: #464646;
   font-size: 0.75rem;
   margin-bottom: 0.688rem;
+  max-width: 60vw;
+  line-height: 100%;
 }
 
 .site-footer button {
@@ -22125,9 +22127,118 @@ article.format-image.fade-in {
     margin-bottom: 4.938rem;
   }
 }
+.btn-home-footer {
+  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+  background-color: #ED6606;
+}
+
+.btn-home-footer:focus-visible {
+  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
+  outline: 1px solid #000AC9;
+  background-color: #ED6606;
+}
+
+.btn-home-footer:hover, .btn-home-footer:active, .btn-home-footer:focus:active {
+  background-color: #D95D05;
+  outline: none;
+}
+
+body.home .site-footer {
+  padding: 6.875rem 0 1rem;
+}
+
+body.home #wrapper-footer {
+  position: relative;
+  background-color: #DD5902;
+  color: #FFFFFF;
+  font-family: "DIN-Light", Arial, sans-serif;
+  padding-top: 5.625rem;
+  font-size: 0.875rem;
+  border-top-left-radius: 0.938rem;
+  border-top-right-radius: 0.938rem;
+  line-height: 141%;
+  z-index: 100;
+}
+
+body.home #wrapper-footer .footer-intro-text {
+  text-indent: 3rem;
+  max-width: 36.25rem;
+}
+
+body.home .form-control, body.home .wpcf7 .wpcf7-validation-errors, .wpcf7 body.home .wpcf7-validation-errors, body.home .wpcf7 input[type=text], .wpcf7 body.home input[type=text],
+body.home .wpcf7 input[type=search],
+.wpcf7 body.home input[type=search],
+body.home .wpcf7 input[type=url],
+.wpcf7 body.home input[type=url],
+body.home .wpcf7 input[type=tel],
+.wpcf7 body.home input[type=tel],
+body.home .wpcf7 input[type=number],
+.wpcf7 body.home input[type=number],
+body.home .wpcf7 input[type=range],
+.wpcf7 body.home input[type=range],
+body.home .wpcf7 input[type=date],
+.wpcf7 body.home input[type=date],
+body.home .wpcf7 input[type=month],
+.wpcf7 body.home input[type=month],
+body.home .wpcf7 input[type=week],
+.wpcf7 body.home input[type=week],
+body.home .wpcf7 input[type=time],
+.wpcf7 body.home input[type=time],
+body.home .wpcf7 input[type=datetime],
+.wpcf7 body.home input[type=datetime],
+body.home .wpcf7 input[type=datetime-local],
+.wpcf7 body.home input[type=datetime-local],
+body.home .wpcf7 input[type=color],
+.wpcf7 body.home input[type=color],
+body.home .wpcf7 input[type=email],
+.wpcf7 body.home input[type=email],
+body.home .wpcf7 input[type=file],
+.wpcf7 body.home input[type=file],
+body.home .wpcf7 input[type=submit],
+.wpcf7 body.home input[type=submit],
+body.home .wpcf7 select,
+.wpcf7 body.home select,
+body.home .wpcf7 textarea,
+.wpcf7 body.home textarea {
+  border-bottom: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+body.home #wrapper-footer .form-group input, body.home #wrapper-footer .wpcf7 .wpcf7-form p input, .wpcf7 .wpcf7-form body.home #wrapper-footer p input {
+  background-color: transparent;
+}
+
+body.home ::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+body.home ::placeholder {
+  color: #FFFFFF;
+}
+
+body.home #email-help-block {
+  color: #FFFFFF;
+}
+
+@media only screen and (min-width: 1440px) {
+  body.home .footer-intro-text {
+    margin: 0 8.75vw 0 auto;
+    text-align: justify;
+    font-size: "DIN-Regular", Arial, sans-serif;
+  }
+  body.home #wrapper-footer {
+    margin: 0;
+  }
+}
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "DIN-Light";
+  src: url(../fonts/din-light.ttf) format("truetype");
   font-weight: normal;
 }
 @font-face {
@@ -22168,46 +22279,55 @@ p {
   margin: 0;
 }
 
-body:is(.home) {
-  /*& p {
-      margin: 0;
-  }*/
+@media only screen and (min-width: 1440px) {
+  body {
+    margin-top: 0;
+  }
 }
-body:is(.home) div.entry-content {
-  text-indent: 5.3rem;
-  font-size: 1rem;
-  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
-  line-height: 141%;
-  font-weight: 400;
-  max-width: 34.625rem;
-  margin-top: 1.375rem;
+/*body:is(.home) {
+
+    div.entry-content {
+            text-indent: 5.3rem;
+            font-size: $font-size-base;
+            font-family: $font-family-serif;
+            line-height: 141%;
+            font-weight: 400;
+            max-width: 34.625rem;
+            margin-top: 1.375rem;
+    }
+
 }
 
 div.post-preview img {
-  max-width: 100%;
-}
-
+    max-width: 100%;
+}*/
 @media only screen and (min-width: 1440px) {
-  body:is(.home) div.entry-content {
-    margin-top: 1.625rem;
-  }
-  body:is(.home) div.post-preview {
-    margin-top: 2.125rem;
-  }
-  body:is(.home) div.post-preview img {
-    max-height: 44vh;
-    width: auto;
-  }
+  /*body:is(.home) {
+
+      div.entry-content {
+          margin-top: 1.625rem;
+      }
+
+      div.post-preview {
+          margin-top: 2.125rem;
+      }
+
+      div.post-preview img {
+          max-height: 44vh;
+          width: auto;
+      }
+  }*/
   div.content-area {
     padding-left: 5.813rem;
   }
   /*#index-wrapper {
       padding-top: child_theme_variables.$wrapper-padding-top;
       padding-bottom: child_theme_variables.$wrapper-padding-bottom;
-  }*/
-  body {
-    margin-top: 0;
   }
+
+  body {
+      margin-top: 0;
+  }*/
 }
 .has-blue-color,
 .has-blue-color:visited {

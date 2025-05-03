@@ -23,7 +23,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 $footer_text = get_field( 'footer_intro_text', get_option( 'page_on_front' ) );
                 if ( $footer_text ) {
                     echo '<div class="footer-intro-text">';
-                    echo wp_kses_post( $footer_text );
+                    echo wpautop( wp_kses_post( $footer_text ) );
                     echo '</div>';
                 }
             }
@@ -57,8 +57,12 @@ $container = get_theme_mod( 'understrap_container_type' );
                         </p>
                     </div>
 
+                    <?php
+                    $button_class = is_front_page() ? 'btn btn-home-footer' : 'btn btn-light';
+                    ?>
+
                     <button
-                        class="btn btn-light raised mb-xxl-auto me-auto mt-xxl-n14"
+                        class="<?php echo esc_attr( $button_class ) ?> raised mb-xxl-auto me-auto mt-xxl-n14"
                         type="submit"
                         name="submit"
                         id="submit-btn"

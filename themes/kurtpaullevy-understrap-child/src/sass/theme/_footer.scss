@@ -66,6 +66,8 @@
     color: child_theme_variables.$gray-500;
     font-size: child_theme_variables.$font-size-xs;
     margin-bottom: 0.688rem;
+    max-width: 60vw;
+    line-height: 100%;
 }
 
 .site-footer button {

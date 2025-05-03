@@ -32,9 +32,8 @@
 
   &:hover,
   &:active, &:focus:active {
-    background-color: child_theme_variables.$gray-300; //change this
+    background-color: child_theme_variables.$gray-300;
     outline: none;
-    //@include btn-shadow(child_theme_variables.$btn-hover-shadow);
   }
 }
 

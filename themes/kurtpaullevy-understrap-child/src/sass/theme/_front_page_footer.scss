@@ -4,7 +4,9 @@
 body.home {
 
     & #wrapper-footer {
-        position: relative;
+        position: absolute;
+        top: 100vh;
+        width: 100%;
         background-color: #DD5902;
         color: #FFFFFF;
         font-family: $font-family-light;

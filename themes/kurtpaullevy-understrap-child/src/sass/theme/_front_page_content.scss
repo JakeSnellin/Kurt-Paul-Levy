@@ -1,6 +1,6 @@
 body.home {
     & .post-preview img {
-        max-height: 50vh;
+        max-height: 50.37vh;
         width: auto;
     }
 
@@ -13,5 +13,11 @@ body.home {
 
     & #index-wrapper {
         position: fixed;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    div.content-area {
+        padding-left: 5.188rem;
     }
 }

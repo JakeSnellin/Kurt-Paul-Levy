@@ -4,7 +4,8 @@ body.home {
 
     & #wrapper-footer {
         position: absolute;
-        top: 100vh;
+        bottom: 0;
+        transform: translateY(100%);
         width: 100%;
         background-color: rgba(230, 230, 230, 0.7);
         -webkit-backdrop-filter: blur(53px);
@@ -16,17 +17,12 @@ body.home {
         border-top-left-radius: 0.938rem;
         border-top-right-radius: 0.938rem;
         z-index: 100;
-        margin: 0;
     }
 
     & #wrapper-footer .footer-intro-text {
         text-indent: 3rem;
         max-width: 36.25rem;
         line-height: 20px;
-    }
-
-    & #index-wrapper {
-        //position: fixed;
     }
 
     & #wrapper-footer .form-group input {
@@ -49,13 +45,12 @@ body.home {
         }
 
         & #wrapper-footer {
-            margin: 0;
             padding-top: 2.75rem;
+            margin: 0;
         }
 
         & .site-footer {
-            margin: 7.188rem 0 1.5rem;
-            padding: 0;
+            padding: 7.188rem 0 1.5rem;
         }
 
         #contact-form {

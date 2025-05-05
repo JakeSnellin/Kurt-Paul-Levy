@@ -353,26 +353,23 @@ function add_span_to_menu_item($items, $args) {
 
 add_filter('wp_nav_menu_items', 'add_span_to_menu_item', 10, 2);
 
-//smooth scrolling for front page
-/*function enqueue_lenis_scroll() {
-    if (is_front_page()) { // Only on the front page
-        // Enqueue the Lenis script from the CDN
-        wp_enqueue_script('lenis', 'https://unpkg.com/lenis@1.1.18/dist/lenis.min.js', [], '1.1.18', true);
-        
-        // Add custom JavaScript to initialize Lenis Scroll
-        wp_add_inline_script('lenis', '
-            const lenis = new Lenis({
-                duration: 1.2, // Scroll speed duration
-                smooth: true,  // Enable smooth scrolling
-            });
+function enqueue_lenis_script() {
+    wp_enqueue_script(
+        'lenis',
+        'https://unpkg.com/lenis@1.3.1/dist/lenis.min.js',
+        array(),
+        '1.3.1',
+        true
+    );
 
-            function raf(time) {
-                lenis.raf(time); // Call the Lenis `raf` function for each frame
-                requestAnimationFrame(raf); // Continue the animation frame loop
-            }
-            requestAnimationFrame(raf); // Start the animation frame loop
-        ');
-    }
+    wp_enqueue_script(
+        'lenis-init',
+        get_stylesheet_directory_uri() . '/src/js/lenis-init.js',
+        array('lenis'),
+        null,
+        true
+    );
 }
-add_action('wp_enqueue_scripts', 'enqueue_lenis_scroll');*/
+add_action('wp_enqueue_scripts', 'enqueue_lenis_script');
+
 

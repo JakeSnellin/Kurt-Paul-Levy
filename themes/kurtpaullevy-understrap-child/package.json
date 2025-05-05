@@ -41,7 +41,6 @@
     "url": "https://github.com/understrap/understrap-child/issues"
   },
   "homepage": "https://understrap.com",
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",

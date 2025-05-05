@@ -15,4 +15,4 @@ if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) {
 }
 ?>
 
-<div class="col-md content-area" id="primary">
+<div class="<?php echo esc_attr( !is_front_page() ? 'col-md content-area' : 'content-area' ); ?>" id="primary">

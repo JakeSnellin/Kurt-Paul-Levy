@@ -22121,7 +22121,8 @@ article.format-image.fade-in {
 }
 body.home #wrapper-footer {
   position: absolute;
-  top: 100vh;
+  bottom: 0;
+  transform: translateY(100%);
   width: 100%;
   background-color: rgba(230, 230, 230, 0.7);
   -webkit-backdrop-filter: blur(53px);
@@ -22133,7 +22134,6 @@ body.home #wrapper-footer {
   border-top-left-radius: 0.938rem;
   border-top-right-radius: 0.938rem;
   z-index: 100;
-  margin: 0;
 }
 
 body.home #wrapper-footer .footer-intro-text {
@@ -22157,38 +22157,144 @@ body.home #email-help-block {
     font-size: "DIN-Regular", Arial, sans-serif;
   }
   body.home #wrapper-footer {
-    margin: 0;
     padding-top: 2.75rem;
+    margin: 0;
   }
   body.home .site-footer {
-    margin: 7.188rem 0 1.5rem;
-    padding: 0;
+    padding: 7.188rem 0 1.5rem;
   }
   body.home #contact-form {
     margin-top: 0;
   }
 }
-body.home .post-preview img {
-  max-height: 50.37vh;
-  width: auto;
+#index-hero {
+  position: fixed;
+  inset: 0;
+}
+
+#index-wrapper {
+  position: relative;
+  height: calc(100vh - 126.13px);
+}
+
+.content-area__media-item {
+  height: 100%;
+  width: 100%;
+  padding-top: clamp(105px, 6vw, 194px);
+  padding-bottom: clamp(153px, 6vw, 259px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-area__media-item img {
+  max-width: 47.938rem;
+  max-height: 54vh;
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.content-area__media-group {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 7.875rem;
+}
+
+body.home .container-fluid, body.home .container-sm, body.home .container-md, body.home .container-lg, body.home .container-xl, body.home .container-xxl {
+  height: 100%;
 }
 
 body.home .content-area {
-  padding-top: calc(18vh - 20px);
-  padding-top: calc(18dvh - 20px);
-  padding-bottom: calc(14vh - 20px);
-  padding-bottom: calc(14dvh - 20px);
+  padding: 0;
+  height: 100%;
 }
 
-body.home #index-wrapper {
-  position: fixed;
+body.home .wrapper {
+  padding: 0;
+}
+
+.arrow-icons {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.arrow {
+  display: block;
+  width: 11px;
+  height: 9px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='9' viewBox='0 0 11 9' fill='none'%3E%3Cpath d='M2.07125 0.458008L5.486 6.83969L8.92875 0.458009L11 0.458009L6.40967 8.9949L4.56234 8.9949L0 0.458008L2.07125 0.458008Z' fill='black'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 @media only screen and (min-width: 1440px) {
-  div.content-area {
-    padding-left: 5.188rem;
+  body.home #left-sidebar {
+    position: fixed;
+    z-index: 100;
+  }
+  #index-wrapper {
+    height: 100vh;
+  }
+  .content-area__media-group {
+    margin-top: 0;
   }
 }
+/*body.home {
+    & .post-preview img {
+        max-height: 54.14vh;
+        width: auto;
+    }
+
+    & .post-preview {
+        padding-top: calc(19.63vh - 20px);
+        padding-top: calc(19.63dvh - 20px);
+    }
+
+    & #index-wrapper {
+        position: fixed;
+        height: calc(100% - 126.13px);
+    }
+
+    & .container-fluid {
+        position: relative;
+        height: 100%;
+    }
+}*/
+/*.arrow-group {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.down-arrow-icon {
+    display: block;
+    width: 11px;
+    height: 9px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='9' viewBox='0 0 11 9' fill='none'%3E%3Cpath d='M2.07125 0.458008L5.486 6.83969L8.92875 0.458009L11 0.458009L6.40967 8.9949L4.56234 8.9949L0 0.458008L2.07125 0.458008Z' fill='black'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1440px) {
+    div.content-area {
+        padding-left: 5.188rem;
+    }
+}*/
 @font-face {
   font-family: "DIN-Regular";
   src: url(../fonts/DIN-Regular.ttf) format("truetype");
@@ -22235,6 +22341,11 @@ ul {
 
 p {
   margin: 0;
+}
+
+.site {
+  height: 100%;
+  width: 100%;
 }
 
 @media only screen and (min-width: 1440px) {

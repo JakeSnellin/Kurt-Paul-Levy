@@ -37,6 +37,22 @@
   }
 }
 
+.btn-dark {
+  @include btn-shadow(child_theme_variables.$btn-box-shadow);
+
+  &:focus-visible {
+    box-shadow: child_theme_variables.$btn-box-shadow;
+    outline: 1px solid child_theme_variables.$btn-focus-border-color;
+    background-color: child_theme_variables.$btn-background-color-variant;
+  }
+
+  &:hover,
+  &:active, &:focus:active {
+    background-color: child_theme_variables.$btn-hover-color-variant;
+    outline: none;
+  }
+}
+
 // Raised button specific styles
 button.btn.raised {
   @include raised-btn;

@@ -48,37 +48,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 </div>
 
-<?php get_footer() ?>
-
-<!--<div class="wrapper" id="index-wrapper">
-
-	<div class="<?php /* echo esc_attr( $container ); */ ?>" id="content" tabindex="-1">
-
-			<?php
-			// Do the left sidebar check and open div#primary.
-			/*get_template_part( 'global-templates/left-sidebar-check' );*/
-			?>
-
-			<main class="site-main" id="main">
-				<?php /*
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
-
-						get_template_part( 'loop-templates/content', 'page' );
-					}
-				} else {
-					get_template_part( 'loop-templates/content', 'none' );
-				}
-				*/?>
-			</main>
-
-			<?php /*
-			// Do the right sidebar check and close div#primary.
-			get_template_part( 'global-templates/right-sidebar-check' );
-			*/?>
-
-	</div> --><!-- #content -->
-
-<?php /* get_footer(); */
+<?php get_footer();
 

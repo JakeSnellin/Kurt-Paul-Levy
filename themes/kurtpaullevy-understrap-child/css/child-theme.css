@@ -22119,21 +22119,104 @@ article.format-image.fade-in {
     margin-bottom: 4.938rem;
   }
 }
+body.home .site-info {
+  display: none;
+}
+
 body.home #wrapper-footer {
   position: absolute;
   bottom: 0;
   transform: translateY(100%);
   width: 100%;
-  background-color: rgba(230, 230, 230, 0.7);
-  -webkit-backdrop-filter: blur(53px);
-  backdrop-filter: blur(53px);
-  color: #000000;
+  color: #FFFFFF;
+  background-color: #000000;
   font-family: "DIN-Light", Arial, sans-serif;
   padding-top: 5.625rem;
   font-size: 0.875rem;
   border-top-left-radius: 0.938rem;
   border-top-right-radius: 0.938rem;
   z-index: 100;
+}
+
+body.home .form-control, body.home .wpcf7 .wpcf7-validation-errors, .wpcf7 body.home .wpcf7-validation-errors, body.home .wpcf7 input[type=text], .wpcf7 body.home input[type=text],
+body.home .wpcf7 input[type=search],
+.wpcf7 body.home input[type=search],
+body.home .wpcf7 input[type=url],
+.wpcf7 body.home input[type=url],
+body.home .wpcf7 input[type=tel],
+.wpcf7 body.home input[type=tel],
+body.home .wpcf7 input[type=number],
+.wpcf7 body.home input[type=number],
+body.home .wpcf7 input[type=range],
+.wpcf7 body.home input[type=range],
+body.home .wpcf7 input[type=date],
+.wpcf7 body.home input[type=date],
+body.home .wpcf7 input[type=month],
+.wpcf7 body.home input[type=month],
+body.home .wpcf7 input[type=week],
+.wpcf7 body.home input[type=week],
+body.home .wpcf7 input[type=time],
+.wpcf7 body.home input[type=time],
+body.home .wpcf7 input[type=datetime],
+.wpcf7 body.home input[type=datetime],
+body.home .wpcf7 input[type=datetime-local],
+.wpcf7 body.home input[type=datetime-local],
+body.home .wpcf7 input[type=color],
+.wpcf7 body.home input[type=color],
+body.home .wpcf7 input[type=email],
+.wpcf7 body.home input[type=email],
+body.home .wpcf7 input[type=file],
+.wpcf7 body.home input[type=file],
+body.home .wpcf7 input[type=submit],
+.wpcf7 body.home input[type=submit],
+body.home .wpcf7 select,
+.wpcf7 body.home select,
+body.home .wpcf7 textarea,
+.wpcf7 body.home textarea {
+  border-bottom: 1px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+body.home .form-control::-moz-placeholder, body.home .wpcf7 .wpcf7-validation-errors::-moz-placeholder, .wpcf7 body.home .wpcf7-validation-errors::-moz-placeholder, body.home .wpcf7 input[type=text]::-moz-placeholder, .wpcf7 body.home input[type=text]::-moz-placeholder, body.home .wpcf7 input[type=search]::-moz-placeholder, .wpcf7 body.home input[type=search]::-moz-placeholder, body.home .wpcf7 input[type=url]::-moz-placeholder, .wpcf7 body.home input[type=url]::-moz-placeholder, body.home .wpcf7 input[type=tel]::-moz-placeholder, .wpcf7 body.home input[type=tel]::-moz-placeholder, body.home .wpcf7 input[type=number]::-moz-placeholder, .wpcf7 body.home input[type=number]::-moz-placeholder, body.home .wpcf7 input[type=range]::-moz-placeholder, .wpcf7 body.home input[type=range]::-moz-placeholder, body.home .wpcf7 input[type=date]::-moz-placeholder, .wpcf7 body.home input[type=date]::-moz-placeholder, body.home .wpcf7 input[type=month]::-moz-placeholder, .wpcf7 body.home input[type=month]::-moz-placeholder, body.home .wpcf7 input[type=week]::-moz-placeholder, .wpcf7 body.home input[type=week]::-moz-placeholder, body.home .wpcf7 input[type=time]::-moz-placeholder, .wpcf7 body.home input[type=time]::-moz-placeholder, body.home .wpcf7 input[type=datetime]::-moz-placeholder, .wpcf7 body.home input[type=datetime]::-moz-placeholder, body.home .wpcf7 input[type=datetime-local]::-moz-placeholder, .wpcf7 body.home input[type=datetime-local]::-moz-placeholder, body.home .wpcf7 input[type=color]::-moz-placeholder, .wpcf7 body.home input[type=color]::-moz-placeholder, body.home .wpcf7 input[type=email]::-moz-placeholder, .wpcf7 body.home input[type=email]::-moz-placeholder, body.home .wpcf7 input[type=file]::-moz-placeholder, .wpcf7 body.home input[type=file]::-moz-placeholder, body.home .wpcf7 input[type=submit]::-moz-placeholder, .wpcf7 body.home input[type=submit]::-moz-placeholder, body.home .wpcf7 select::-moz-placeholder, .wpcf7 body.home select::-moz-placeholder, body.home .wpcf7 textarea::-moz-placeholder, .wpcf7 body.home textarea::-moz-placeholder {
+  color: #FFFFFF;
+}
+
+body.home .form-control::placeholder, body.home .wpcf7 .wpcf7-validation-errors::placeholder, .wpcf7 body.home .wpcf7-validation-errors::placeholder, body.home .wpcf7 input[type=text]::placeholder, .wpcf7 body.home input[type=text]::placeholder,
+body.home .wpcf7 input[type=search]::placeholder,
+.wpcf7 body.home input[type=search]::placeholder,
+body.home .wpcf7 input[type=url]::placeholder,
+.wpcf7 body.home input[type=url]::placeholder,
+body.home .wpcf7 input[type=tel]::placeholder,
+.wpcf7 body.home input[type=tel]::placeholder,
+body.home .wpcf7 input[type=number]::placeholder,
+.wpcf7 body.home input[type=number]::placeholder,
+body.home .wpcf7 input[type=range]::placeholder,
+.wpcf7 body.home input[type=range]::placeholder,
+body.home .wpcf7 input[type=date]::placeholder,
+.wpcf7 body.home input[type=date]::placeholder,
+body.home .wpcf7 input[type=month]::placeholder,
+.wpcf7 body.home input[type=month]::placeholder,
+body.home .wpcf7 input[type=week]::placeholder,
+.wpcf7 body.home input[type=week]::placeholder,
+body.home .wpcf7 input[type=time]::placeholder,
+.wpcf7 body.home input[type=time]::placeholder,
+body.home .wpcf7 input[type=datetime]::placeholder,
+.wpcf7 body.home input[type=datetime]::placeholder,
+body.home .wpcf7 input[type=datetime-local]::placeholder,
+.wpcf7 body.home input[type=datetime-local]::placeholder,
+body.home .wpcf7 input[type=color]::placeholder,
+.wpcf7 body.home input[type=color]::placeholder,
+body.home .wpcf7 input[type=email]::placeholder,
+.wpcf7 body.home input[type=email]::placeholder,
+body.home .wpcf7 input[type=file]::placeholder,
+.wpcf7 body.home input[type=file]::placeholder,
+body.home .wpcf7 input[type=submit]::placeholder,
+.wpcf7 body.home input[type=submit]::placeholder,
+body.home .wpcf7 select::placeholder,
+.wpcf7 body.home select::placeholder,
+body.home .wpcf7 textarea::placeholder,
+.wpcf7 body.home textarea::placeholder {
+  color: #FFFFFF;
 }
 
 body.home #wrapper-footer .footer-intro-text {

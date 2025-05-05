@@ -57,8 +57,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                         </div>
                     </div>
 
+                    <?php
+                        $base_classes = is_front_page() ? 'btn btn-dark' : 'btn btn-light';
+                        $btn_classes = $base_classes . ' raised mb-xxl-auto me-auto';
+                    ?>
+
                     <button
-                        class="btn btn-light raised mb-xxl-auto me-auto"
+                        class="<?php echo esc_attr( $btn_classes )?>"
                         type="submit"
                         name="submit"
                         id="submit-btn"

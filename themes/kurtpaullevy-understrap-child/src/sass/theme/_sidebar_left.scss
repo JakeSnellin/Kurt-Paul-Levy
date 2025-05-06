@@ -71,6 +71,7 @@
     position: sticky;
     top: 3.375rem;
     bottom: 0;
+    z-index: 999;
 }
 
 .icon-button {
@@ -134,5 +135,11 @@
 @media only screen and (min-width: 1440px) {
     #left-sidebar {
         display: block;
+    }
+
+    body.home {
+        #left-sidebar {
+            position: fixed;
+        }
     }
 }

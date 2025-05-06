@@ -34,9 +34,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
 			</div>
 			<div class="arrow-icons">
-				<span class="arrow"></span>
-				<span class="arrow"></span>
-				<span class="arrow"></span>
+				<span class="arrow arrow-1"></span>
+				<span class="arrow arrow-2"></span>
+				<span class="arrow arrow-3"></span>
 			</div>
 		</div>
 

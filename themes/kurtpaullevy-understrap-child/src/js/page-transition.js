@@ -4,12 +4,12 @@ export function pageTransition ($) {
 
   // Function to trigger page fade-in
   function pageFadeIn() {
-    $('body').addClass('loaded');
+    $('.content-area').addClass('loaded');
   }
 
   // Function to trigger page fade-out
   function pageFadeOut() {
-    $('body').removeClass('loaded');
+    $('.content-area').removeClass('loaded');
   }
 
   // On page load, add the 'loaded' class to trigger fade-in

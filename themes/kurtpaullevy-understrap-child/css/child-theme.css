@@ -21320,6 +21320,7 @@ body.page-id-14 .current-menu-item {
   position: sticky;
   top: 3.375rem;
   bottom: 0;
+  z-index: 999;
 }
 
 .icon-button {
@@ -21383,6 +21384,9 @@ body.page-id-14 .current-menu-item {
 @media only screen and (min-width: 1440px) {
   #left-sidebar {
     display: block;
+  }
+  body.home #left-sidebar {
+    position: fixed;
   }
 }
 #wrapper-footer .container-fluid hr, #wrapper-footer .container-sm hr, #wrapper-footer .container-md hr, #wrapper-footer .container-lg hr, #wrapper-footer .container-xl hr, #wrapper-footer .container-xxl hr {
@@ -21671,14 +21675,14 @@ button.btn.raised:active {
 }
 
 /* Add fade-out effect to the body */
-body {
+.content-area {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s ease, visibility 0s 0.5s;
 }
 
 /* When the page is ready (loaded), make it visible */
-body.loaded {
+.content-area.loaded {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease, visibility 0s 0s;
@@ -22364,11 +22368,12 @@ body.home .wrapper {
     opacity: 0;
   }
 }
-@media only screen and (min-width: 1440px) {
-  body.home #left-sidebar {
-    position: fixed;
-    z-index: 100;
+@media (prefers-reduced-motion: reduce) {
+  .arrow {
+    animation: none !important;
   }
+}
+@media only screen and (min-width: 1440px) {
   #index-wrapper {
     height: 100vh;
     height: 100dvh;

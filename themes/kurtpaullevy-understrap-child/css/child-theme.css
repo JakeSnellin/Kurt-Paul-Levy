@@ -22335,8 +22335,35 @@ body.home .wrapper {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='9' viewBox='0 0 11 9' fill='none'%3E%3Cpath d='M2.07125 0.458008L5.486 6.83969L8.92875 0.458009L11 0.458009L6.40967 8.9949L4.56234 8.9949L0 0.458008L2.07125 0.458008Z' fill='black'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
+  animation: fadeIn 1.5s ease-in-out infinite;
 }
 
+.arrow-1 {
+  animation-delay: 0s;
+}
+
+.arrow-2 {
+  animation-delay: 0.3s;
+}
+
+.arrow-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @media only screen and (min-width: 1440px) {
   body.home #left-sidebar {
     position: fixed;

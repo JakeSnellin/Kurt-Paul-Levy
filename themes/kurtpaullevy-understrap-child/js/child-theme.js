@@ -6978,12 +6978,12 @@
 
 	  // Function to trigger page fade-in
 	  function pageFadeIn() {
-	    $('.content-area').addClass('loaded');
+	    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar').addClass('loaded');
 	  }
 
 	  // Function to trigger page fade-out
 	  function pageFadeOut() {
-	    $('.content-area').removeClass('loaded');
+	    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar').removeClass('loaded');
 	  }
 
 	  // On page load, add the 'loaded' class to trigger fade-in

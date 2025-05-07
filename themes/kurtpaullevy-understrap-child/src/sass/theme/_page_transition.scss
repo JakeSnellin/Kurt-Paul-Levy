@@ -1,12 +1,12 @@
-/* Add fade-out effect to the body */
-body {
+/* Add fade-out effect to the content area and sidebar contact email icon */
+.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.5s ease, visibility 0s 0.5s;
 }
   
 /* When the page is ready (loaded), make it visible */
-body.loaded {
+.content-area.loaded, #sidebar__contact.loaded, .category-dropdown.loaded, #scroll-progress-bar.loaded {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.5s ease, visibility 0s 0s;

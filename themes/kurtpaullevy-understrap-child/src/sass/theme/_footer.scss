@@ -17,27 +17,19 @@
 }
 
 .site-footer {
-    padding: 3rem 0 1rem;
-}
-
-.site-footer {
-    .site-info {
-        small {
-            font-family: child_theme_variables.$font-family-sans-serif;
-            font-size: 0.75rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-    }
+    padding: 6.875rem 0 1rem;
 }
 
 .site-info {
     margin-bottom: 1.438rem;
+    font-family: child_theme_variables.$font-family-sans-serif;
+    font-size: 0.75rem;
+    line-height: 12px;
 }
 
 .footer__copyright-text {
-    font-size: 8px;
-    font-family: child_theme_variables.$font-family-sans-serif;
+    font-size: child_theme_variables.$font-size-xxs;
+    font-family: child_theme_variables.$font-family-light;
     display: flex;
     justify-content: flex-end;
 }
@@ -54,18 +46,30 @@
     letter-spacing: child_theme_variables.$input-placeholder-letter-spacing;
 }
 
+.form-control::placeholder {
+    letter-spacing: 1.6px;
+    line-height: 16px;
+}
+
 .form-control {
     border: none;
     border-bottom: child_theme_variables.$input-border-width solid child_theme_variables.$input-border-color;
     border-radius: 0;
-    padding: 0 0 0.375rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0;
     margin-bottom: 0.688rem;
+    line-height: 14px;
+}
+
+.form-group {
+    margin-bottom: .875rem;
 }
 
 #email-help-block {
     color: child_theme_variables.$gray-500;
     font-size: child_theme_variables.$font-size-xs;
-    margin-bottom: 0.688rem;
+    max-width: 60vw;
+    line-height: 12px;
 }
 
 .site-footer button {
@@ -82,7 +86,7 @@
 
     .site-footer {
         .site-info {
-            small {
+            p {
                 font-family: child_theme_variables.$font-family-sans-serif;
                 font-size: child_theme_variables.$font-size-base;
                 line-height: 1.2;
@@ -93,6 +97,10 @@
 
     .site-footer {
         padding: 1.375rem 0 1.5rem;
+
+        & > div:first-of-type {
+            align-items: flex-start;
+        }
     }
 
     #contact-form {
@@ -106,6 +114,10 @@
 
     .site-info {
         margin-bottom: 0;
+    }
+
+    #contact-form button {
+        margin-top: -0.75rem;
     }
 }
 

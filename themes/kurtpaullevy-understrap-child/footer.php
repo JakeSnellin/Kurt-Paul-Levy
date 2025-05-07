@@ -18,7 +18,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper" id="wrapper-footer">
     <div class="<?php echo esc_attr( $container ); ?>">
 
+        <?php
+            if ( is_front_page() ) {
+                $footer_text = get_field( 'footer_intro_text', get_option( 'page_on_front' ) );
+                if ( $footer_text ) {
+                    echo '<div class="footer-intro-text">';
+                    echo wpautop( wp_kses_post( $footer_text ) );
+                    echo '</div>';
+                }
+            }
+        ?>
+
+        <?php if( !is_front_page() ) : ?>
+
         <hr>
+
+        <?php endif; ?>
 
         <!-- Footer Section -->
         <footer class="site-footer" id="colophon">
@@ -26,7 +41,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <!-- Email Registration Form -->
                 <form novalidate id="contact-form" class="d-flex flex-column flex-xxl-row gap-xxl-4">
-                    <div class="form-group mb-11 mb-xxl-0">
+                    <div class="form-group mb-xxl-0">
                         <input
                             type="email"
                             autocomplete="off"
@@ -37,13 +52,18 @@ $container = get_theme_mod( 'understrap_container_type' );
                             placeholder="Your email"
                         >
                         <div id="validation-container"></div>
-                        <p id="email-help-block" role="alert">
-                            <small><?php esc_html_e('Register your email for notifications of upcoming exhibitions.', 'understrap-child'); ?></small>
-                        </p>
+                        <div id="email-help-block" role="alert">
+                            <p><?php esc_html_e('Register your email for notifications of upcoming exhibitions.', 'understrap-child'); ?></p>
+                        </div>
                     </div>
 
+                    <?php
+                        $base_classes = is_front_page() ? 'btn btn-dark' : 'btn btn-light';
+                        $btn_classes = $base_classes . ' raised mb-xxl-auto me-auto';
+                    ?>
+
                     <button
-                        class="btn btn-light raised mb-xxl-auto me-auto mt-xxl-n14"
+                        class="<?php echo esc_attr( $btn_classes )?>"
                         type="submit"
                         name="submit"
                         id="submit-btn"
@@ -55,11 +75,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <!-- Site Info Section -->
                 <div class="site-info ms-xxl-auto">
-                        <small><?php esc_html_e('contact@kurtpaullevy.com', 'understrap-child'); ?></small>
+                        <p><?php esc_html_e('contact@kurtpaullevy.com', 'understrap-child'); ?></p>
                     <?php /* understrap_site_info(); */ ?>
                 </div><!-- .site-info -->
             </div>
-            <p class="ms-auto footer__copyright-text"><?php esc_html_e('copyrightkurtlevy', 'understrap-child'); ?></p>
+            <p class="ms-auto footer__copyright-text"><?php esc_html_e('© 2025 Kurt Paul Levy', 'understrap-child'); ?></p>
         </footer><!-- #colophon -->
     </div><!-- .container(-fluid) -->
 </div><!-- #wrapper-footer -->

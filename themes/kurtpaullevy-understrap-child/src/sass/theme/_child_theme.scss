@@ -12,10 +12,18 @@
 @use 'category_dropdown';
 @use 'lightbox';
 @use 'back_to_top';
+@use './pages/biography_page.scss';
+@use './pages/front_page.scss';
 
 @font-face {
     font-family: "DIN-Regular";
     src: url(../fonts/DIN-Regular.ttf) (format('truetype'));
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "DIN-Light";
+    src: url(../fonts/din-light.ttf) (format('truetype'));
     font-weight: normal;
 }
 
@@ -60,7 +68,18 @@ p {
     margin: 0;
 }
 
-body:is(.home) {
+.site {
+    height: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1440px) {
+    body {
+        margin-top: 0;
+    }
+}
+
+/*body:is(.home) {
 
     div.entry-content {
             text-indent: 5.3rem;
@@ -72,18 +91,15 @@ body:is(.home) {
             margin-top: 1.375rem;
     }
 
-    /*& p {
-        margin: 0;
-    }*/
 }
 
 div.post-preview img {
     max-width: 100%;
-}
+}*/
 
 @media only screen and (min-width: 1440px) {
 
-    body:is(.home) {
+    /*body:is(.home) {
 
         div.entry-content {
             margin-top: 1.625rem;
@@ -97,7 +113,7 @@ div.post-preview img {
             max-height: 44vh;
             width: auto;
         }
-    }
+    }*/
 
     div.content-area {
         padding-left: 5.813rem;
@@ -106,9 +122,9 @@ div.post-preview img {
     /*#index-wrapper {
         padding-top: child_theme_variables.$wrapper-padding-top;
         padding-bottom: child_theme_variables.$wrapper-padding-bottom;
-    }*/
+    }
 
     body {
         margin-top: 0;
-    }
+    }*/
 }

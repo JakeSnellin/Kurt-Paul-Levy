@@ -1,0 +1,22 @@
+@use 'child_theme_variables';
+
+.bio-intro-text {
+    font-family: child_theme_variables.$font-family-serif;
+    line-height: 141%;
+    margin-top: 0.438rem;
+    p {
+        margin-bottom: 1.6rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .bio-intro-text {
+        display: flex;
+        gap: 4.688rem;
+        margin-bottom: 6.125rem;
+        margin-top: 2.125rem;
+    }
+    .intro-wrapper {
+        max-width: 28rem;
+    }
+}

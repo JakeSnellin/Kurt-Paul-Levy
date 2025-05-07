@@ -39,34 +39,6 @@ defined( 'ABSPATH' ) || exit;
 
   <div class="gallery-lightbox__content">
     <div class="gallery-lightbox__track">
-      <!--<div class="gallery-lightbox__item">
-          <img src="https://picsum.photos/1010/715" alt="" />
-          <div class="gallery-lightbox__info">
-            <div class="gallery-lightbox__meta">
-            <p> 12cm x 21cm <br> Watercolour <br> 1989 </p>
-            </div>
-            <div class="gallery-lightbox__tags">
-              <div class="tag">Abstract</div>
-              <div class="tag">Watercolour</div>
-              <div class="tag">Print</div>
-            </div>
-          </div>
-        </div>
-        <div class="gallery-lightbox__item">
-          <div>
-          <img src="https://picsum.photos/1010/715" alt="" />
-          <div class="gallery-lightbox__info">
-            <div class="gallery-lightbox__meta">
-            <p> 12cm x 21cm <br> Watercolour <br> 1989 </p>
-            </div>
-            <div class="gallery-lightbox__tags">
-              <div class="tag">Abstract</div>
-              <div class="tag">Watercolour</div>
-              <div class="tag">Print</div>
-            </div>
-          </div>
-        </div>-->
-      <!-- dynamic content -->
     </div>
   </div>
 </div>

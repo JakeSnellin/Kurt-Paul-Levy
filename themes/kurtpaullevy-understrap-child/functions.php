@@ -356,5 +356,23 @@ function add_span_to_menu_item($items, $args) {
 
 add_filter('wp_nav_menu_items', 'add_span_to_menu_item', 10, 2);
 
+function enqueue_lenis_script() {
+    wp_enqueue_script(
+        'lenis',
+        'https://unpkg.com/lenis@1.3.1/dist/lenis.min.js',
+        array(),
+        '1.3.1',
+        true
+    );
+
+    wp_enqueue_script(
+        'lenis-init',
+        get_stylesheet_directory_uri() . '/src/js/lenis-init.js',
+        array('lenis'),
+        null,
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_lenis_script');
 
 

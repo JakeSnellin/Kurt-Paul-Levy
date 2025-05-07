@@ -1,0 +1,60 @@
+@use 'child_theme_variables';
+
+$group-widths: (
+  "first": 78% 100% 74%,
+  "second": 100% 61% 77% 60%
+);
+
+@each $group, $widths in $group-widths {
+  @each $width in $widths {
+    $i: index($widths, $width);
+
+    .portrait-gallery__group--#{$group} img:nth-of-type(#{$i}) {
+      width: $width;
+    }
+  }
+}
+
+.portrait-gallery {
+    display: flex;
+    gap: 0.875rem;
+}
+
+.portrait-gallery__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.portrait-gallery-title {
+    font-family: child_theme_variables.$font-family-serif;
+    line-height: 141%;
+    margin-bottom: 2rem;
+}
+
+.portrait-gallery__group--first {
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.portrait-gallery__group--second {
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 8vh;
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .portrait-gallery {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .portrait-gallery__group {
+        gap: 2.5rem;
+    }
+
+    .portrait-gallery-title {
+        margin-bottom: 3.688rem;
+    }
+}

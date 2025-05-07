@@ -7281,6 +7281,7 @@
 	    // Set the id of the first cloned article
 	    firstClonedArticle.attr('id', 'firstClone');
 
+<<<<<<< Updated upstream
 	    // Clone the last article and append it to the end of the carousel slide
 	    let lastClonedArticle = lightboxImages.eq(lightboxImages.length - 1).clone(); // Cloning the last article
 	    lastClonedArticle.attr('id', 'lastClone');
@@ -7299,6 +7300,20 @@
 	    } else if (e.key === 'Escape') {
 	      closeBtn.click();
 	    }
+=======
+	    // Hide the clicked item
+	    $(this).addClass('hidden').removeClass('visible');
+	    var categoryText = $(this).text();
+	    $('.widget-area #dropdown-btn-text').text(categoryText);
+	    if (categoryText === 'All work') {
+	      filterContentByCategoryAjax($, {
+	        category: 'All work'
+	      });
+	    }
+	    filterContentByCategoryAjax($, {
+	      category: categoryText
+	    });
+>>>>>>> Stashed changes
 	  });
 	}
 
@@ -7400,6 +7415,7 @@
 	    }, 50); // small delay to allow layout reflow
 	  }
 
+<<<<<<< Updated upstream
 	  // Run on load
 	  $(window).on('load', function () {
 	    if (window.innerWidth >= 1440) {
@@ -7422,6 +7438,69 @@
 	        });
 	      }
 	    }, 150);
+=======
+	    // Hide the clicked item
+	    $(this).addClass('hidden').removeClass('visible');
+	    var categoryText = $(this).text();
+	    $('.site-main #dropdown-btn-text').text(categoryText);
+	    if (categoryText === 'All work') {
+	      filterContentByCategoryAjax($, {
+	        category: "All work"
+	      });
+	    }
+	    filterContentByCategoryAjax($, {
+	      category: categoryText
+	    });
+	  });
+	}
+
+	function filterLightBoxAjax($, {
+	  postId,
+	  category
+	}) {
+	  const ajaxUrl = `${window.location.origin}/wp-admin/admin-ajax.php`;
+	  $.ajax({
+	    url: ajaxUrl,
+	    // Ensure ajaxurl is defined in your theme or script
+	    method: 'POST',
+	    data: {
+	      action: 'filter_lightbox_content',
+	      postId: postId,
+	      category: category
+	    },
+	    success: function (response) {
+	      if (response.success) {
+	        console.log(response.data.post_content);
+	        // Handle success (e.g., update the lightbox content)
+	        $('.lightbox__content').html(response.data.post_content);
+	        $(document).trigger('newContentLoaded');
+	        // Set up previous/next navigation buttons
+	        //setupLightboxNavigation(response.data.previous_post, response.data.next_post);
+	      } else {
+	        console.log('Error: ' + response.data.error);
+	      }
+	    }
+	  });
+	}
+
+	function lightBox($) {
+	  $('#image-grid-container').on('click', function (e) {
+	    if ($(e.target).closest('.format-image')) {
+	      //
+	      const clickedPostID = $(e.target).closest('.format-image').attr('id').replace('post-', '');
+	      console.log(clickedPostID);
+	      //get the category 
+	      const categoryText = $('#dropdown-btn-text').text();
+
+	      //open the lightbox.
+	      $('.lightbox').addClass('open');
+	      $('body').css('overflow', 'hidden');
+	      filterLightBoxAjax($, {
+	        postId: clickedPostID,
+	        category: categoryText
+	      });
+	    }
+>>>>>>> Stashed changes
 	  });
 	}
 
@@ -7435,9 +7514,13 @@
 	    toggleShowNav($);
 	    validateAndRegisterUser($);
 	    categoryDropdown($);
+<<<<<<< Updated upstream
 	    galleryLightboxController($);
 	    handleBackToTopButton($);
 	    calculateImageSizes($);
+=======
+	    lightBox($);
+>>>>>>> Stashed changes
 	  });
 	})(jQuery);
 

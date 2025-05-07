@@ -21826,9 +21826,14 @@ article.format-image.fade-in {
     display: none;
   }
 }
+<<<<<<< Updated upstream
 .gallery-lightbox {
   opacity: 0;
   visibility: hidden;
+=======
+.lightbox {
+  display: none;
+>>>>>>> Stashed changes
   position: fixed;
   inset: 0;
   background-color: white;
@@ -21880,6 +21885,7 @@ article.format-image.fade-in {
 .gallery-lightbox__track {
   display: flex;
   width: 100%;
+<<<<<<< Updated upstream
   height: 100%;
 }
 
@@ -22005,6 +22011,27 @@ article.format-image.fade-in {
 
 .back-to-top--no-transition {
   transition: none !important;
+=======
+  z-index: 9999;
+  background-color: white;
+}
+
+.lightbox.open {
+  display: block;
+}
+
+.lightbox.open {
+  display: block;
+}
+
+.lightbox__content {
+  display: flex;
+}
+
+.lightbox__content article {
+  flex-shrink: 0;
+  width: 100%;
+>>>>>>> Stashed changes
 }
 
 @font-face {

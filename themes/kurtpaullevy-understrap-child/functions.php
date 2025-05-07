@@ -208,6 +208,7 @@ function understrap_child_add_post_count_to_menu_items( $items, $args ) {
 
 add_filter( 'wp_nav_menu_objects', 'understrap_child_add_post_count_to_menu_items', 10, 2 );
 
+<<<<<<< Updated upstream
 function understrap_child_add_contact_email_to_menu_items($items, $args) {
 
 	if($args->theme_location == 'primary') {
@@ -226,6 +227,8 @@ function understrap_child_add_contact_email_to_menu_items($items, $args) {
 
 add_filter( 'wp_nav_menu_items', 'understrap_child_add_contact_email_to_menu_items', 10, 2);
 
+=======
+>>>>>>> Stashed changes
 function filter_lightbox_content() {
     if (isset($_POST['category']) && isset($_POST['postId'])) {
         // Sanitize inputs

@@ -64,6 +64,7 @@ export function categoryDropdown($) {
         $(`${context} .category-dropdown-menu .menu-item`).removeClass('hidden').addClass('visible');
         $this.addClass('hidden').removeClass('visible');
 
+<<<<<<< Updated upstream
         const categoryText = $this.text();
         $(`${context} #dropdown-btn-text`).text(categoryText);
 
@@ -75,4 +76,38 @@ export function categoryDropdown($) {
 
         filterContentByCategoryAjax($, { category: categoryText });
     });
+=======
+        $('.widget-area #dropdown-btn-text').text(categoryText);
+
+        if(categoryText === 'All work') {
+            filterContentByCategoryAjax($, { category: 'All work'});
+        }
+
+        filterContentByCategoryAjax($, { category: categoryText });
+        
+        });
+
+        $('.site-main .category-dropdown-menu .menu-item').on('click', function (e) {
+            e.preventDefault();
+    
+            $('.site-main .caret-icon').toggleClass('rotated');
+    
+             // Make all items visible again before hiding the clicked one
+             $('.site-main .category-dropdown-menu .menu-item').removeClass('hidden').addClass('visible');
+    
+             // Hide the clicked item
+             $(this).addClass('hidden').removeClass('visible');
+    
+            var categoryText = $(this).text();
+    
+            $('.site-main #dropdown-btn-text').text(categoryText);
+
+            if(categoryText === 'All work') {
+                filterContentByCategoryAjax($, { category: "All work" });
+            }
+    
+            filterContentByCategoryAjax($, { category: categoryText });
+
+        });
+>>>>>>> Stashed changes
 }

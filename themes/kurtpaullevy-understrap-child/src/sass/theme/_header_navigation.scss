@@ -21,7 +21,6 @@
     line-height: 19.33px;
     letter-spacing: 1.6px;
     padding: child_theme_variables.$nav-link-padding-x;
-    display: block;
 }
 
 .navbar-nav li.menu-item-email {
@@ -64,14 +63,7 @@ header {
     }
 }
 
-body.category-selected-work .current-menu-item {
-    font-family: child_theme_variables.$font-family-black;
-}
-
-body.blog .current-menu-item {
-    font-family: child_theme_variables.$font-family-black;
-}
-
-body.page-id-14 .current-menu-item {
-    font-family: child_theme_variables.$font-family-black;
+#main-menu .current-menu-item a span {
+    padding-bottom: 0.906rem;
+    border-bottom: 2px solid child_theme_variables.$black;
 }

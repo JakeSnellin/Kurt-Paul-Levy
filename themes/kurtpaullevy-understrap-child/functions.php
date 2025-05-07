@@ -208,6 +208,18 @@ function understrap_child_add_post_count_to_menu_items( $items, $args ) {
 
 add_filter( 'wp_nav_menu_objects', 'understrap_child_add_post_count_to_menu_items', 10, 2 );
 
+function understrap_child_add_span_to_menu_item_text ($items, $args) {
+	if($args->theme_location == 'primary') {
+		$items = preg_replace_callback('/(<a.*?>)(.*?)(<\/a>)/', function ($matches) {
+			return $matches[1] . '<span>' . $matches[2] . '</span>' . $matches[3];
+		}, $items);
+	}
+
+	return $items;
+}
+
+add_filter( 'wp_nav_menu_items', 'understrap_child_add_span_to_menu_item_text', 10, 2 );
+
 function understrap_child_add_contact_email_to_menu_items($items, $args) {
 
 	if($args->theme_location == 'primary') {

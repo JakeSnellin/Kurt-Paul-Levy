@@ -21196,7 +21196,6 @@ figure.woocommerce-product-gallery__wrapper {
   line-height: 19.33px;
   letter-spacing: 1.6px;
   padding: 1rem;
-  display: block;
 }
 
 .navbar-nav li.menu-item-email {
@@ -21236,16 +21235,9 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
     display: none;
   }
 }
-body.category-selected-work .current-menu-item {
-  font-family: "DIN-Black-Regular", Arial, sans-serif;
-}
-
-body.blog .current-menu-item {
-  font-family: "DIN-Black-Regular", Arial, sans-serif;
-}
-
-body.page-id-14 .current-menu-item {
-  font-family: "DIN-Black-Regular", Arial, sans-serif;
+#main-menu .current-menu-item a span {
+  padding-bottom: 0.906rem;
+  border-bottom: 2px solid #000000;
 }
 
 #left-sidebar {
@@ -22390,11 +22382,6 @@ body.home .wrapper {
 @font-face {
   font-family: "DIN-Light";
   src: url(../fonts/din-light.ttf) format("truetype");
-  font-weight: normal;
-}
-@font-face {
-  font-family: "DIN-Black-Regular";
-  src: url(../fonts/DIN-Black-Regular.ttf) format("truetype");
   font-weight: normal;
 }
 @font-face {

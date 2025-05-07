@@ -17,6 +17,10 @@
 # DO NOT ignore these themes...
 !/themes/kurtpaullevy-understrap-child
 
+# Ignore All-in-One WP Migration backups
+/ai1wm-backups/
+*.wpress
+
 #---------------------------
 # WordPress plugins
 #---------------------------

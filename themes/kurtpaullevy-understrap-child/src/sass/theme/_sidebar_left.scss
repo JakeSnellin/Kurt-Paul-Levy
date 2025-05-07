@@ -20,7 +20,6 @@
         opacity: 0.2;
     }
 
-    /* The menu item itself */
     .menu-item {
         & a {
             position: relative;
@@ -39,18 +38,24 @@
             right: -1.4em;
             width: 12px;
             height: 12px;
-            background-image: url(https://staging-c2a8-kurtpaullevy.wpcomstaging.com/wp-content/uploads/2025/02/star_icon.svg);
+            background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2213%22%20height%3D%2214%22%20viewBox%3D%220%200%2013%2014%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M6.07091%206.31073L0.545247%203.0429L0%203.95814L5.65932%207L0%2010.0408L0.545247%2010.9561L6.07091%207.68927L5.93301%2014H7.06805L6.93015%207.68927L12.4548%2010.9561L13%2010.0408L7.34174%207L13%203.95814L12.4548%203.0429L6.93015%206.31073L7.06805%200H5.93301L6.07091%206.31073Z%22%20fill%3D%22black%22/%3E%3C/svg%3E");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             opacity: 0;
             transform: translateY(-50%);
-            transition: opacity 0.3s ease-in-out; // Just opacity here
+            transition: opacity 0.3s ease-in-out;
         }
     
         & a:hover::after {
             opacity: 1;
             animation: rotateIcon 1s linear infinite;
+        }
+
+        &.current-menu-item a::after {
+            animation: none;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
         }
     }
     

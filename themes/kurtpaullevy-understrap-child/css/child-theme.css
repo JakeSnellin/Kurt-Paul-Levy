@@ -21707,14 +21707,29 @@ body.home .footer-intro-text.fade-in {
   transition: opacity 0.5s ease, visibility 0s 0s;
 }
 
+/* Basic styles for the parent and child elements */
 #image-grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.938rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  position: relative;
 }
 
-#image-grid-container:has(article:hover) article:not(:hover) {
-  opacity: 0.7;
+article {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#image-grid-container:hover article {
+  opacity: 0.6; /* This is the default opacity for the non-hovered images */
+}
+
+#image-grid-container:hover article:hover {
+  opacity: 1; /* The hovered image retains full opacity */
+}
+
+#image-grid-container:not(:hover) article {
+  opacity: 1; /* When the parent is not hovered, all images have opacity 1 */
 }
 
 @media only screen and (min-width: 1440px) {

@@ -16,9 +16,9 @@ export function createFooterObserver($, threshold) {
     var observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                const text = $('body').hasClass('home') ? $('.footer-intro-text') : "";
-                text.addClass('fade-in');
-                observer.unobserve(entry.target);
+                const footerText = $(entry.target).find('.footer-intro-text');
+                footerText.addClass('fade-in');
+                observer.unobserve(entry.target); // stop observing the footer itself
             }
         });
     }, { threshold: threshold });

@@ -9,7 +9,7 @@ export function lazyLoadImages ($) {
 
         const imageThreshold = 0.2;
 
-        const footerThreshold = 0.4;
+        const footerThreshold = 0.3;
 
         const imageObserver = createImageObserver($, imageThreshold);
 

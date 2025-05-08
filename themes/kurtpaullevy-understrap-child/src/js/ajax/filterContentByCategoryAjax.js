@@ -9,9 +9,19 @@ export function filterContentByCategoryAjax($, { category = 'All work' }) {
         },
         success: function(response) {
             if (response.success) {
-                // Handle success (e.g., update the grid of posts)
-                $('#image-grid-container').html(response.data);
-                $(document).trigger('newContentLoaded');
+                const gridContainer = $('#image-grid-container');
+                
+                // Fade out the current content
+                gridContainer.fadeOut(500, function() {
+                    // Update the content after the fade-out is complete
+                    gridContainer.html(response.data);
+                    
+                    // Fade in the new content
+                    gridContainer.fadeIn(500);
+                    
+                    // Trigger any additional actions if needed
+                    $(document).trigger('newContentLoaded');
+                });
             } else {
                 console.log('Error: ' + response.data.error);
             }

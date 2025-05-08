@@ -1,7 +1,7 @@
 export function galleryLightboxController ($) {
     const galleryLightbox = $('.gallery-lightbox');
     const galleryLightboxTrack = $('.gallery-lightbox__track');
-    const imageGridContainer = $('.image-grid-container');
+    const imageGridContainer = $('#image-grid-container');
     const prevBtn = $('.gallery-lightbox__btn--prev');
     const nextBtn = $('.gallery-lightbox__btn--next');
     const closeBtn = $('.gallery-lightbox__btn--close');
@@ -26,7 +26,7 @@ export function galleryLightboxController ($) {
 
     function createGalleryLightboxItems() {
         // Select all articles in the image grid container
-        lightboxImages = $('.image-grid-container article');
+        lightboxImages = $('#image-grid-container article');
         const lightboxHTML = [];
 
         lightboxImages.each(function() {
@@ -129,7 +129,7 @@ export function galleryLightboxController ($) {
         galleryLightbox.attr('aria-hidden', 'true');
         
         // Restore the original content of the image grid
-        $('.image-grid-container').html(originalContent);
+        $('#image-grid-container').html(originalContent);
         // Return focus to the gallery image or button that opened the carousel
         $(this).focus();  // Or store and use the original focus element
     });

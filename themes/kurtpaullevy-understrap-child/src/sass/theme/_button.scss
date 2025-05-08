@@ -37,6 +37,8 @@
   }
 }
 
+//use mixin here to keep things DRY
+
 .btn-dark {
   @include btn-shadow(child_theme_variables.$btn-box-shadow);
 

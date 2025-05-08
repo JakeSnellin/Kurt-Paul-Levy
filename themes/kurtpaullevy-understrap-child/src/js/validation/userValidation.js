@@ -12,7 +12,10 @@ export function validateAndRegisterUser($) {
         validationContainer.text("");
 
         // Validate email format
-        if (email === "" || !(/^[^@]+@[^@]+\.[^@]+$/.test(email))) {
+
+        if(email === "") return;
+
+        if (!(/^[^@]+@[^@]+\.[^@]+$/.test(email))) {
             createElement($, 'p', { class: 'my-11 lh-sm text-warning d-flex align-items-center', id: 'validation-text' }, "Incorrect email", '#validation-container');
             createElement($, 'i', { class: "bi bi-exclamation-circle ps-2" }, "", "#validation-text");
         } else {

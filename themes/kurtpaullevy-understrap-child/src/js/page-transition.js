@@ -4,12 +4,12 @@ export function pageTransition ($) {
 
   // Function to trigger page fade-in
   function pageFadeIn() {
-    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar').addClass('loaded');
+    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
   }
 
   // Function to trigger page fade-out
   function pageFadeOut() {
-    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar').removeClass('loaded');
+    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').removeClass('loaded');
   }
 
   // On page load, add the 'loaded' class to trigger fade-in

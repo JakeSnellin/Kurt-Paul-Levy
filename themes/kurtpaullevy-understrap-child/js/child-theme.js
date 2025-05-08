@@ -7042,9 +7042,9 @@
 	  var observer = new IntersectionObserver(function (entries, observer) {
 	    entries.forEach(function (entry) {
 	      if (entry.isIntersecting) {
-	        const text = $('body').hasClass('home') ? $('.footer-intro-text') : "";
-	        text.addClass('fade-in');
-	        observer.unobserve(entry.target);
+	        const footerText = $(entry.target).find('.footer-intro-text');
+	        footerText.addClass('fade-in');
+	        observer.unobserve(entry.target); // stop observing the footer itself
 	      }
 	    });
 	  }, {
@@ -7061,18 +7061,18 @@
 
 	function lazyLoadImages($) {
 	  const images = $('article.format-image');
-	  const frontPageFooter = $('body').hasClass('home') ? $('#wrapper-footer') : "";
+	  const frontPageFooter = $('body').hasClass('home') ? $('#wrapper-footer') : $();
 	  const imageThreshold = 0.2;
 	  const footerThreshold = 0.3;
-	  const imageObserver = createImageObserver($, imageThreshold);
+	  let imageObserver = createImageObserver($, imageThreshold);
 	  initialiseObserver(images, imageObserver);
 	  const footerObserver = createFooterObserver($, footerThreshold);
 	  initialiseObserver(frontPageFooter, footerObserver);
 	  $(document).on('newContentLoaded', function () {
-	    observer.disconnect();
-	    var images = $('article.format-image');
-	    observer = createObserver($);
-	    initialiseObserver(images, observer);
+	    imageObserver.disconnect();
+	    const images = $('article.format-image');
+	    imageObserver = createImageObserver($, imageThreshold);
+	    initialiseObserver(images, imageObserver);
 	  });
 	}
 

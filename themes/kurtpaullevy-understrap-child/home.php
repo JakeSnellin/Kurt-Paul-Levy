@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 <?php get_template_part( 'global-templates/dropdown', 'category' ) ?>
                 
-                <div class="image-grid-container" id="image-grid-container">
+                <div id="image-grid-container">
                     <?php
                     if ( have_posts() ) :
                         while ( have_posts() ) : the_post();

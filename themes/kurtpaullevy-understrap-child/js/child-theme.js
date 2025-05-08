@@ -7105,9 +7105,19 @@
 	    },
 	    success: function (response) {
 	      if (response.success) {
-	        // Handle success (e.g., update the grid of posts)
-	        $('#image-grid-container').html(response.data);
-	        $(document).trigger('newContentLoaded');
+	        const gridContainer = $('#image-grid-container');
+
+	        // Fade out the current content
+	        gridContainer.fadeOut(500, function () {
+	          // Update the content after the fade-out is complete
+	          gridContainer.html(response.data);
+
+	          // Fade in the new content
+	          gridContainer.fadeIn(500);
+
+	          // Trigger any additional actions if needed
+	          $(document).trigger('newContentLoaded');
+	        });
 	      } else {
 	        console.log('Error: ' + response.data.error);
 	      }
@@ -7186,7 +7196,7 @@
 	function galleryLightboxController($) {
 	  const galleryLightbox = $('.gallery-lightbox');
 	  const galleryLightboxTrack = $('.gallery-lightbox__track');
-	  const imageGridContainer = $('.image-grid-container');
+	  const imageGridContainer = $('#image-grid-container');
 	  const prevBtn = $('.gallery-lightbox__btn--prev');
 	  const nextBtn = $('.gallery-lightbox__btn--next');
 	  const closeBtn = $('.gallery-lightbox__btn--close');
@@ -7208,7 +7218,7 @@
 	  });
 	  function createGalleryLightboxItems() {
 	    // Select all articles in the image grid container
-	    lightboxImages = $('.image-grid-container article');
+	    lightboxImages = $('#image-grid-container article');
 	    const lightboxHTML = [];
 	    lightboxImages.each(function () {
 	      const article = $(this);
@@ -7296,7 +7306,7 @@
 	    galleryLightbox.attr('aria-hidden', 'true');
 
 	    // Restore the original content of the image grid
-	    $('.image-grid-container').html(originalContent);
+	    $('#image-grid-container').html(originalContent);
 	    // Return focus to the gallery image or button that opened the carousel
 	    $(this).focus(); // Or store and use the original focus element
 	  });

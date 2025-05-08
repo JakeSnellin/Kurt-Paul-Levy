@@ -1,13 +1,28 @@
-export function createObserver($) {
+export function createImageObserver($, threshold) {
     var observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
-                var $img = $(entry.target);
-                $img.addClass('fade-in');
+                const img = $(entry.target);
+                img.addClass('fade-in');
                 observer.unobserve(entry.target); // Stop observing after image is loaded
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: threshold });
 
     return observer;
 }
+
+export function createFooterObserver($, threshold) {
+    var observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                const text = $('body').hasClass('home') ? $('.footer-intro-text') : "";
+                text.addClass('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: threshold });
+
+    return observer;
+}
+

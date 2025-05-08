@@ -1,12 +1,23 @@
-import { createObserver } from "./helpers/createObserver";
+import { createImageObserver } from "./helpers/createObserver";
+import { createFooterObserver } from "./helpers/createObserver";
 import { initialiseObserver } from "./helpers/initialiseObserver";
 
 export function lazyLoadImages ($) {
 
-        var images = $('article.format-image');
-        var observer = createObserver($);
+        const images = $('article.format-image');
+        const  frontPageFooter = $('body').hasClass('home') ? $('#wrapper-footer') : "";
 
-        initialiseObserver(images, observer);
+        const imageThreshold = 0.2;
+
+        const footerThreshold = 0.4;
+
+        const imageObserver = createImageObserver($, imageThreshold);
+
+        initialiseObserver(images, imageObserver);
+
+        const footerObserver = createFooterObserver($, footerThreshold);
+
+        initialiseObserver(frontPageFooter, footerObserver);
 
         $(document).on('newContentLoaded', function() {
             observer.disconnect();

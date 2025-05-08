@@ -7022,17 +7022,31 @@
 	  });
 	}
 
-	function createObserver($) {
+	function createImageObserver($, threshold) {
 	  var observer = new IntersectionObserver(function (entries, observer) {
 	    entries.forEach(function (entry) {
 	      if (entry.isIntersecting) {
-	        var $img = $(entry.target);
-	        $img.addClass('fade-in');
+	        const img = $(entry.target);
+	        img.addClass('fade-in');
 	        observer.unobserve(entry.target); // Stop observing after image is loaded
 	      }
 	    });
 	  }, {
-	    threshold: 0.2
+	    threshold: threshold
+	  });
+	  return observer;
+	}
+	function createFooterObserver($, threshold) {
+	  var observer = new IntersectionObserver(function (entries, observer) {
+	    entries.forEach(function (entry) {
+	      if (entry.isIntersecting) {
+	        const text = $('body').hasClass('home') ? $('.footer-intro-text') : "";
+	        text.addClass('fade-in');
+	        observer.unobserve(entry.target);
+	      }
+	    });
+	  }, {
+	    threshold: threshold
 	  });
 	  return observer;
 	}
@@ -7044,9 +7058,14 @@
 	}
 
 	function lazyLoadImages($) {
-	  var images = $('article.format-image');
-	  var observer = createObserver($);
-	  initialiseObserver(images, observer);
+	  const images = $('article.format-image');
+	  const frontPageFooter = $('body').hasClass('home') ? $('#wrapper-footer') : "";
+	  const imageThreshold = 0.2;
+	  const footerThreshold = 0.4;
+	  const imageObserver = createImageObserver($, imageThreshold);
+	  initialiseObserver(images, imageObserver);
+	  const footerObserver = createFooterObserver($, footerThreshold);
+	  initialiseObserver(frontPageFooter, footerObserver);
 	  $(document).on('newContentLoaded', function () {
 	    observer.disconnect();
 	    var images = $('article.format-image');

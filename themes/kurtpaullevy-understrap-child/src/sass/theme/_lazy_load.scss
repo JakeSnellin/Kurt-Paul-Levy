@@ -1,12 +1,12 @@
 /* Initially hide the images (they are invisible before they load) */
-article.format-image {
+article.format-image, body.home .footer-intro-text {
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.5s ease, visibility 0s 0.5s;
+    transition: opacity 1.4s ease, visibility 0s 1.4s;
 }
 
-article.format-image.fade-in {
+article.format-image.fade-in, body.home .footer-intro-text.fade-in {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.5s ease, visibility 0s 0s;
+    transition: opacity 1.4s ease, visibility 0s 0s;
 }

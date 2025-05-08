@@ -21672,14 +21672,14 @@ button.btn.raised:active {
 }
 
 /* Add fade-out effect to the content area and sidebar contact email icon */
-.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar {
+.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.5s ease, visibility 0s 0.5s;
 }
 
 /* When the page is ready (loaded), make it visible */
-.content-area.loaded, #sidebar__contact.loaded, .category-dropdown.loaded, #scroll-progress-bar.loaded {
+.content-area.loaded, #sidebar__contact.loaded, .category-dropdown.loaded, #scroll-progress-bar.loaded, body.home #wrapper-footer.loaded {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease, visibility 0s 0s;

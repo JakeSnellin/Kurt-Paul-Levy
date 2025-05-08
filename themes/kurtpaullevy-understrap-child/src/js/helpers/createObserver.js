@@ -1,10 +1,12 @@
 export function createImageObserver($, threshold) {
-    var observer = new IntersectionObserver(function(entries, observer) {
+    const observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 const img = $(entry.target);
-                img.addClass('fade-in');
-                observer.unobserve(entry.target); // Stop observing after image is loaded
+                if (img.hasClass('fade-init')) {
+                    img.removeClass('fade-init').addClass('fade-in');
+                }
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: threshold });
@@ -13,7 +15,7 @@ export function createImageObserver($, threshold) {
 }
 
 export function createFooterObserver($, threshold) {
-    var observer = new IntersectionObserver(function(entries, observer) {
+    const observer = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 const footerText = $(entry.target).find('.footer-intro-text');

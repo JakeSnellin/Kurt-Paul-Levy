@@ -1,5 +1,10 @@
 export function initialiseObserver(images, observer) {
-    images.each(function() {
-        observer.observe(this);
-    });
+
+    if (!images || images.length === 0) return;
+
+    setTimeout(() => {
+        images.each(function() {
+            observer.observe(this); // observe everything
+        });
+    }, 500);
 }

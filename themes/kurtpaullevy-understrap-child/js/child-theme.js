@@ -7025,12 +7025,14 @@
 	}
 
 	function createImageObserver($, threshold) {
-	  var observer = new IntersectionObserver(function (entries, observer) {
+	  const observer = new IntersectionObserver(function (entries, observer) {
 	    entries.forEach(function (entry) {
 	      if (entry.isIntersecting) {
 	        const img = $(entry.target);
-	        img.addClass('fade-in');
-	        observer.unobserve(entry.target); // Stop observing after image is loaded
+	        if (img.hasClass('fade-init')) {
+	          img.removeClass('fade-init').addClass('fade-in');
+	        }
+	        observer.unobserve(entry.target);
 	      }
 	    });
 	  }, {
@@ -7039,7 +7041,7 @@
 	  return observer;
 	}
 	function createFooterObserver($, threshold) {
-	  var observer = new IntersectionObserver(function (entries, observer) {
+	  const observer = new IntersectionObserver(function (entries, observer) {
 	    entries.forEach(function (entry) {
 	      if (entry.isIntersecting) {
 	        const footerText = $(entry.target).find('.footer-intro-text');
@@ -7054,9 +7056,12 @@
 	}
 
 	function initialiseObserver(images, observer) {
-	  images.each(function () {
-	    observer.observe(this);
-	  });
+	  if (!images || images.length === 0) return;
+	  setTimeout(() => {
+	    images.each(function () {
+	      observer.observe(this); // observe everything
+	    });
+	  }, 500);
 	}
 
 	function lazyLoadImages($) {
@@ -7064,16 +7069,26 @@
 	  const frontPageFooter = $('body').hasClass('home') ? $('#wrapper-footer') : $();
 	  const imageThreshold = 0.2;
 	  const footerThreshold = 0.3;
+	  markImagesBelowFold(images);
 	  let imageObserver = createImageObserver($, imageThreshold);
 	  initialiseObserver(images, imageObserver);
-	  const footerObserver = createFooterObserver($, footerThreshold);
+	  let footerObserver = createFooterObserver($, footerThreshold);
 	  initialiseObserver(frontPageFooter, footerObserver);
 	  $(document).on('newContentLoaded', function () {
 	    imageObserver.disconnect();
 	    const images = $('article.format-image');
+	    markImagesBelowFold(images);
 	    imageObserver = createImageObserver($, imageThreshold);
 	    initialiseObserver(images, imageObserver);
 	  });
+	  function markImagesBelowFold(images) {
+	    images.each(function () {
+	      const rect = this.getBoundingClientRect();
+	      if (rect.top > window.innerHeight) {
+	        $(this).addClass('fade-init');
+	      }
+	    });
+	  }
 	}
 
 	function filterContentByCategoryAjax($, {

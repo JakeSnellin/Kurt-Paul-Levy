@@ -1,7 +1,7 @@
 /* Basic styles for the parent and child elements */
 #image-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
     position: relative;
   }
@@ -25,7 +25,6 @@
 
 @media only screen and (min-width: 1440px) {
     #image-grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
         gap: 3.5rem;
         margin-top: 2.125rem;
     }

@@ -21710,7 +21710,7 @@ body.home .footer-intro-text.fade-in {
 /* Basic styles for the parent and child elements */
 #image-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   position: relative;
 }
@@ -21736,6 +21736,16 @@ article {
   #image-grid-container {
     gap: 3.5rem;
     margin-top: 2.125rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #image-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (min-width: 1900px) {
+  #image-grid-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .category-dropdown {

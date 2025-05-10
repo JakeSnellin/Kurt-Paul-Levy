@@ -1,5 +1,10 @@
 export function hoverMenuItems ($) {
-    const menu = $('.menu');
+
+    $(window).on('load', function () {
+        $('body').addClass('page-loaded');
+    });
+
+    /*const menu = $('.menu');
     const items = $('.menu-item');
 
     items.on('click', function() {
@@ -11,5 +16,5 @@ export function hoverMenuItems ($) {
 
         // Add active class to the menu
         menu.addClass('active');
-    });
+    });*/
 }

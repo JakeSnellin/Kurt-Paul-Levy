@@ -21244,28 +21244,26 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   display: none;
 }
 
+.menu:hover .menu-item:not(:hover) {
+  opacity: 0.2;
+}
+
+/* No transition until page is fully loaded */
+.menu > * {
+  opacity: 1;
+}
+
+.page-loaded .menu > * {
+  transition: opacity 0.5s ease;
+}
+
 .menu {
   font-size: 0.875rem;
   width: -moz-max-content;
   width: max-content;
   margin-left: -0.563em;
   margin-bottom: 0;
-  /* Transition for all children */
-  /* On hover or active state, dim non-targeted items */
   /* Define the rotation animation */
-}
-
-.menu .menu > * {
-  transition: opacity 0.5s ease;
-}
-
-.menu:hover .menu-item:not(:hover), .menu.active .menu-item:not(.active) {
-  opacity: 0.2;
-}
-
-.menu .menu-item:hover,
-.menu .menu-item.active {
-  opacity: 1;
 }
 
 .menu .menu-item a {

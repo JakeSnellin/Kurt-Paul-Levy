@@ -10,14 +10,20 @@
     margin-left: -0.563em;
     margin-bottom: 0;
     
-    /* Targeting all direct children for opacity transition */
-    & > * {
-        transition: opacity 500ms ease;
+    /* Transition for all children */
+    .menu > * {
+        transition: opacity 0.5s ease;
     }
 
-    /* On hover of the menu, reduce opacity of non-hovered items */
-    &:hover .menu-item:not(:hover) {
+    /* On hover or active state, dim non-targeted items */
+    &:hover .menu-item:not(:hover),
+    &.active .menu-item:not(.active) {
         opacity: 0.2;
+    }
+
+    .menu-item:hover,
+    .menu-item.active {
+        opacity: 1;
     }
 
     .menu-item {

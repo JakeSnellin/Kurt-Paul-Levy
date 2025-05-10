@@ -9,6 +9,7 @@ import { categoryDropdown } from "./category-dropdown.js";
 import { galleryLightboxController } from "./lightbox.js";
 import { handleBackToTopButton } from "./back-to-top-btn.js";
 import { calculateImageSizes } from "./calculate-image-sizes.js";
+import { hoverMenuItems } from "./hover-menu-items.js";
 
 (function($) {
 
@@ -22,6 +23,7 @@ import { calculateImageSizes } from "./calculate-image-sizes.js";
         galleryLightboxController($);
         handleBackToTopButton($);
         calculateImageSizes($);
+        hoverMenuItems($);
     });
 
 })(jQuery);

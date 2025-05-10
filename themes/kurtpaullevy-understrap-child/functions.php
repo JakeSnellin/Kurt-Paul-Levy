@@ -349,6 +349,7 @@ function add_class_to_specific_menu_item( $classes, $item, $args ) {
 		// Add custom hidden class to menu item
 		$classes[] = 'hidden';
 	}
+	
 	return $classes;
 }
 

@@ -1,10 +1,30 @@
+import { calculateImageSizes } from "./calculate-image-sizes";
+
 export function pageTransition ($) {
 
   let isTransitioning = false;
 
   // Function to trigger page fade-in
-  function pageFadeIn() {
+  /*function pageFadeIn() {
     $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+  }*/
+
+  function pageFadeIn() {
+    // Check if it's an archive page
+    if ($('body').hasClass('archive')) {
+      // Only load non-content-area elements immediately
+      $('#sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+  
+      // Perform your layout calculations first, then add the class
+      calculateImageSizes($); // Assuming you have a function like this
+  
+      // Then add .loaded to .content-area
+      $('.content-area').addClass('loaded');
+  
+    } else {
+      // For all other pages, load everything at once
+      $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+    }
   }
 
   // Function to trigger page fade-out

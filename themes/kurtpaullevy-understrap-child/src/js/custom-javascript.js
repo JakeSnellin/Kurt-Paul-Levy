@@ -15,6 +15,7 @@ import { hoverMenuItems } from "./hover-menu-items.js";
 
     $(document).ready(function() {
         pageTransition($);
+        /*calculateImageSizes($);*/
         lazyLoadImages($);
         progressBar($);
         toggleShowNav($);
@@ -22,7 +23,6 @@ import { hoverMenuItems } from "./hover-menu-items.js";
         categoryDropdown($);
         galleryLightboxController($);
         handleBackToTopButton($);
-        calculateImageSizes($);
         hoverMenuItems($);
     });
 

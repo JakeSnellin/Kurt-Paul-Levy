@@ -6975,12 +6975,104 @@
 	  });
 	}
 
+	function calculateImageSizes($) {
+	  if (!$('body').hasClass('archive')) return;
+	  function alignImagesByTallest() {
+	    if (window.innerWidth < 1440) return;
+	    const images = $('.wp-post-image');
+	    if (images.length === 0) return;
+
+	    // Reset styles
+	    images.css({
+	      maxHeight: '',
+	      width: '',
+	      height: ''
+	    });
+	    let tallestImage = null;
+	    let tallestHeight = 0;
+
+	    // Find tallest image
+	    images.each(function () {
+	      const img = $(this)[0];
+	      if (img.complete && img.height > tallestHeight) {
+	        tallestHeight = img.height;
+	        tallestImage = $(this);
+	      }
+	    });
+	    if (!tallestImage) return;
+
+	    // Step 1: set max height and let it scale
+	    tallestImage.css({
+	      maxHeight: '93vh',
+	      height: 'auto',
+	      width: 'auto'
+	    });
+
+	    // delay slightly so browser can reflow, then read scaled width
+	    setTimeout(() => {
+	      const finalWidth = tallestImage[0].getBoundingClientRect().width;
+
+	      // apply that width to the other images
+	      images.each(function () {
+	        const img = $(this);
+	        if (img[0] !== tallestImage[0]) {
+	          img.css({
+	            width: `${finalWidth}px`,
+	            height: 'auto'
+	          });
+	        }
+	      });
+	    }, 50); // small delay to allow layout reflow
+	  }
+
+	  // Run on load
+	  $(window).on('load', function () {
+	    if (window.innerWidth >= 1440) {
+	      setTimeout(alignImagesByTallest, 50);
+	    }
+	  });
+
+	  // Debounced resize
+	  let resizeTimeout;
+	  $(window).on('resize', function () {
+	    clearTimeout(resizeTimeout);
+	    resizeTimeout = setTimeout(() => {
+	      if (window.innerWidth >= 1440) {
+	        alignImagesByTallest();
+	      } else {
+	        $('.wp-post-image').css({
+	          maxHeight: '',
+	          width: '',
+	          height: ''
+	        });
+	      }
+	    }, 150);
+	  });
+	}
+
 	function pageTransition($) {
 	  let isTransitioning = false;
 
 	  // Function to trigger page fade-in
-	  function pageFadeIn() {
+	  /*function pageFadeIn() {
 	    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+	  }*/
+
+	  function pageFadeIn() {
+	    // Check if it's an archive page
+	    if ($('body').hasClass('archive')) {
+	      // Only load non-content-area elements immediately
+	      $('#sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+
+	      // Perform your layout calculations first, then add the class
+	      calculateImageSizes($); // Assuming you have a function like this
+
+	      // Then add .loaded to .content-area
+	      $('.content-area').addClass('loaded');
+	    } else {
+	      // For all other pages, load everything at once
+	      $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+	    }
 	  }
 
 	  // Function to trigger page fade-out
@@ -7396,96 +7488,10 @@
 	  $(window).on('scroll resize', updateButton);
 	}
 
-	function calculateImageSizes($) {
-	  if (!$('body').hasClass('archive')) return;
-	  function alignImagesByTallest() {
-	    if (window.innerWidth < 1440) return;
-	    const images = $('.wp-post-image');
-	    if (images.length === 0) return;
-
-	    // Reset styles
-	    images.css({
-	      maxHeight: '',
-	      width: '',
-	      height: ''
-	    });
-	    let tallestImage = null;
-	    let tallestHeight = 0;
-
-	    // Find tallest image
-	    images.each(function () {
-	      const img = $(this)[0];
-	      if (img.complete && img.height > tallestHeight) {
-	        tallestHeight = img.height;
-	        tallestImage = $(this);
-	      }
-	    });
-	    if (!tallestImage) return;
-
-	    // Step 1: set max height and let it scale
-	    tallestImage.css({
-	      maxHeight: '93vh',
-	      height: 'auto',
-	      width: 'auto'
-	    });
-
-	    // delay slightly so browser can reflow, then read scaled width
-	    setTimeout(() => {
-	      const finalWidth = tallestImage[0].getBoundingClientRect().width;
-
-	      // apply that width to the other images
-	      images.each(function () {
-	        const img = $(this);
-	        if (img[0] !== tallestImage[0]) {
-	          img.css({
-	            width: `${finalWidth}px`,
-	            height: 'auto'
-	          });
-	        }
-	      });
-	    }, 50); // small delay to allow layout reflow
-	  }
-
-	  // Run on load
-	  $(window).on('load', function () {
-	    if (window.innerWidth >= 1440) {
-	      setTimeout(alignImagesByTallest, 50);
-	    }
-	  });
-
-	  // Debounced resize
-	  let resizeTimeout;
-	  $(window).on('resize', function () {
-	    clearTimeout(resizeTimeout);
-	    resizeTimeout = setTimeout(() => {
-	      if (window.innerWidth >= 1440) {
-	        alignImagesByTallest();
-	      } else {
-	        $('.wp-post-image').css({
-	          maxHeight: '',
-	          width: '',
-	          height: ''
-	        });
-	      }
-	    }, 150);
-	  });
-	}
-
 	function hoverMenuItems($) {
 	  $(window).on('load', function () {
 	    $('body').addClass('page-loaded');
 	  });
-
-	  /*const menu = $('.menu');
-	  const items = $('.menu-item');
-	    items.on('click', function() {
-	      // Remove active class from all items
-	      items.removeClass('active');
-	        // Add active class to the clicked item
-	      $(this).addClass('active');
-	        // Add active class to the menu
-	      menu.addClass('active');
-	  });*/
 	}
 
 	// Add your custom JS here.
@@ -7493,6 +7499,7 @@
 	(function ($) {
 	  $(document).ready(function () {
 	    pageTransition($);
+	    /*calculateImageSizes($);*/
 	    lazyLoadImages($);
 	    progressBar($);
 	    toggleShowNav($);
@@ -7500,7 +7507,6 @@
 	    categoryDropdown($);
 	    galleryLightboxController($);
 	    handleBackToTopButton($);
-	    calculateImageSizes($);
 	    hoverMenuItems($);
 	  });
 	})(jQuery);

@@ -11,3 +11,11 @@
     opacity: 1;
     transition: opacity 0.5s ease, visibility 0s 0s;
 }
+
+/* More specific rules for archive pages */
+body.archive .content-area.loaded {
+    /* Custom behavior or delay for archive pages */
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease 0.2s, visibility 0s 0.2s;
+}

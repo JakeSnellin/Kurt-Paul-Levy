@@ -60,7 +60,6 @@ export function categoryDropdown($) {
         const isSidebar = $this.closest('.widget-area').length > 0;
         const context = isSidebar ? '.widget-area' : '.site-main';
 
-        $(`${context} .caret-icon`).toggleClass('rotated');
         $(`${context} .category-dropdown-menu .menu-item`).removeClass('hidden').addClass('visible');
         $this.addClass('hidden').removeClass('visible');
 

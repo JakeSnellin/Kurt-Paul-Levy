@@ -21814,7 +21814,7 @@ article {
   border-bottom-left-radius: 5px;
 }
 
-.category-dropdown-menu > :nth-child(-n+3) {
+.category-dropdown-menu > *:not(:last-child) {
   border-bottom: 0.5px solid #CFCFCF;
 }
 
@@ -21851,7 +21851,7 @@ article {
   display: none;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1440px) {
   body:is(.blog) .site-main .category-dropdown {
     display: none;
   }

@@ -55,7 +55,7 @@
         border-bottom-left-radius: 5px;
     }
         
-        & > :nth-child(-n+3) {
+        & > *:not(:last-child) {
             border-bottom: .5px solid #CFCFCF;
         }
 
@@ -93,7 +93,7 @@
         display: none;
     }
 
-    @media only screen and (min-width: 1400px) {
+    @media only screen and (min-width: 1440px) {
 
         body:is(.blog) {
             .site-main .category-dropdown {

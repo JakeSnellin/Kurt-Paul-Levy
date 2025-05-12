@@ -324,8 +324,9 @@ function filter_category_posts() {
         if ($query->have_posts()) :
             ob_start(); // Start output buffering to capture the HTML
             while ($query->have_posts()) : $query->the_post();
-                // This assumes you're using a template part to render the content
-                get_template_part('loop-templates/content', get_post_format());
+				$context = 'home'; // or 'home', depending on logic
+				include locate_template('loop-templates/content-image.php');
+                //get_template_part('loop-templates/content', get_post_format());
             endwhile;
             $html = ob_get_clean(); // Get the buffered HTML output
             wp_send_json_success($html); // Return the HTML content as part of a JSON response

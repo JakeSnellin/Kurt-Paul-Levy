@@ -1,11 +1,23 @@
+<?php
+/**
+ * Content image partial template
+ *
+ * @package Understrap
+ */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
     <?php
     // Determine the classes for the content wrapper
     $content_wrapper_classes = '';
-    if ( is_home() ) {
+    if ( ( isset($context) && $context === 'home' ) || is_home() ) {
         $content_wrapper_classes = 'home-page';
-    } elseif ( is_category() ) {
+    } elseif ( ( isset($context) && $context === 'category' ) || is_category() ) {
         $content_wrapper_classes = 'category-page';
     }
     ?>
@@ -25,7 +37,7 @@
             <?php the_content(); ?>
         </div><!-- .entry-content -->
 
-        <?php if ( is_home() ) : ?>
+        <?php if ( ( isset($context) && $context === 'home' ) || is_home() ) : ?>
             <!-- Display category pill below the image -->
             <?php 
             $categories = get_the_category();

@@ -21,6 +21,10 @@
 /ai1wm-backups/
 *.wpress
 
+# Ignore wpvivid backups and staging files
+/wpvivid_staging/
+/wpvividbackups/
+
 #---------------------------
 # WordPress plugins
 #---------------------------

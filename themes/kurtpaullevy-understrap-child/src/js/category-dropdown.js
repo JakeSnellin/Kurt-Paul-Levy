@@ -2,7 +2,80 @@ import { filterContentByCategoryAjax } from './ajax/filterContentByCategoryAjax.
 
 export function categoryDropdown($) {
 
-    function toggleDropdown({ button, menu, container }) {
+    const $toggleBtn = $('.category-dropdown__menu-btn');
+    const $menu = $('.category-dropdown-menu');
+    const $scrollContainer = $('.scroll-container');
+    const $dropdown = $('.category-dropdown');
+
+    /*$('.scroll-container').on('wheel', function (e) {
+        console.log('Wheel scroll triggered on dropdown');
+    });
+
+    const simplebarInstance = SimpleBar.instances.get($('.scroll-container')[0]);
+    console.log(simplebarInstance.getScrollElement()); // should return a scrollable element*/
+
+    function toggleDropdown () {
+        const caretIcon = $dropdown.find('.caret-icon');
+        caretIcon.toggleClass('rotated');
+        if ($menu.hasClass('open')) {
+            // Slide up (close)
+            $menu.removeClass('open');
+            setTimeout(() => {
+                $dropdown.css('background-color', "")
+            }, 300)
+            $toggleBtn.attr('aria-expanded', 'false');
+        } else {
+            // Slide down (open)
+            $menu.addClass('open');
+            $dropdown.css('background-color', "#EFEFEF");
+            $toggleBtn.attr('aria-expanded', 'true');
+            setTimeout(() => {
+            const simplebarInstance = SimpleBar.instances.get($scrollContainer[0]);
+            if (simplebarInstance) {
+                simplebarInstance.recalculate();
+                simplebarInstance.getScrollElement().scrollTop = 0;
+            }
+        }, 50); // Slight delay to ensure layout has been rendered*/
+            setupOutsideClickListener();
+        }
+    }
+
+    $('body').on('click', '.category-dropdown__menu-btn', function () {
+        toggleDropdown();
+    });
+
+     $('body').on('click', '.category-dropdown-menu .menu-item', function (e) {
+        e.preventDefault();
+
+        $(document).off('click.dropdown');
+
+        const $this = $(this);
+
+        $('.category-dropdown-menu .menu-item').removeClass('hidden').addClass('visible');
+        $this.addClass('hidden').removeClass('visible');
+
+        const categoryText = $this.text();
+        $('#dropdown-btn-text').text(categoryText);
+
+        toggleDropdown();
+
+        filterContentByCategoryAjax($, { category: categoryText });
+    });
+
+    function setupOutsideClickListener () {
+        function outsideClickHandler (e) {
+            if(!$menu.is(e.target) && $menu.has(e.target).length === 0 && !$toggleBtn.is(e.target) && $toggleBtn.has(e.target).length === 0) {
+                    toggleDropdown();
+                    $(document).off('click.dropdown', outsideClickHandler);
+                }
+        }
+    
+    setTimeout(() => {
+            $(document).on('click.dropdown', outsideClickHandler)
+        }, 0)
+  }
+
+    /*function toggleDropdown({ button, menu, container }) {
         const caretIcon = container.find('.caret-icon');
         caretIcon.toggleClass('rotated');
         menu.toggleClass('show-menu');
@@ -73,5 +146,5 @@ export function categoryDropdown($) {
         });
 
         filterContentByCategoryAjax($, { category: categoryText });
-    });
+    });*/
 }

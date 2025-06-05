@@ -386,4 +386,19 @@ function enqueue_lenis_script() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_lenis_script');
 
+function enqueue_simplebar_assets () {
+	wp_enqueue_style(
+		'simplebar-css', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css',
+		 array(),
+    	null);
+
+	wp_enqueue_script(
+		'simplebar-js', 'https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js',
+    	array(),
+    	null,
+    	true);
+}
+
+add_action('wp_enqueue_scripts', 'enqueue_simplebar_assets');
+
 

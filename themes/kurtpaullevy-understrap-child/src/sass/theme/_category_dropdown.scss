@@ -1,6 +1,133 @@
 @use 'child_theme_variables';
 
 .category-dropdown {
+    display: none;
+    position: relative;
+    margin-top: 4.5rem;
+    width: 67%;
+    border-top-left-radius: 2.063rem;
+    border-top-right-radius: 2.063rem;
+    margin-bottom: 1.063rem;
+
+    & button {
+        width: 100%;
+        padding: 15px 20px;
+        z-index: 3;
+        position: relative;
+        background-color: child_theme_variables.$btn-background-color;
+    }
+
+    & button .caret-icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    & button .caret-icon svg {
+        transition: transform 0.3s ease;
+        transform-origin: center;
+    }
+
+    & button .caret-icon.rotated svg {
+        transform: rotate(180deg);
+    }
+
+    & button > span {
+        margin: 0 auto;
+    }
+
+    & .dropdown-toggle::after {
+       content: none;
+    }
+}
+
+#dropdown-btn-text {
+    font-size: 12px;
+    letter-spacing: 0.075rem;
+}
+
+.simplebar-content ul > *:not(:last-child) {
+    border-bottom: .5px solid #CFCFCF;
+}
+
+.simplebar-track.simplebar-vertical {
+    width: 11px;
+    right: 0;
+}
+
+.simplebar-scrollbar {
+    left: 4px;
+    width: 3px;
+}
+
+.simplebar-scrollbar::before {
+    background-color: #939090 !important;
+    border-radius: 4px !important;
+    min-height: 32px;
+    width: 100%;
+}
+
+.category-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    background: child_theme_variables.$btn-background-color;
+
+    & .menu-item {
+        display: flex;
+        width: 100%;
+    }
+
+    & .menu-item:hover {
+        background-color: child_theme_variables.$gray-300;
+    }
+
+    & .menu-item a {
+        width: 100%;
+        padding: 17px 15px;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        text-decoration: none;
+        font-size: 12px;
+        letter-spacing: 0.075rem;
+    }
+
+    &.open {
+        max-height: 208px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+    .hidden {
+        display: none;
+    }   
+
+    .visible {
+        display: flex;
+    }
+
+    .scroll-container {
+        scrollbar-width: none;
+        max-height: 208px;
+        overflow: auto;
+    }
+
+    body:is(.blog) {
+    .category-dropdown {
+        display: block;
+    }
+}
+
+/*.category-dropdown {
+    display: none;
     margin-bottom: 1.063rem;
     width: 100%;
     position: relative;
@@ -40,11 +167,35 @@
     }
 }
 
+.simplebar-content > *:not(:last-child) {
+    border-bottom: .5px solid #CFCFCF;
+}
+
+.simplebar-track.simplebar-vertical {
+    width: 11px;
+    right: 0;
+}
+
+.simplebar-scrollbar {
+    left: 4px;
+    width: 3px;
+}
+
+.simplebar-scrollbar::before {
+    background-color: #939090 !important;
+    border-radius: 4px !important;
+    min-height: 32px;
+    width: 100%;
+}
+
 .category-dropdown-menu {
+    scrollbar-width: none;
+    max-height: calc(4 * 52px);
+    overflow-y: scroll;
     display: none;
     background-color: child_theme_variables.$btn-background-color;
-    position: absolute; /* Remove the menu from document flow */
-    top: 100%; /* Position the dropdown directly below the button */
+    position: absolute;
+    top: 100%;
     left: 0;
     width: 100%;
     z-index: 2;
@@ -54,10 +205,6 @@
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
     }
-        
-        & > *:not(:last-child) {
-            border-bottom: .5px solid #CFCFCF;
-        }
 
         & .menu-item {
             display: flex;
@@ -85,21 +232,10 @@
         }
     }
     
-    .site-main .category-dropdown {
-        display: none;
-    }
-    
-    .widget-area .category-dropdown {
-        display: none;
-    }
 
     @media only screen and (min-width: 1440px) {
 
         body:is(.blog) {
-            .site-main .category-dropdown {
-                display: none;
-            }
-    
             .widget-area .category-dropdown {
                 display: block;
                 width: 67%;
@@ -124,17 +260,4 @@
                 letter-spacing: 0.075rem;
             }
         }
-    }
-    
-    @media only screen and (max-width: 1439px) {
-    
-        body:is(.blog) {
-            .site-main .category-dropdown {
-                display: block;
-            }
-        
-            .widget-area .category-dropdown {
-                display: none;
-            }
-        }
-    }
+    }*/

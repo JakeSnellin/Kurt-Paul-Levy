@@ -9,6 +9,7 @@ import { categoryDropdown } from "./category-dropdown.js";
 import { galleryLightboxController } from "./lightbox.js";
 import { handleBackToTopButton } from "./back-to-top-btn.js";
 import { hoverMenuItems } from "./hover-menu-items.js";
+import { categoryNavbar } from "./category-navbar.js";
 
 (function($) {
 
@@ -19,6 +20,7 @@ import { hoverMenuItems } from "./hover-menu-items.js";
         toggleShowNav($);
         validateAndRegisterUser($); 
         categoryDropdown($);
+        categoryNavbar($);
         galleryLightboxController($);
         handleBackToTopButton($);
         hoverMenuItems($);

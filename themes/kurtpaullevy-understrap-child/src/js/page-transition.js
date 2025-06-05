@@ -5,9 +5,6 @@ export function pageTransition ($) {
   let isTransitioning = false;
 
   // Function to trigger page fade-in
-  /*function pageFadeIn() {
-    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
-  }*/
 
   function pageFadeIn() {
     // Check if it's an archive page
@@ -16,14 +13,14 @@ export function pageTransition ($) {
       $('#sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
   
       // Perform your layout calculations first, then add the class
-      calculateImageSizes($); // Assuming you have a function like this
+      calculateImageSizes($);
   
       // Then add .loaded to .content-area
       $('.content-area').addClass('loaded');
   
     } else {
       // For all other pages, load everything at once
-      $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+      $('.content-area, #sidebar__contact, .nav-category-menu, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
     }
   }
 

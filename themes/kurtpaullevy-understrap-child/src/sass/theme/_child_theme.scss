@@ -14,6 +14,7 @@
 @use 'back_to_top';
 @use './pages/biography_page.scss';
 @use './pages/front_page.scss';
+@use './header_category_menu.scss';
 
 @font-face {
     font-family: "DIN-Regular";
@@ -46,7 +47,6 @@ html, body {
 
 body {
     margin-top: child_theme_variables.$body-margin;
-    touch-action: manipulation;
 }
 
 a {

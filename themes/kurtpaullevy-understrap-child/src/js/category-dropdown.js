@@ -1,4 +1,4 @@
-import { filterContentByCategoryAjax } from './ajax/filterContentByCategoryAjax.js';
+import { handleCategoryFilter } from './handleCategoryFilter.js';
 
 export function categoryDropdown($) {
 
@@ -6,13 +6,6 @@ export function categoryDropdown($) {
     const $menu = $('.category-dropdown-menu');
     const $scrollContainer = $('.scroll-container');
     const $dropdown = $('.category-dropdown');
-
-    /*$('.scroll-container').on('wheel', function (e) {
-        console.log('Wheel scroll triggered on dropdown');
-    });
-
-    const simplebarInstance = SimpleBar.instances.get($('.scroll-container')[0]);
-    console.log(simplebarInstance.getScrollElement()); // should return a scrollable element*/
 
     function toggleDropdown () {
         const caretIcon = $dropdown.find('.caret-icon');
@@ -59,7 +52,7 @@ export function categoryDropdown($) {
 
         toggleDropdown();
 
-        filterContentByCategoryAjax($, { category: categoryText });
+        handleCategoryFilter($, categoryText);
     });
 
     function setupOutsideClickListener () {

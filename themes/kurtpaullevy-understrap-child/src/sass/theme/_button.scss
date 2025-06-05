@@ -55,6 +55,20 @@
   }
 }
 
+.btn-nav-category {
+  &:focus-visible {
+    box-shadow: child_theme_variables.$btn-box-shadow;
+    outline: 1px solid child_theme_variables.$btn-focus-border-color;
+    background-color: child_theme_variables.$btn-background-color;
+  }
+
+  &:hover,
+  &:active, &:focus:active {
+    background-color: child_theme_variables.$gray-300;
+    outline: none;
+  }
+}
+
 // Raised button specific styles
 button.btn.raised {
   @include raised-btn;

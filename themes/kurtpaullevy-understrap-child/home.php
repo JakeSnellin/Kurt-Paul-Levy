@@ -29,8 +29,6 @@ $container = get_theme_mod( 'understrap_container_type' );
             <main class="site-main" id="main" role="main">
 
                 <?php get_template_part( 'global-templates/lightbox' ); ?>
-
-                <?php get_template_part( 'global-templates/dropdown', 'category' ) ?>
                 
                 <div id="image-grid-container">
                     <?php

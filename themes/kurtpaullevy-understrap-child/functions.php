@@ -367,6 +367,18 @@ function add_span_to_menu_item($items, $args) {
 
 add_filter('wp_nav_menu_items', 'add_span_to_menu_item', 10, 2);
 
+function add_button_to_menu_item($items, $args) {
+	if($args->theme_location === 'category_dropdown'){
+			$items = preg_replace_callback('/<a[^>]*?>(.*?)<\/a>/s', function ($matches) {
+    		$label = wp_strip_all_tags($matches[1]); // removes <span>, <strong>, etc.
+    		return '<button aria-pressed="false" type="button" class="btn raised btn-nav-category">' . esc_html($label) . '</button>';
+		}, $items);
+	}
+	return $items;
+}
+
+add_filter('wp_nav_menu_items', 'add_button_to_menu_item', 10, 2);
+
 function enqueue_lenis_script() {
     wp_enqueue_script(
         'lenis',
@@ -400,5 +412,7 @@ function enqueue_simplebar_assets () {
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_simplebar_assets');
+
+
 
 

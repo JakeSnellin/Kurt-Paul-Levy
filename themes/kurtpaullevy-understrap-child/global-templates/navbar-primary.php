@@ -37,6 +37,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 		);
 		?>
 
+		<ul class="nav-category-menu">
+			<?php get_template_part('global-templates/category-menu-items') ?>
+      	</ul>
+
 	</div><!-- .container(-fluid) -->
 
 </nav><!-- #main-nav -->

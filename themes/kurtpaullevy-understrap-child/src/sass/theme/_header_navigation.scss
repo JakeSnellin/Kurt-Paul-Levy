@@ -6,6 +6,7 @@
     flex-direction: row;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    padding: 0 0.25rem;
 }
 
 .navbar-nav li {
@@ -37,22 +38,35 @@
     will-change: transform;
 }
 
+body.blog #main-nav { 
+    border: none;
+}
+
 .custom-logo-link {
-    padding-inline-start: 1em;
+    padding-inline-start: 1.25rem;
     display: block;
-    padding-bottom: 1.25em;
+    padding-bottom: 1.25rem;
 }
 
 header {
     div.container-fluid {
-        padding: 1.875rem 0.25rem 0 0.25rem;
+        padding: 1.875rem 0 0;
     }
 
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
 }
 
+body.blog {
+    margin-top: child_theme_variables.$body-margin-blog;
+}
+
 @media only screen and (min-width: 1440px) {
+
+    body.blog {
+        margin-top: 0px;
+    }
+
     .custom-logo-link {
         padding-bottom: 3.375em;
         padding-inline-start: 0;

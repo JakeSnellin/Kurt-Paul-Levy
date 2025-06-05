@@ -7054,9 +7054,6 @@
 	  let isTransitioning = false;
 
 	  // Function to trigger page fade-in
-	  /*function pageFadeIn() {
-	    $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
-	  }*/
 
 	  function pageFadeIn() {
 	    // Check if it's an archive page
@@ -7065,13 +7062,13 @@
 	      $('#sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
 
 	      // Perform your layout calculations first, then add the class
-	      calculateImageSizes($); // Assuming you have a function like this
+	      calculateImageSizes($);
 
 	      // Then add .loaded to .content-area
 	      $('.content-area').addClass('loaded');
 	    } else {
 	      // For all other pages, load everything at once
-	      $('.content-area, #sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
+	      $('.content-area, #sidebar__contact, .nav-category-menu, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
 	    }
 	  }
 
@@ -7217,18 +7214,17 @@
 	  });
 	}
 
+	function handleCategoryFilter($, categoryText) {
+	  filterContentByCategoryAjax($, {
+	    category: categoryText
+	  });
+	}
+
 	function categoryDropdown($) {
 	  const $toggleBtn = $('.category-dropdown__menu-btn');
 	  const $menu = $('.category-dropdown-menu');
 	  const $scrollContainer = $('.scroll-container');
 	  const $dropdown = $('.category-dropdown');
-
-	  /*$('.scroll-container').on('wheel', function (e) {
-	      console.log('Wheel scroll triggered on dropdown');
-	  });
-	    const simplebarInstance = SimpleBar.instances.get($('.scroll-container')[0]);
-	  console.log(simplebarInstance.getScrollElement()); // should return a scrollable element*/
-
 	  function toggleDropdown() {
 	    const caretIcon = $dropdown.find('.caret-icon');
 	    caretIcon.toggleClass('rotated');
@@ -7266,9 +7262,7 @@
 	    const categoryText = $this.text();
 	    $('#dropdown-btn-text').text(categoryText);
 	    toggleDropdown();
-	    filterContentByCategoryAjax($, {
-	      category: categoryText
-	    });
+	    handleCategoryFilter($, categoryText);
 	  });
 	  function setupOutsideClickListener() {
 	    function outsideClickHandler(e) {
@@ -7550,6 +7544,18 @@
 	  });
 	}
 
+	function categoryNavbar($) {
+	  $('body').on('click', '.nav-category-menu .menu-item', function (e) {
+	    e.preventDefault();
+	    const categoryText = $(this).text();
+	    handleCategoryFilter($, categoryText);
+	  });
+	  $('.btn-nav-category').on('click', function () {
+	    $('.btn-nav-category').attr('aria-pressed', 'false');
+	    $(this).attr('aria-pressed', 'true');
+	  });
+	}
+
 	// Add your custom JS here.
 
 	(function ($) {
@@ -7560,6 +7566,7 @@
 	    toggleShowNav($);
 	    validateAndRegisterUser($);
 	    categoryDropdown($);
+	    categoryNavbar($);
 	    galleryLightboxController($);
 	    handleBackToTopButton($);
 	    hoverMenuItems($);

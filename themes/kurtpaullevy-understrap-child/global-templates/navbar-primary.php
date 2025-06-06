@@ -38,7 +38,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 		?>
 
 		<ul class="nav-category-menu">
-			<?php get_template_part('global-templates/category-menu-items') ?>
+			<?php
+				get_template_part('global-templates/category-menu-items', null, [
+    			'menu_location' => 'category_navbar'
+			]);
+			?>
       	</ul>
 
 	</div><!-- .container(-fluid) -->

@@ -19,7 +19,11 @@ defined( 'ABSPATH' ) || exit;
   <div class="category-dropdown-menu" aria-labelledby="dropdownMenuButton">
     <div data-simplebar data-lenis-prevent class="scroll-container">
       <ul>
-        <?php get_template_part('global-templates/category-menu-items') ?>
+        <?php
+          get_template_part('global-templates/category-menu-items', null, [
+          'menu_location' => 'category_dropdown'
+          ]);
+        ?>
       </ul>
     </div>
   </div>

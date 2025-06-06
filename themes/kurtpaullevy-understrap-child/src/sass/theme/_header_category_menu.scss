@@ -26,27 +26,42 @@
 }
 
 .btn-navbar-category {
+  background-color: #EFEFEF;
+  color: inherit;
+
+  // Focus visible (keyboard users)
   &:focus-visible {
     box-shadow: child_theme_variables.$btn-box-shadow;
     outline: 1px solid child_theme_variables.$btn-focus-border-color;
-    background-color: child_theme_variables.$btn-background-color;
+    background-color: #EFEFEF;
+    color: inherit;
   }
 
-  &:hover,
+  // Hover state
+  &:hover {
+    background-color: #D8D7D7;
+    color: inherit;
+  }
+
+  // Pressed & held state (same as hover)
   &:active,
   &:focus:active {
-    background-color: child_theme_variables.$gray-300 !important;
+    background-color: #D8D7D7 !important;
+    color: inherit !important;
     outline: none;
   }
 
+  // Selected/active state
   &.active {
     background-color: #807F7F !important;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
   }
 
+  // Mobile interaction fixes
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   user-select: none;
+  touch-action: manipulation;
 }
 
 body.blog {

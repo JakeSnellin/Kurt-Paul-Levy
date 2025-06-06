@@ -22464,27 +22464,37 @@ body.home .wrapper {
 }
 
 .btn-navbar-category {
+  background-color: #EFEFEF;
+  color: inherit;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  touch-action: manipulation;
 }
 
 .btn-navbar-category:focus-visible {
   box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
   outline: 1px solid #000AC9;
   background-color: #EFEFEF;
+  color: inherit;
 }
 
-.btn-navbar-category:hover, .btn-navbar-category:active, .btn-navbar-category:focus:active {
+.btn-navbar-category:hover {
+  background-color: #D8D7D7;
+  color: inherit;
+}
+
+.btn-navbar-category:active, .btn-navbar-category:focus:active {
   background-color: #D8D7D7 !important;
+  color: inherit !important;
   outline: none;
 }
 
 .btn-navbar-category.active {
   background-color: #807F7F !important;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 body.blog .nav-category-menu {

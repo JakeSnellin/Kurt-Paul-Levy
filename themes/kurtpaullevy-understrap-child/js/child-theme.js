@@ -7550,8 +7550,8 @@
 	    const categoryText = $(this).text();
 	    handleCategoryFilter($, categoryText);
 	  });
-	  $('.btn-nav-category').on('click', function () {
-	    $('.btn-nav-category').attr('aria-pressed', 'false');
+	  $('.nav-category-menu').on('click', '.btn-navbar-category', function () {
+	    $('.nav-category-menu .btn-navbar-category').attr('aria-pressed', 'false');
 	    $(this).attr('aria-pressed', 'true');
 	  });
 	}

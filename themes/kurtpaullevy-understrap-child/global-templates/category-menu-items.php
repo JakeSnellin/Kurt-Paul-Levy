@@ -5,18 +5,16 @@
  * @package Understrap
  */
 
-// Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-?>
+// Default fallback in case no location is passed
+$menu_location = isset($args['menu_location']) ? sanitize_key($args['menu_location']) : 'category_dropdown';
 
-<?php 
-// Display the menu if it exists
 wp_nav_menu(array(
-    'theme_location' => 'category_dropdown',
-    'container' => false,
-    'items_wrap' => '%3$s', // Only outputs the <li> items
-    'depth' => 1, // Prevents nested menu items from being displayed
-    'walker' => new Walker_Nav_Menu() // Optional: if you need custom walker for dropdowns
-)); 
+    'theme_location' => $menu_location,
+    'container'      => false,
+    'items_wrap'     => '%3$s', // Only outputs the <li> items
+    'depth'          => 1,
+    'walker'         => new Walker_Nav_Menu(),
+));
 ?>

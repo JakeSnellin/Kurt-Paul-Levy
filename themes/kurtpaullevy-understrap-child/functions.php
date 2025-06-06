@@ -107,6 +107,7 @@ function understrap_child_register_menus() {
 		'primary' 			=> esc_html__('Primary Menu', 'understrap-child'),
 		'sidebar' 			=> esc_html__('Sidebar Menu', 'understrap-child'),
 		'category_dropdown' => esc_html__('Dropdown Menu', 'understrap-child'),
+		'category_navbar'   => esc_html__('Category Navbar Menu', 'understrap-child'),
 	));
 }
 
@@ -344,17 +345,15 @@ add_action('wp_ajax_filter_category_posts', 'filter_category_posts');
 // Hook for category filter functionality (non-logged-in users)
 add_action('wp_ajax_nopriv_filter_category_posts', 'filter_category_posts');
 
-function add_class_to_specific_menu_item( $classes, $item, $args ) {
-	// Check if the menu item ID is 65
-	if( $item->ID === 65 ){
-		// Add custom hidden class to menu item
-		$classes[] = 'hidden';
+function hide_first_menu_item( $classes, $item, $args ) {
+	if ( $args->theme_location === 'category_dropdown' && $item->ID === 65 ){
+			$classes[] = 'hidden';
 	}
 	
 	return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'add_class_to_specific_menu_item', 10, 3 );
+add_filter( 'nav_menu_css_class', 'hide_first_menu_item', 10, 3 );
 
 function add_span_to_menu_item($items, $args) {
 	if($args->theme_location === 'category_dropdown'){
@@ -368,15 +367,19 @@ function add_span_to_menu_item($items, $args) {
 add_filter('wp_nav_menu_items', 'add_span_to_menu_item', 10, 2);
 
 function add_button_to_menu_item($items, $args) {
-	if($args->theme_location === 'category_dropdown'){
-			$items = preg_replace_callback('/<a[^>]*?>(.*?)<\/a>/s', function ($matches) {
-    		$label = wp_strip_all_tags($matches[1]); // removes <span>, <strong>, etc.
-    		return '<button aria-pressed="false" type="button" class="btn raised btn-nav-category">' . esc_html($label) . '</button>';
-		}, $items);
-	}
-	return $items;
-}
+    if ($args->theme_location === 'category_navbar' || $args->theme_location === 'category_dropdown') {
+        $items = preg_replace_callback('/<a[^>]*?>(.*?)<\/a>/s', function ($matches) use ($args) {
+            $label = wp_strip_all_tags($matches[1]);
 
+            // Conditional classes
+            $context_class = $args->theme_location === 'category_navbar' ? 'btn-navbar-category raised' : 'btn-dropdown-category';
+
+            return '<button aria-pressed="false" type="button" class="btn ' . esc_attr($context_class) . '">' . esc_html($label) . '</button>';
+        }, $items);
+    }
+
+    return $items;
+}
 add_filter('wp_nav_menu_items', 'add_button_to_menu_item', 10, 2);
 
 function enqueue_lenis_script() {

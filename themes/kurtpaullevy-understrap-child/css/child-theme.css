@@ -21608,6 +21608,11 @@ body.blog {
   outline: none;
 }
 
+.btn-navbar-category.active {
+  background-color: #807F7F;
+  color: #FFFFFF;
+}
+
 button.btn.raised:active {
   box-shadow: none !important;
   transform: translateY(2px);
@@ -22472,9 +22477,10 @@ body.home .wrapper {
   border: none;
 }
 
-.btn-navbar-category[aria-pressed=true] {
+.btn-navbar-category.active {
   background-color: #807F7F;
   color: #FFFFFF;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.blog .nav-category-menu {

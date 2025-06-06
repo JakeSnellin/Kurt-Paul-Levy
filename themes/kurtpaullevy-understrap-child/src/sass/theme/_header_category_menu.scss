@@ -25,9 +25,10 @@
     border: none;
 }
 
-.btn-navbar-category[aria-pressed="true"] {
+.btn-navbar-category.active {
   background-color: #807F7F;
   color: #FFFFFF;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body.blog {

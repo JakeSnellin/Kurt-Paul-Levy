@@ -7550,9 +7550,9 @@
 	    const categoryText = $(this).text();
 	    handleCategoryFilter($, categoryText);
 	  });
-	  $('.nav-category-menu').on('click', '.btn-navbar-category', function () {
-	    $('.nav-category-menu .btn-navbar-category').attr('aria-pressed', 'false');
-	    $(this).attr('aria-pressed', 'true');
+	  $('.nav-category-menu').on('click touchstart', '.btn-navbar-category', function () {
+	    $('.nav-category-menu .btn-navbar-category').removeClass('active').attr('aria-pressed', 'false');
+	    $(this).addClass('active').attr('aria-pressed', 'true');
 	  });
 	}
 

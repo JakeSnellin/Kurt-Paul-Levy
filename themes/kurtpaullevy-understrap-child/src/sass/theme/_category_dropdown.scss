@@ -18,6 +18,7 @@
 
     & button {
         background-color: child_theme_variables.$btn-background-color;
+        line-height: 100%;
     }
 
     & .category-dropdown__menu-btn .caret-icon {

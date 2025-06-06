@@ -22464,7 +22464,7 @@ body.home .wrapper {
 }
 
 .btn-navbar-category {
-  background-color: #EFEFEF;
+  background-color: #E6E6E6;
   color: inherit;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -22474,18 +22474,14 @@ body.home .wrapper {
   touch-action: manipulation;
 }
 
-.btn-navbar-category:hover {
-  background-color: #D8D7D7;
-  color: inherit;
-}
-
 .btn-navbar-category:focus, .btn-navbar-category:focus-visible {
+  outline: 1px solid #000AC9;
   background-color: #D8D7D7;
   outline: none;
 }
 
 .btn-navbar-category:active {
-  background-color: #EFEFEF !important;
+  background-color: #E6E6E6 !important;
   color: inherit !important;
 }
 

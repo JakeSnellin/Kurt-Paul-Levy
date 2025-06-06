@@ -26,19 +26,20 @@
 }
 
 .btn-navbar-category {
-  background-color: #EFEFEF;
+  background-color: #E6E6E6;
   color: inherit;
 
   // TEMPORARY touch/click effect (optional, can be removed)
   &:focus,
   &:focus-visible {
+    outline: 1px solid child_theme_variables.$btn-focus-border-color;
     background-color: #D8D7D7;
     outline: none;
   }
 
   // Remove all :active styling to avoid mobile scroll effect
   &:active {
-    background-color: #EFEFEF !important;
+    background-color: #E6E6E6 !important;
     color: inherit !important;
   }
 

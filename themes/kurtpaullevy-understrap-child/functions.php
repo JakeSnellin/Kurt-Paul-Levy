@@ -221,7 +221,7 @@ function understrap_child_add_span_to_menu_item_text ($items, $args) {
 
 add_filter( 'wp_nav_menu_items', 'understrap_child_add_span_to_menu_item_text', 10, 2 );
 
-function understrap_child_add_contact_email_to_menu_items($items, $args) {
+/*function understrap_child_add_contact_email_to_menu_items($items, $args) {
 
 	if($args->theme_location == 'primary') {
 
@@ -237,7 +237,7 @@ function understrap_child_add_contact_email_to_menu_items($items, $args) {
 	return $items;
 }
 
-add_filter( 'wp_nav_menu_items', 'understrap_child_add_contact_email_to_menu_items', 10, 2);
+add_filter( 'wp_nav_menu_items', 'understrap_child_add_contact_email_to_menu_items', 10, 2);*/
 
 function filter_lightbox_content() {
     if (isset($_POST['category']) && isset($_POST['postId'])) {

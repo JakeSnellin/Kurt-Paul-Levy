@@ -29,35 +29,32 @@
   background-color: #EFEFEF;
   color: inherit;
 
-  // Focus visible (keyboard users)
-  &:focus-visible {
-    box-shadow: child_theme_variables.$btn-box-shadow;
-    outline: 1px solid child_theme_variables.$btn-focus-border-color;
-    background-color: #EFEFEF;
-    color: inherit;
-  }
-
   // Hover state
   &:hover {
     background-color: #D8D7D7;
     color: inherit;
   }
 
-  // Pressed & held state (same as hover)
-  &:active,
-  &:focus:active {
-    background-color: #D8D7D7 !important;
-    color: inherit !important;
+  // TEMPORARY touch/click effect (optional, can be removed)
+  &:focus,
+  &:focus-visible {
+    background-color: #D8D7D7;
     outline: none;
   }
 
-  // Selected/active state
+  // Remove all :active styling to avoid mobile scroll effect
+  &:active {
+    background-color: #EFEFEF !important;
+    color: inherit !important;
+  }
+
+  // Selected button (set via JS only)
   &.active {
     background-color: #807F7F !important;
     color: #FFFFFF !important;
   }
 
-  // Mobile interaction fixes
+  // Mobile fixes
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   user-select: none;

@@ -21597,22 +21597,6 @@ body.blog {
   outline: none;
 }
 
-.btn-navbar-category:focus-visible {
-  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
-  outline: 1px solid #000AC9;
-  background-color: #EFEFEF;
-}
-
-.btn-navbar-category:hover, .btn-navbar-category:active, .btn-navbar-category:focus:active {
-  background-color: #D8D7D7;
-  outline: none;
-}
-
-.btn-navbar-category.active {
-  background-color: #807F7F;
-  color: #FFFFFF;
-}
-
 button.btn.raised:active {
   box-shadow: none !important;
   transform: translateY(2px);
@@ -21802,6 +21786,9 @@ article {
   padding: 15px 20px;
   z-index: 3;
   position: relative;
+}
+
+.category-dropdown button {
   background-color: #EFEFEF;
 }
 
@@ -21864,7 +21851,6 @@ article {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease;
-  background: #EFEFEF;
 }
 
 .category-dropdown-menu .menu-item {
@@ -22477,9 +22463,23 @@ body.home .wrapper {
   border: none;
 }
 
+.btn-navbar-category:focus-visible {
+  box-shadow: 0px 2px 0.8px 0px rgba(0, 0, 0, 0.2);
+  outline: 1px solid #000AC9;
+  background-color: #EFEFEF;
+}
+
+.btn-navbar-category:hover, .btn-navbar-category:active, .btn-navbar-category:focus:active {
+  background-color: #D8D7D7;
+  outline: none;
+}
+
 .btn-navbar-category.active {
   background-color: #807F7F;
   color: #FFFFFF;
+}
+
+.btn-navbar-category {
   -webkit-tap-highlight-color: transparent;
 }
 

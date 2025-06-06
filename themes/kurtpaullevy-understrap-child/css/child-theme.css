@@ -21786,6 +21786,7 @@ body.home .footer-intro-text.fade-in {
 
 .category-dropdown button {
   background-color: #EFEFEF;
+  line-height: 1;
 }
 
 .category-dropdown .category-dropdown__menu-btn .caret-icon {
@@ -21872,7 +21873,7 @@ body.home .footer-intro-text.fade-in {
 }
 
 .category-dropdown-menu.open {
-  max-height: 208px;
+  max-height: 184px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -21887,7 +21888,7 @@ body.home .footer-intro-text.fade-in {
 
 .scroll-container {
   scrollbar-width: none;
-  max-height: 208px;
+  max-height: 184px;
   overflow: auto;
 }
 

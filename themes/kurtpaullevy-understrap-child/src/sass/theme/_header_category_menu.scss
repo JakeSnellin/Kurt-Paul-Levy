@@ -33,19 +33,20 @@
   }
 
   &:hover,
-  &:active, &:focus:active {
-    background-color: child_theme_variables.$gray-300;
+  &:active,
+  &:focus:active {
+    background-color: child_theme_variables.$gray-300 !important;
     outline: none;
   }
 
-   &.active {
-    background-color: #807F7F;
+  &.active {
+    background-color: #807F7F !important;
     color: #FFFFFF;
   }
-}
 
-.btn-navbar-category {
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 body.blog {

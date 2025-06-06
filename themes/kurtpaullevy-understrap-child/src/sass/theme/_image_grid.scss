@@ -5,28 +5,27 @@
     gap: 10px;
     position: relative;
   }
-  
-  article {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-  
-  #image-grid-container:hover article {
-    opacity: 0.6;  /* This is the default opacity for the non-hovered images */
-  }
-  
-  #image-grid-container:hover article:hover {
-    opacity: 1;  /* The hovered image retains full opacity */
-  }
-  
-  #image-grid-container:not(:hover) article {
-    opacity: 1;  /* When the parent is not hovered, all images have opacity 1 */
-  }
 
 @media only screen and (min-width: 1440px) {
     #image-grid-container {
         gap: 3.5rem;
         margin-top: 2.125rem;
+    }
+
+    /* Default state: all cards fully opaque */
+    .content-image-wrapper {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* If any card is hovered, dim all of them */
+    #image-grid-container:has(.content-image-wrapper:hover) .content-image-wrapper {
+      opacity: 0.6;
+    }
+
+    /* Then re-boost the hovered one back to full opacity */
+    #image-grid-container:has(.content-image-wrapper:hover) .content-image-wrapper:hover {
+      opacity: 1;
     }
 }
 

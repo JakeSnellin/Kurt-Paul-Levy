@@ -29,12 +29,6 @@
   background-color: #EFEFEF;
   color: inherit;
 
-  // Hover state
-  &:hover {
-    background-color: #D8D7D7;
-    color: inherit;
-  }
-
   // TEMPORARY touch/click effect (optional, can be removed)
   &:focus,
   &:focus-visible {

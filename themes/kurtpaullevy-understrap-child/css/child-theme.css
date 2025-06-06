@@ -22459,13 +22459,14 @@ body.home .wrapper {
 .nav-category-menu li button {
   padding: 8px 18px;
   border-radius: 36px;
-  background-color: #E6E6E6;
   border: none;
 }
 
 .btn-navbar-category {
+  border: none;
   background-color: #E6E6E6;
   color: inherit;
+  transition: background-color 0.15s ease-in-out;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -22477,7 +22478,11 @@ body.home .wrapper {
 .btn-navbar-category:focus, .btn-navbar-category:focus-visible {
   outline: 1px solid #000AC9;
   background-color: #D8D7D7;
-  outline: none;
+}
+
+.btn-navbar-category:hover {
+  background-color: #E6E6E6;
+  color: inherit;
 }
 
 .btn-navbar-category:active {

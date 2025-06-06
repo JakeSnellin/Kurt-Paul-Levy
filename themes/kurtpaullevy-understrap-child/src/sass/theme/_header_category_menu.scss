@@ -21,20 +21,25 @@
 .nav-category-menu li button {
     padding: 8px 18px;
     border-radius: 36px;
-    background-color: #E6E6E6;
     border: none;
 }
 
 .btn-navbar-category {
+  border: none;
   background-color: #E6E6E6;
   color: inherit;
+  transition: background-color 0.15s ease-in-out;
 
   // TEMPORARY touch/click effect (optional, can be removed)
   &:focus,
   &:focus-visible {
     outline: 1px solid child_theme_variables.$btn-focus-border-color;
     background-color: #D8D7D7;
-    outline: none;
+  }
+
+   &:hover {
+    background-color: #E6E6E6;
+    color: inherit;
   }
 
   // Remove all :active styling to avoid mobile scroll effect

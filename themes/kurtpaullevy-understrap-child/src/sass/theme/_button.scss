@@ -67,6 +67,11 @@
     background-color: child_theme_variables.$gray-300;
     outline: none;
   }
+
+   &.active {
+    background-color: #807F7F;
+    color: #FFFFFF;
+  }
 }
 
 // Raised button specific styles

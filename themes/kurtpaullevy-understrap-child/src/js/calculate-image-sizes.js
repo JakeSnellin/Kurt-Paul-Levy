@@ -62,19 +62,23 @@ export function calculateImageSizes($) {
   };
 
   let resizeTimeout;
-  $(window).on('resize', function () {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-      // Only run if viewport size really changed
-      const currentWidth = window.innerWidth;
-      const currentHeight = window.innerHeight;
+$(window).on('resize', function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    const currentWidth = window.innerWidth;
+    const currentHeight = window.innerHeight;
 
-      if (currentWidth !== lastViewport.width || currentHeight !== lastViewport.height) {
-        lastViewport.width = currentWidth;
-        lastViewport.height = currentHeight;
-        alignImagesByTallest();
-      }
-      // else: Ignore resize events caused by UI chrome changes that don't affect layout
-    }, 100);
-  });
+    const widthDiff = Math.abs(currentWidth - lastViewport.width);
+    const heightDiff = Math.abs(currentHeight - lastViewport.height);
+
+    const TOLERANCE = 50; // Allow for minor changes on iPad scroll
+
+    if (widthDiff > 0 || heightDiff > TOLERANCE) {
+      lastViewport.width = currentWidth;
+      lastViewport.height = currentHeight;
+      alignImagesByTallest();
+    }
+    // else: ignore minor changes likely caused by UI chrome
+  }, 100);
+});
 }

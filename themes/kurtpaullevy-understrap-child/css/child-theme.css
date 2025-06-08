@@ -21609,7 +21609,7 @@ button.btn.raised:active {
 .entry-content p {
   margin-top: 0.563rem;
   margin-bottom: 1.375rem;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 
 .home-page .entry-content p {
@@ -21621,25 +21621,38 @@ button.btn.raised:active {
   cursor: pointer;
 }
 
+#selected-work {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: clamp(10px, 4vw, 54px) 0 auto 0;
+  gap: clamp(54px, 4vw, 94px);
+}
+
+body.archive .wrapper {
+  padding: 0;
+}
+
+.wp-post-image {
+  will-change: width, height;
+}
+
+@media only screen and (min-width: 640px) {
+  #selected-work {
+    margin-right: 11vw;
+    margin-left: auto;
+    align-items: flex-end;
+  }
+}
 @media only screen and (min-width: 1440px) {
   .entry-content p {
     margin: 0;
-    font-size: 0.75rem;
   }
   .content-image-wrapper.category-page {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     gap: 8.625rem;
-  }
-  #selected-work {
-    display: flex;
-    gap: 4.625rem;
-    flex-direction: column;
-    align-items: flex-end;
-    margin: 2.125rem 11vw 0 auto;
-    width: -moz-fit-content;
-    width: fit-content;
   }
   .content-image-wrapper.home-page .entry-content p {
     margin: 1.5rem 0;

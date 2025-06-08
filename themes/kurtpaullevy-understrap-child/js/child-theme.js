@@ -7002,7 +7002,7 @@
 
 	    // Step 1: Set max height for the tallest image (for scaling)
 	    tallestImage.css({
-	      maxHeight: window.innerWidth >= 1400 ? '93vh' : '83vh',
+	      maxHeight: '89vh',
 	      height: 'auto',
 	      width: 'auto'
 	    });

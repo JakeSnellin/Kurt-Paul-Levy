@@ -6977,6 +6977,8 @@
 
 	function calculateImageSizes($) {
 	  if (!$('body').hasClass('archive')) return;
+	  let alignTimeout;
+	  let observer;
 	  function alignImagesByTallest() {
 	    const images = $('.wp-post-image');
 	    if (images.length === 0) return;
@@ -6989,8 +6991,8 @@
 	    let tallestHeight = 0;
 	    images.each(function () {
 	      const img = $(this)[0];
-	      if (img.complete && img.height > tallestHeight) {
-	        tallestHeight = img.height;
+	      if (img.complete && img.naturalHeight > tallestHeight) {
+	        tallestHeight = img.naturalHeight;
 	        tallestImage = $(this);
 	      }
 	    });
@@ -7017,13 +7019,33 @@
 	      });
 	    }, 50);
 	  }
+	  function debounceAlign() {
+	    clearTimeout(alignTimeout);
+	    alignTimeout = setTimeout(alignImagesByTallest, 100);
+	  }
 
-	  // Run on load
-	  $(window).on('load', function () {
-	    alignImagesByTallest();
+	  // Re-align when any image loads
+	  $('.wp-post-image').each(function () {
+	    const img = this;
+	    if (!img.complete) {
+	      $(img).on('load', debounceAlign);
+	    }
 	  });
 
-	  // Store the last known viewport size
+	  // Observe for new images being lazy-loaded
+	  observer = new MutationObserver(() => {
+	    $('.wp-post-image').off('load').on('load', debounceAlign);
+	    debounceAlign();
+	  });
+	  observer.observe(document.body, {
+	    childList: true,
+	    subtree: true
+	  });
+
+	  // Initial run
+	  $(window).on('load', debounceAlign);
+
+	  // Resize with viewport tolerance
 	  let lastViewport = {
 	    width: window.innerWidth,
 	    height: window.innerHeight
@@ -7036,14 +7058,12 @@
 	      const currentHeight = window.innerHeight;
 	      const widthDiff = Math.abs(currentWidth - lastViewport.width);
 	      const heightDiff = Math.abs(currentHeight - lastViewport.height);
-	      const TOLERANCE = 50; // Allow for minor changes on iPad scroll
-
+	      const TOLERANCE = 50;
 	      if (widthDiff > 0 || heightDiff > TOLERANCE) {
 	        lastViewport.width = currentWidth;
 	        lastViewport.height = currentHeight;
 	        alignImagesByTallest();
 	      }
-	      // else: ignore minor changes likely caused by UI chrome
 	    }, 100);
 	  });
 	}

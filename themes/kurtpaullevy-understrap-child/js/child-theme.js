@@ -7045,27 +7045,23 @@
 	  // Initial run
 	  $(window).on('load', debounceAlign);
 
-	  // Resize with viewport tolerance
-	  let lastViewport = {
-	    width: window.innerWidth,
-	    height: window.innerHeight
-	  };
+	  // Only react to real layout changes (width changes)
+	  let lastWidth = window.innerWidth;
 	  let resizeTimeout;
 	  $(window).on('resize', function () {
 	    clearTimeout(resizeTimeout);
 	    resizeTimeout = setTimeout(() => {
 	      const currentWidth = window.innerWidth;
-	      const currentHeight = window.innerHeight;
-	      const widthDiff = Math.abs(currentWidth - lastViewport.width);
-	      const heightDiff = Math.abs(currentHeight - lastViewport.height);
-	      const TOLERANCE = 50;
-	      if (widthDiff > 0 || heightDiff > TOLERANCE) {
-	        lastViewport.width = currentWidth;
-	        lastViewport.height = currentHeight;
+	      if (currentWidth !== lastWidth) {
+	        lastWidth = currentWidth;
 	        alignImagesByTallest();
 	      }
+	      // else: Ignore height-only changes (common on iOS scroll)
 	    }, 100);
 	  });
+
+	  // Optional: Respond to orientation changes
+	  window.addEventListener('orientationchange', debounceAlign);
 	}
 
 	function pageTransition($) {

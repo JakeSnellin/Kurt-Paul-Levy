@@ -21637,11 +21637,11 @@ body.archive .wrapper {
   will-change: width, height;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 768px) {
   #selected-work {
-    margin-right: 11vw;
     margin-left: auto;
     align-items: flex-end;
+    margin-right: 11vw;
   }
 }
 @media only screen and (min-width: 1440px) {

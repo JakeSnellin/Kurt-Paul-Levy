@@ -21235,7 +21235,7 @@ body.blog {
   margin-top: 182.93px;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   body.blog {
     margin-top: 0px;
   }
@@ -21393,7 +21393,7 @@ body.blog {
   margin-left: 2.125em;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   #left-sidebar {
     display: block;
   }
@@ -21680,7 +21680,7 @@ body.archive .wrapper {
   margin-left: auto;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
     --bs-gutter-x: $grid-gutter-width-lg;
     padding-right: 2.5rem; /* Set 1.25rem (20px) padding on the right */
@@ -21751,9 +21751,9 @@ body.home .footer-intro-text.fade-in {
   position: relative;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   #image-grid-container {
-    gap: 3.5rem;
+    gap: 2.125rem;
     margin-top: 2.125rem;
   }
   /* Default state: all cards fully opaque */
@@ -21770,7 +21770,7 @@ body.home .footer-intro-text.fade-in {
     opacity: 1;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   #image-grid-container {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -22590,7 +22590,7 @@ p {
 div.post-preview img {
     max-width: 100%;
 }*/
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   /*body:is(.home) {
 
       div.entry-content {

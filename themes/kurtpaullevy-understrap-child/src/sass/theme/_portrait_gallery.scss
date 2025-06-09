@@ -18,7 +18,8 @@ $group-widths: (
 .portrait-gallery {
     display: flex;
     gap: 0.875rem;
-    width: clamp(41rem, calc(56.25vw - 10px), 50rem);
+    width: clamp(100%, calc(56.25vw - 10px), 50rem);
+    max-width: 100%; /* extra safety to prevent overflow */
 }
 
 .portrait-gallery__group {
@@ -47,11 +48,11 @@ $group-widths: (
 @media only screen and (min-width: 1184px) {
 
     .portrait-gallery {
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .portrait-gallery__group {
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .portrait-gallery-title {

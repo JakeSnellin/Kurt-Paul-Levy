@@ -22145,7 +22145,8 @@ body:is(.blog) .category-dropdown {
 .portrait-gallery {
   display: flex;
   gap: 0.875rem;
-  width: clamp(41rem, 56.25vw - 10px, 50rem);
+  width: clamp(100%, 56.25vw - 10px, 50rem);
+  max-width: 100%; /* extra safety to prevent overflow */
 }
 
 .portrait-gallery__group {
@@ -22173,10 +22174,10 @@ body:is(.blog) .category-dropdown {
 
 @media only screen and (min-width: 1184px) {
   .portrait-gallery {
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .portrait-gallery__group {
-    gap: 2.5rem;
+    gap: 2rem;
   }
   .portrait-gallery-title {
     margin-bottom: 3.688rem;

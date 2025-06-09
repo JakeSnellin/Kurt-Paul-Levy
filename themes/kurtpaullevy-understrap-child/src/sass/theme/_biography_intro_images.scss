@@ -18,10 +18,16 @@
     margin-bottom: 4.125rem;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
     .bio-main-images {
         display: flex;
-        gap: 4.688rem;
+        gap: 4rem;
+        justify-content: flex-start;
         margin-bottom: 4.938rem;
+    }
+
+    .bio-main-image img {
+        width: clamp(20.25rem, calc(49.61vw - 263.4px), 451px);
+        height: auto;
     }
 }

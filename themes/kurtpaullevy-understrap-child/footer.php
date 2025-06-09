@@ -37,11 +37,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <!-- Footer Section -->
         <footer class="site-footer" id="colophon">
-            <div class="d-flex flex-column flex-xxl-row">
+            <div class="site-footer__inner-wrapper">
 
                 <!-- Email Registration Form -->
-                <form novalidate id="contact-form" class="d-flex flex-column flex-xxl-row gap-xxl-4">
-                    <div class="form-group mb-xxl-0">
+                <form novalidate id="contact-form">
+                    <div class="form-group">
                         <input
                             type="email"
                             autocomplete="off"
@@ -59,7 +59,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                     <?php
                         $base_classes = is_front_page() ? 'btn btn-dark' : 'btn btn-light';
-                        $btn_classes = $base_classes . ' raised mb-xxl-auto me-auto';
+                        $btn_classes = $base_classes . ' raised';
                     ?>
 
                     <button
@@ -74,7 +74,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                 </form>
 
                 <!-- Site Info Section -->
-                <div class="site-info ms-xxl-auto">
+                <div class="site-info">
                         <p><?php esc_html_e('contact@kurtpaullevy.com', 'understrap-child'); ?></p>
                     <?php /* understrap_site_info(); */ ?>
                 </div><!-- .site-info -->

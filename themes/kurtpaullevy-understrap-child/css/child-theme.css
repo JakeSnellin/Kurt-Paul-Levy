@@ -22149,7 +22149,6 @@ body:is(.blog) .category-dropdown {
 
 @media only screen and (min-width: 1184px) {
   .portrait-gallery {
-    margin-left: 5.75rem;
     gap: 2.5rem;
   }
   .portrait-gallery__group {
@@ -22157,6 +22156,10 @@ body:is(.blog) .category-dropdown {
   }
   .portrait-gallery-title {
     margin-bottom: 3.688rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .portrait-gallery, .portrait-gallery-title {
     margin-left: 5.75rem;
   }
 }

@@ -22121,6 +22121,7 @@ body:is(.blog) .category-dropdown {
 .portrait-gallery {
   display: flex;
   gap: 0.875rem;
+  width: clamp(41rem, 56.25vw - 10px, 50rem);
 }
 
 .portrait-gallery__group {
@@ -22146,9 +22147,9 @@ body:is(.blog) .category-dropdown {
   margin-top: 8vh;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   .portrait-gallery {
-    display: flex;
+    margin-left: 5.75rem;
     gap: 2.5rem;
   }
   .portrait-gallery__group {
@@ -22156,6 +22157,7 @@ body:is(.blog) .category-dropdown {
   }
   .portrait-gallery-title {
     margin-bottom: 3.688rem;
+    margin-left: 5.75rem;
   }
 }
 .bio-intro-text {
@@ -22168,15 +22170,16 @@ body:is(.blog) .category-dropdown {
   margin-bottom: 1.6rem;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   .bio-intro-text {
     display: flex;
-    gap: 4.688rem;
-    margin-bottom: 6.125rem;
+    gap: 4rem;
+    justify-content: flex-start;
+    margin-bottom: 4.938rem;
     margin-top: 2.125rem;
   }
   .intro-wrapper {
-    max-width: 28rem;
+    width: clamp(20.25rem, 49.61vw - 263.4px, 451px);
   }
 }
 .bio-image-caption {
@@ -22197,11 +22200,16 @@ body:is(.blog) .category-dropdown {
   margin-bottom: 4.125rem;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   .bio-main-images {
     display: flex;
-    gap: 4.688rem;
+    gap: 4rem;
+    justify-content: flex-start;
     margin-bottom: 4.938rem;
+  }
+  .bio-main-image img {
+    width: clamp(20.25rem, 49.61vw - 263.4px, 451px);
+    height: auto;
   }
 }
 body.home .site-info {
@@ -22557,7 +22565,7 @@ p {
   width: 100%;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   body {
     margin-top: 0;
   }

@@ -33,6 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php $args = array(
 						'post_type' => 'post',
 						'posts_per_page' => -1,
+						'category_name' => 'selected-work',
 						'orderby' => 'title', 
 						'order' => 'ASC'
 					);

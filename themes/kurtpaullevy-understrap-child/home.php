@@ -31,14 +31,26 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <?php get_template_part( 'global-templates/lightbox' ); ?>
                 
                 <div id="image-grid-container">
+
+                    <?php $args = array(
+						'post_type' => 'post',
+						'posts_per_page' => -1,
+						'orderby' => 'title', 
+						'order' => 'ASC'
+					);
+					?>
+
+					<?php $query = new WP_Query($args); ?>
+
                     <?php
-                    if ( have_posts() ) :
-                        while ( have_posts() ) : the_post();
+                    if ( $query->have_posts() ) :
+                        while ( $query->have_posts() ) : $query->the_post();
                             get_template_part( 'loop-templates/content', get_post_format() );
                         endwhile;
                     else :
                         echo '<p>No posts found.</p>';
                     endif;
+                    wp_reset_postdata();
                     ?>
                 </div><!-- .image-grid-container -->
 

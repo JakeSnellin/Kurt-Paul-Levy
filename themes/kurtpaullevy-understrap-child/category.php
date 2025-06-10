@@ -30,8 +30,18 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<div id="selected-work">
 
+					<?php $args = array(
+						'post_type' => 'post',
+						'posts_per_page' => -1,
+						'orderby' => 'title', 
+						'order' => 'ASC'
+					);
+					?>
+
+					<?php $query = new WP_Query($args); ?>
+
 					<?php
-					if ( have_posts() ) {
+					if ( $query->have_posts() ) {
 						?>
 						<!--<header class="page-header">-->
 							<?php /*
@@ -41,8 +51,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 						<!--</header>--><!-- .page-header -->
 						<?php
 						// Start the loop.
-						while ( have_posts() ) {
-							the_post();
+						while ( $query->have_posts() ) {
+							$query->the_post();
 
 							/*
 							* Include the Post-Format-specific template for the content.
@@ -54,6 +64,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 					} else {
 						get_template_part( 'loop-templates/content', 'none' );
 					}
+
+					wp_reset_postdata();
 					?>
 
 				</div>

@@ -13,6 +13,9 @@ export function filterContentByCategoryAjax($, { category = 'All work' }) {
                 
                 // Fade out the current content
                 gridContainer.fadeOut(500, function() {
+                    // Scroll to the top of the page
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+
                     // Update the content after the fade-out is complete
                     gridContainer.html(response.data);
                     

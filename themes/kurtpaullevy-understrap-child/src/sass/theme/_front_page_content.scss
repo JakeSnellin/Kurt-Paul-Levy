@@ -94,7 +94,28 @@ $delays: (1: 0s, 2: 0.3s, 3: 0.6s);
     }
   }
 
+@media (min-width: 1184px) and (max-width: 1440px) {
+
+    .content-area__media-item img {
+        width: 50%;
+}
+
+    #index-wrapper {
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .content-area__media-group {
+        margin-top: 0;
+    }
+
+}
+
 @media only screen and (min-width: 1440px) {
+
+    .content-area__media-item img {
+        width: 100%;
+}
 
     #index-wrapper {
         height: 100vh;

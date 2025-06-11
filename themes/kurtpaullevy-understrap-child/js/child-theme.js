@@ -6975,34 +6975,6 @@
 	  });
 	}
 
-	function calculateImageSizes($) {
-	  if (!$('body').hasClass('archive')) return;
-	  const images = $('.wp-post-image');
-	  var $tallestImage = null;
-	  var maxHeight = 0;
-
-	  // Find the tallest image
-	  images.each(function () {
-	    var $img = $(this);
-	    var height = $img.height();
-	    if (height > maxHeight) {
-	      maxHeight = height;
-	      $tallestImage = $img;
-	    }
-	  });
-	  if ($tallestImage) {
-	    var targetWidth = $tallestImage.width();
-
-	    // Apply that width to all images
-	    images.each(function () {
-	      $(this).css({
-	        width: targetWidth + 'px',
-	        height: 'auto'
-	      });
-	    });
-	  }
-	}
-
 	function pageTransition($) {
 	  let isTransitioning = false;
 
@@ -7013,9 +6985,6 @@
 	    if ($('body').hasClass('archive')) {
 	      // Only load non-content-area elements immediately
 	      $('#sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
-
-	      // Perform your layout calculations first, then add the class
-	      calculateImageSizes($);
 
 	      // Then add .loaded to .content-area
 	      $('.content-area').addClass('loaded');
@@ -7456,11 +7425,40 @@
 	  });
 	}
 
+	function calculateImageSizes($) {
+	  if (!$('body').hasClass('archive')) return;
+	  const images = $('.wp-post-image');
+	  var $tallestImage = null;
+	  var maxHeight = 0;
+
+	  // Find the tallest image
+	  images.each(function () {
+	    var $img = $(this);
+	    var height = $img.height();
+	    if (height > maxHeight) {
+	      maxHeight = height;
+	      $tallestImage = $img;
+	    }
+	  });
+	  if ($tallestImage) {
+	    var targetWidth = $tallestImage.width();
+
+	    // Apply that width to all images
+	    images.each(function () {
+	      $(this).css({
+	        width: targetWidth + 'px',
+	        height: 'auto'
+	      });
+	    });
+	  }
+	}
+
 	// Add your custom JS here.
 
 	(function ($) {
 	  $(document).ready(function () {
 	    pageTransition($);
+	    calculateImageSizes($);
 	    lazyLoadImages($);
 	    progressBar($);
 	    toggleShowNav($);

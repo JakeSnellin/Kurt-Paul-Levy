@@ -35,6 +35,21 @@
 	height: 43px;
 	padding: 0;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery-lightbox__btn .icon-caret {
+	width: 8px;
+	height: 11px;
+	display: block;
+}
+
+.gallery-lightbox__btn .icon-close {
+	width: 12px;
+	height: 11px;
+	display: block;
 }
 
   .gallery-lightbox__btn--close {
@@ -124,7 +139,7 @@
 	rotate: -90deg;
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
 	.gallery-lightbox__info{
 		font-size: 12px;
 		gap: 25px;
@@ -137,7 +152,7 @@
 		top: auto;
 	}
 
-	.gallery-lightbox__controls button {
+	.gallery-lightbox button {
 		width: 65px;
 		height: 65px;
 	}

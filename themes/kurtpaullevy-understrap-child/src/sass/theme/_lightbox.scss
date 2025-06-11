@@ -1,3 +1,5 @@
+@use 'child_theme_variables';
+
 @mixin dvh-fallback {
 	top: calc(3vh + 3px); /* fallback for browsers that don't support dvh */
 	top: calc(3dvh + 3px); /* override for modern browsers */
@@ -108,9 +110,11 @@
 }
 
 .tag {
-	background-color: #EFEFEF;
-	border-radius: 27px;
-	padding: 7px 8.5px;
+	background-color: child_theme_variables.$pill-bg-color;
+    border-radius: child_theme_variables.$pill-border-radius;
+    padding: child_theme_variables.$pill-padding-y child_theme_variables.$pill-padding-x;
+    width: fit-content;
+    font-size: child_theme_variables.$pill-font-size;
 }
 
 .gallery-lightbox__info {

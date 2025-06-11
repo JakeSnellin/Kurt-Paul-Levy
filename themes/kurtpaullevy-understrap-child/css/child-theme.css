@@ -21668,7 +21668,7 @@ body.archive .wrapper {
     margin-right: 11vw;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1184px) {
   .entry-content p {
     margin: 0;
   }
@@ -21679,7 +21679,7 @@ body.archive .wrapper {
     gap: 8.625rem;
   }
   .content-image-wrapper.home-page .entry-content p {
-    margin: 1.5rem 0;
+    margin: 1.25rem 0;
   }
   .category-pill-container {
     display: flex;

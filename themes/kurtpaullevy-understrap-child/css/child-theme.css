@@ -21771,7 +21771,7 @@ body.home .footer-intro-text.fade-in {
 #image-grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 1.25rem;
   position: relative;
 }
 

@@ -21657,7 +21657,7 @@ body.archive .wrapper {
   gap: 54px;
 }
 
-.content-image-wrapper img {
+.content-image-wrapper.category-page img {
   max-height: 83vh;
   height: auto;
   width: auto;
@@ -21665,7 +21665,7 @@ body.archive .wrapper {
 }
 
 @media only screen and (min-width: 843px) {
-  .content-image-wrapper img {
+  .content-image-wrapper.category-page img {
     max-width: 648px;
   }
   #selected-work {
@@ -21674,7 +21674,7 @@ body.archive .wrapper {
   }
 }
 @media only screen and (min-width: 1440px) {
-  .content-image-wrapper img {
+  .content-image-wrapper.category-page img {
     max-height: 93vh;
   }
 }

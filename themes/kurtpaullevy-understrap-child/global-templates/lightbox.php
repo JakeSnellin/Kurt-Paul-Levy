@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
       aria-controls="gallery-lightbox" 
       id="gallery-lightbox__btn-prev"
     >
-      <?php get_template_part('icon-templates/icons', 'caret'); ?>
+      <?php get_template_part('icon-templates/icons', 'caret-prev'); ?>
     </button>
 
     <button 
@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
       aria-controls="gallery-lightbox" 
       id="gallery-lightbox__btn-next"
     >
-      <?php get_template_part('icon-templates/icons', 'caret'); ?>
+      <?php get_template_part('icon-templates/icons', 'caret-next'); ?>
     </button>
   </div>
 

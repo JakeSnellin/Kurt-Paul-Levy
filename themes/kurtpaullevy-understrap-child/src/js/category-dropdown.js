@@ -8,7 +8,7 @@ export function categoryDropdown($) {
     const $dropdown = $('.category-dropdown');
 
     function toggleDropdown () {
-        const caretIcon = $dropdown.find('.caret-icon');
+        const caretIcon = $dropdown.find('.icon-caret-down');
         caretIcon.toggleClass('rotated');
         if ($menu.hasClass('open')) {
             // Slide up (close)

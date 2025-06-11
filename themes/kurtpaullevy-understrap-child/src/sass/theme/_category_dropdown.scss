@@ -12,7 +12,7 @@
     & .category-dropdown__menu-btn {
         width: 100%;
         padding: 15px 20px;
-        z-index: 3;
+        z-index: 20;
         position: relative;
     }
 
@@ -21,20 +21,17 @@
         line-height: 1;
     }
 
-    & .category-dropdown__menu-btn .caret-icon {
+    & .category-dropdown__menu-btn .icon-caret-down {
         position: absolute;
         right: 20px;
         top: 50%;
-        transform: translateY(-50%);
-    }
-
-    & .category-dropdown__menu-btn .caret-icon svg {
+        transform: translateY(calc(-50% + 3px));
         transition: transform 0.3s ease;
         transform-origin: center;
     }
 
-    & .category-dropdown__menu-btn .caret-icon.rotated svg {
-        transform: rotate(180deg);
+    & .category-dropdown__menu-btn .icon-caret-down.rotated {
+        transform: translateY(calc(-50% + 3px)) rotate(180deg);
     }
 
     & .category-dropdown__menu-btn > span {
@@ -76,7 +73,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 2;
+    z-index: 10;
     width: 100%;
     overflow: hidden;
     max-height: 0;

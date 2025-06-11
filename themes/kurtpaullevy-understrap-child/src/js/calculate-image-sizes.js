@@ -1,4 +1,4 @@
-export function calculateImageSizes($) {
+/*export function calculateImageSizes($) {
 
    if (!$('body').hasClass('archive')) return;
 
@@ -11,7 +11,7 @@ export function calculateImageSizes($) {
       var $img = $(this);
       var height = $img.height();
 
-      if (height > maxHeight) {
+      if (height < maxHeight) {
         maxHeight = height;
         $tallestImage = $img;
       }
@@ -28,4 +28,4 @@ export function calculateImageSizes($) {
         });
       });
     }
-}
+}*/

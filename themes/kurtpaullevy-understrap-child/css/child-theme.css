@@ -22032,8 +22032,11 @@ body:is(.blog) .category-dropdown {
 
 .tag {
   background-color: #EFEFEF;
-  border-radius: 27px;
-  padding: 7px 8.5px;
+  border-radius: 1.688rem;
+  padding: 0.594rem 0.813rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.625rem;
 }
 
 .gallery-lightbox__info {

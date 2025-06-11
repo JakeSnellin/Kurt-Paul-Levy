@@ -56,15 +56,14 @@ export function categoryDropdown($) {
     });
 
     function setupOutsideClickListener () {
-        function outsideClickHandler (e) {
-            if(!$menu.is(e.target) && $menu.has(e.target).length === 0 && !$toggleBtn.is(e.target) && $toggleBtn.has(e.target).length === 0) {
-                    toggleDropdown();
-                    $(document).off('click.dropdown', outsideClickHandler);
-                }
+    function outsideClickHandler (e) {
+            if (!$(e.target).closest('.category-dropdown').length) {
+                toggleDropdown();
+                $(document).off('click.dropdown', outsideClickHandler);
+            }
         }
-    
-    setTimeout(() => {
-            $(document).on('click.dropdown', outsideClickHandler)
-        }, 0)
-  }
+
+        $(document).off('click.dropdown');
+        $(document).on('click.dropdown', outsideClickHandler);
+    }
 }

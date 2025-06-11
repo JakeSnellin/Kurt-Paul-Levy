@@ -10,13 +10,12 @@ import { galleryLightboxController } from "./lightbox.js";
 import { handleBackToTopButton } from "./back-to-top-btn.js";
 import { hoverMenuItems } from "./hover-menu-items.js";
 import { categoryNavbar } from "./category-navbar.js";
-import { calculateImageSizes } from "./calculate-image-sizes.js";
+//import { calculateImageSizes } from "./calculate-image-sizes.js";
 
 (function($) {
 
     $(document).ready(function() {
         pageTransition($);
-        calculateImageSizes($);
         lazyLoadImages($);
         progressBar($);
         toggleShowNav($);
@@ -27,5 +26,9 @@ import { calculateImageSizes } from "./calculate-image-sizes.js";
         handleBackToTopButton($);
         hoverMenuItems($);
     });
+
+    /*$(window).on('load', function () {
+        calculateImageSizes($);
+    });*/
 
 })(jQuery);

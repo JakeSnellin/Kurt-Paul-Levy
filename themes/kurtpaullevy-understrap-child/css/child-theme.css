@@ -21658,27 +21658,46 @@ body.archive .wrapper {
 }
 
 .content-image-wrapper.category-page img {
-  max-height: 83vh;
   height: auto;
-  width: auto;
   display: block;
 }
 
-@media only screen and (min-width: 843px) {
+.content-image-wrapper {
+  max-width: 300px;
+}
+
+@media only screen and (min-width: 480px) {
   .content-image-wrapper.category-page img {
-    max-width: 648px;
+    max-width: 480px;
+  }
+  .content-image-wrapper {
+    max-width: 507px;
   }
   #selected-work {
-    max-width: 843px;
-    margin: 10px clamp(30px, 4vw, 181px) 0 auto;
+    max-width: 507px;
+    margin: 10px clamp(30px, 3vw, 181px) 0 auto;
   }
 }
-@media only screen and (min-width: 1440px) {
-  .content-image-wrapper.category-page img {
-    max-height: 93vh;
+@media only screen and (min-width: 707px) {
+  .content-image-wrapper {
+    max-width: 607px;
+  }
+  #selected-work {
+    max-width: 607px;
   }
 }
+/*@media only screen and (min-width: 1440px) {
+     .content-image-wrapper.category-page img {
+        max-height: 93vh;
+    }
+}*/
 @media only screen and (min-width: 1184px) {
+  .content-image-wrapper {
+    max-width: 707px;
+  }
+  #selected-work {
+    max-width: 707px;
+  }
   #selected-work {
     display: flex;
     flex-direction: column;

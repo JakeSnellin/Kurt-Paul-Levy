@@ -1,5 +1,3 @@
-import { calculateImageSizes } from "./calculate-image-sizes";
-
 export function pageTransition ($) {
 
   let isTransitioning = false;
@@ -11,9 +9,6 @@ export function pageTransition ($) {
     if ($('body').hasClass('archive')) {
       // Only load non-content-area elements immediately
       $('#sidebar__contact, .category-dropdown, #scroll-progress-bar, body.home #wrapper-footer').addClass('loaded');
-  
-      // Perform your layout calculations first, then add the class
-      calculateImageSizes($);
   
       // Then add .loaded to .content-area
       $('.content-area').addClass('loaded');

@@ -9,6 +9,12 @@
     }
 }
 
+@media (min-width: 640px) and (max-width: 1184px) {
+  .bio-intro-text {
+    max-width: 640px;
+  }
+}
+
 @media only screen and (min-width: 1184px) {
     .bio-intro-text {
         display: flex;

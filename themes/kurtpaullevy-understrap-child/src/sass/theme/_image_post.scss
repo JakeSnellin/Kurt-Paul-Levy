@@ -32,19 +32,13 @@ body.archive .wrapper {
 }
 
 .content-image-wrapper.category-page img {
-    //max-height: 83vh;
     height: auto;
     display: block;
-}
-
-.content-image-wrapper {
-    max-width: 300px;
 }
 
 @media only screen and (min-width: 480px) {
     .content-image-wrapper.category-page img {
         max-width: 480px;
-        //max-height: 100%;
     }
 
     .content-image-wrapper {
@@ -67,12 +61,6 @@ body.archive .wrapper {
         max-width: 607px;
     }
 }
-
-/*@media only screen and (min-width: 1440px) {
-     .content-image-wrapper.category-page img {
-        max-height: 93vh;
-    }
-}*/
 
 @media only screen and (min-width: 1184px) {
 

@@ -22119,20 +22119,14 @@ body:is(.blog) .category-dropdown {
   font-size: 0.75rem;
 }
 
-.back-to-top .caret-icon {
-  position: absolute;
-  right: -24px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.back-to-top .caret-icon svg {
-  rotate: 180deg;
-  transform-origin: center;
+.back-to-top svg {
+  margin-bottom: 4px;
 }
 
 .back-to-top__btn-wrapper {
-  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
 }
 
 /* Style when button is visible */

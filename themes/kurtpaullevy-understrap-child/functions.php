@@ -367,7 +367,7 @@ function add_button_to_menu_item($items, $args) {
 }
 add_filter('wp_nav_menu_items', 'add_button_to_menu_item', 10, 2);
 
-function enqueue_lenis_script() {
+/*function enqueue_lenis_script() {
     wp_enqueue_script(
         'lenis',
         'https://unpkg.com/lenis@1.3.1/dist/lenis.min.js',
@@ -384,7 +384,7 @@ function enqueue_lenis_script() {
         true
     );
 }
-add_action('wp_enqueue_scripts', 'enqueue_lenis_script');
+add_action('wp_enqueue_scripts', 'enqueue_lenis_script');*/
 
 function enqueue_simplebar_assets () {
 	wp_enqueue_style(

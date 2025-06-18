@@ -21964,6 +21964,8 @@ body:is(.blog) .category-dropdown {
   background-color: white;
   z-index: 9999;
   transition: opacity 0.5s ease, visibility 0s 0.5s;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .gallery-lightbox.lightbox-gallery--open {

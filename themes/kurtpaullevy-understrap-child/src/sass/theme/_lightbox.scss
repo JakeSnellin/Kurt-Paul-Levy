@@ -12,6 +12,8 @@
 	inset: 0;
 	background-color: white;
 	z-index: 9999;
+	height: 100vh; // fallback
+	height: 100dvh; // override
 	transition: opacity 0.5s ease, visibility 0s 0.5s;
 
 	&.lightbox-gallery--open {

@@ -22668,8 +22668,13 @@ body.blog .nav-category-menu {
   src: url(../fonts/Inter-Regular.ttf);
   font-weight: normal;
 }
-html, body {
+body {
   height: 100%;
+  margin: 0;
+}
+
+html {
+  min-height: 100vh;
   margin: 0;
 }
 

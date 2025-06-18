@@ -23,21 +23,15 @@
     letter-spacing: 1.2px;
     font-size: child_theme_variables.$font-size-xs;
 
-    & .caret-icon {
-        position: absolute;
-        right: -24px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    & .caret-icon svg {
-        rotate: (180deg);
-        transform-origin: center;
+    & svg {
+        margin-bottom: 4px;
     }
 }
 
 .back-to-top__btn-wrapper {
-    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
 }
 
 /* Style when button is visible */

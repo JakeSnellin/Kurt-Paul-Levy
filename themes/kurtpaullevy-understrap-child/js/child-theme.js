@@ -7304,15 +7304,20 @@
 	    }
 	  });
 	  function openGalleryLightbox() {
-	    $(document.body).css('overflow', 'hidden');
+	    $('body, html').css('overflow', 'hidden');
 	    galleryLightbox.addClass('lightbox-gallery--open');
+
+	    // Force reflow to make sure the layout recalculates immediately
+	    // Accessing offsetHeight forces a reflow in the browser
+	    galleryLightbox[0].offsetHeight;
 	    galleryLightbox.attr('aria-hidden', 'false');
 	    // Focus on the close button when carousel opens
 	    galleryLightbox.focus();
 	  }
 	  closeBtn.on('click', function () {
 	    galleryLightboxTrack.css('transition', 'none');
-	    $(document.body).css('overflow', '');
+	    //$(document.body).css('overflow', '');
+	    $('body, html').css('overflow', '');
 	    galleryLightbox.removeClass('lightbox-gallery--open');
 	    galleryLightbox.attr('aria-hidden', 'true');
 
@@ -7357,6 +7362,10 @@
 	      closeBtn.click();
 	    }
 	  });
+	  function updateLightboxHeight() {
+	    $('.gallery-lightbox').css('height', window.innerHeight + 'px');
+	  }
+	  $(window).on('resize', updateLightboxHeight);
 	}
 
 	function handleBackToTopButton($) {

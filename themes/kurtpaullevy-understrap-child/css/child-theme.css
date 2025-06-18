@@ -21963,6 +21963,8 @@ body:is(.blog) .category-dropdown {
   inset: 0;
   background-color: white;
   z-index: 9999;
+  height: 100vh;
+  height: 100dvh;
   transition: opacity 0.5s ease, visibility 0s 0.5s;
 }
 

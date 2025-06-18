@@ -32,6 +32,11 @@
   }
 }
 
+body.lightbox-open {
+  margin-top: 0 !important;
+  overflow: hidden !important;
+}
+
 .gallery-lightbox__controls {
   position: absolute;
   left: calc(3vw + 10px);

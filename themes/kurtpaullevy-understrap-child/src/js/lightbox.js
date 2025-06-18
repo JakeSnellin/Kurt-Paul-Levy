@@ -115,7 +115,7 @@ export function galleryLightboxController ($) {
     })
 
     function openGalleryLightbox () {
-        $(document.body).css('overflow', 'hidden');
+        $('body').addClass('lightbox-open');
         galleryLightbox.addClass('lightbox-gallery--open');
         galleryLightbox.attr('aria-hidden', 'false');
         // Focus on the close button when carousel opens
@@ -125,6 +125,7 @@ export function galleryLightboxController ($) {
     closeBtn.on('click', function () {
         galleryLightboxTrack.css('transition', 'none');
         $(document.body).css('overflow', '');
+        $('body').removeClass('lightbox-open');
         galleryLightbox.removeClass('lightbox-gallery--open');
         galleryLightbox.attr('aria-hidden', 'true');
         

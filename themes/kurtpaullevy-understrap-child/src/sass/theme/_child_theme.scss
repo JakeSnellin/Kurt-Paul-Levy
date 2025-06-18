@@ -40,8 +40,13 @@
     font-weight: normal;
 }
 
-html, body {
+body {
     height: 100%;
+    margin: 0;
+}
+
+html {
+    min-height: 100vh;
     margin: 0;
 }
 

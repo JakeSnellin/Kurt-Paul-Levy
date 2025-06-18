@@ -21984,6 +21984,11 @@ body:is(.blog) .category-dropdown {
   transition: opacity 0.5s ease, visibility 0s 0s;
 }
 
+body.lightbox-open {
+  margin-top: 0 !important;
+  overflow: hidden !important;
+}
+
 .gallery-lightbox__controls {
   position: absolute;
   left: calc(3vw + 10px);
@@ -22663,8 +22668,13 @@ body.blog .nav-category-menu {
   src: url(../fonts/Inter-Regular.ttf);
   font-weight: normal;
 }
-html, body {
+body {
   height: 100%;
+  margin: 0;
+}
+
+html {
+  min-height: 100vh;
   margin: 0;
 }
 

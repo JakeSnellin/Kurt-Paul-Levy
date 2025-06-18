@@ -12,8 +12,9 @@
 	inset: 0;
 	background-color: white;
 	z-index: 9999;
-	height: 100vh; // fallback
-	height: 100dvh; // override
+	height: 100vh;     // fallback
+  	height: 100dvh;    // supports dynamic UI height
+  	height: 100lvh;    // NEW: includes areas below browser chrome
 	transition: opacity 0.5s ease, visibility 0s 0.5s;
 
 	&.lightbox-gallery--open {
@@ -89,13 +90,22 @@
 		- clamp(94px, 6.5vw, 106px)
 		- clamp(27px, 6.5vw, 77px)
 		- 112px
+		- env(safe-area-inset-bottom)
 	); /* fallback */
 	height: calc(
 		100dvh
 		- clamp(94px, 6.5vw, 106px)
 		- clamp(27px, 6.5vw, 77px)
 		- 112px
+		- env(safe-area-inset-bottom)
 	); /* override */
+	height: calc(
+		100lvh
+		- clamp(94px, 6.5vw, 106px)
+		- clamp(27px, 6.5vw, 77px)
+		- 112px
+		- env(safe-area-inset-bottom)
+	); /* modern override */
 }
 
 .gallery-lightbox__item img {

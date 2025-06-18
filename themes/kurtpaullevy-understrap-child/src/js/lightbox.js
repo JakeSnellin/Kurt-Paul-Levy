@@ -117,10 +117,8 @@ export function galleryLightboxController ($) {
     function openGalleryLightbox () {
         $('body, html').css('overflow', 'hidden');
         galleryLightbox.addClass('lightbox-gallery--open');
-
-        // Force reflow to make sure the layout recalculates immediately
-        // Accessing offsetHeight forces a reflow in the browser
-        galleryLightbox[0].offsetHeight;
+ 
+        updateLightboxHeight(); // JS fallback for height
 
         galleryLightbox.attr('aria-hidden', 'false');
         // Focus on the close button when carousel opens

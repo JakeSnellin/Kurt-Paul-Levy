@@ -22033,7 +22033,6 @@ body.lightbox-open {
   display: flex;
   overflow: hidden;
   padding-top: clamp(94px, 6.5vw, 106px);
-  padding-bottom: clamp(27px, 6.5vw, 77px);
   width: 100%;
   height: 100%;
 }

@@ -57,14 +57,14 @@ header {
     transition: all 0.4s ease;
 }
 
-body.blog {
-    margin-top: child_theme_variables.$body-margin-blog;
+body.blog main {
+    padding-top: 183px;
 }
 
 @media only screen and (min-width: 1184px) {
 
-    body.blog {
-        margin-top: 0px;
+    body.blog main {
+        padding-top: 0px;
     }
 
     .custom-logo-link {

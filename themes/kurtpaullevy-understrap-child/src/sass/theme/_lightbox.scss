@@ -1,5 +1,9 @@
 @use 'child_theme_variables';
 
+body.blog .wrapper {
+  padding: 0;
+}
+
 .gallery-lightbox {
   opacity: 0;
 	visibility: hidden;

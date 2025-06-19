@@ -40,13 +40,25 @@
     font-weight: normal;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
+html {
+    min-height: 100vh;
 }
 
 body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+html, body {
+    margin: 0;
+}
+
+/*body {
     margin-top: child_theme_variables.$body-margin;
+}*/
+
+main {
+  padding-top: 126px;
 }
 
 a {

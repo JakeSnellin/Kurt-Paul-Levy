@@ -21231,13 +21231,13 @@ header div.container-fluid, header div.container-sm, header div.container-md, he
   padding: 1.875rem 0 0;
 }
 
-body.blog {
-  margin-top: 182.93px;
+body.blog main {
+  padding-top: 183px;
 }
 
 @media only screen and (min-width: 1184px) {
-  body.blog {
-    margin-top: 0px;
+  body.blog main {
+    padding-top: 0px;
   }
   .custom-logo-link {
     padding-bottom: 3.375em;
@@ -21956,6 +21956,10 @@ body:is(.blog) .category-dropdown {
   display: block;
 }
 
+body.blog .wrapper {
+  padding: 0;
+}
+
 .gallery-lightbox {
   opacity: 0;
   visibility: hidden;
@@ -22664,13 +22668,24 @@ body.blog .nav-category-menu {
   src: url(../fonts/Inter-Regular.ttf);
   font-weight: normal;
 }
-html, body {
-  height: 100%;
-  margin: 0;
+html {
+  min-height: 100vh;
 }
 
 body {
-  margin-top: 126.13px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+}
+
+/*body {
+    margin-top: child_theme_variables.$body-margin;
+}*/
+main {
+  padding-top: 126px;
 }
 
 a {

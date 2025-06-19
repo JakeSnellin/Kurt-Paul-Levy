@@ -21958,8 +21958,6 @@ body:is(.blog) .category-dropdown {
 
 .gallery-lightbox {
   opacity: 0;
-  overflow: hidden;
-  width: 100%;
   visibility: hidden;
   position: fixed;
   inset: 0;
@@ -21968,7 +21966,6 @@ body:is(.blog) .category-dropdown {
   transition: opacity 0.5s ease, visibility 0s 0.5s;
   height: 100vh;
   height: 100dvh;
-  height: 100lvh; /* covers largest viewport height */
 }
 
 .gallery-lightbox.lightbox-gallery--open {

@@ -7304,7 +7304,7 @@
 	    }
 	  });
 	  function openGalleryLightbox() {
-	    $('body').addClass('lightbox-open');
+	    $(document.body).css('overflow', 'hidden');
 	    galleryLightbox.addClass('lightbox-gallery--open');
 	    galleryLightbox.attr('aria-hidden', 'false');
 	    // Focus on the close button when carousel opens
@@ -7313,7 +7313,6 @@
 	  closeBtn.on('click', function () {
 	    galleryLightboxTrack.css('transition', 'none');
 	    $(document.body).css('overflow', '');
-	    $('body').removeClass('lightbox-open');
 	    galleryLightbox.removeClass('lightbox-gallery--open');
 	    galleryLightbox.attr('aria-hidden', 'true');
 

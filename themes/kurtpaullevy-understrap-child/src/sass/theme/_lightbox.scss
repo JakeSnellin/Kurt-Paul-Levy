@@ -7,8 +7,6 @@
 
 .gallery-lightbox {
 	opacity: 0;
-	overflow: hidden;
-	width: 100%;
 	visibility: hidden;
 	position: fixed;
 	inset: 0;
@@ -17,7 +15,6 @@
 	transition: opacity 0.5s ease, visibility 0s 0.5s;
 	height: 100vh; // fallback
 	height: 100dvh; // modern browsers
-	height: 100lvh; /* covers largest viewport height */
 
 	&.lightbox-gallery--open {
 		visibility: visible; 

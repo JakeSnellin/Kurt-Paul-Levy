@@ -14,11 +14,11 @@ export function galleryLightboxController ($) {
     imageGridContainer.on('click', function (e) {
     const closestFormatImage = $(e.target).closest('.format-image');
     if (closestFormatImage.length) { // Check if an element with .format-image was found
-        index = closestFormatImage.index() + 1; // Get the index of the .format-image element
+        //index = closestFormatImage.index() + 1; // Get the index of the .format-image element
 
-        createGalleryLightboxItems();
+        /*createGalleryLightboxItems();
 
-        updateTrackPosition();
+        updateTrackPosition();*/
         
         openGalleryLightbox();
     }

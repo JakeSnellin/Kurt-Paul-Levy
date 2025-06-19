@@ -1,12 +1,31 @@
 @use 'child_theme_variables';
 
-@mixin dvh-fallback {
-	top: calc(3vh + 3px); /* fallback for browsers that don't support dvh */
-	top: calc(3dvh + 3px); /* override for modern browsers */
+.gallery-lightbox {
+  opacity: 0;
+	visibility: hidden;
+  position: fixed;
+  border: 2px solid red;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: white;
+
+  &.lightbox-gallery--open {
+		visibility: visible; 
+		opacity: 1;
+		transition: opacity 0.5s ease, visibility 0s 0s;
+	}
+}
+
+/*@mixin dvh-fallback {
+	top: calc(3vh + 3px);
+	top: calc(3dvh + 3px);
 }
 
 .gallery-lightbox {
-  border: 4px solid red;
 	opacity: 0;
 	visibility: hidden;
 	position: fixed;
@@ -63,11 +82,10 @@
 }
 
 .gallery-lightbox__content {
-  border: 2px solid green;
 	display: flex;
 	overflow: hidden;
 	padding-top: clamp(94px, 6.5vw, 106px);
-	//padding-bottom: clamp(27px, 6.5vw, 77px);
+	padding-bottom: clamp(27px, 6.5vw, 77px);
 	width: 100%;
 	height: 100%;
 }
@@ -79,14 +97,13 @@
 }
 
 .gallery-lightbox__item {
-  border: 2px solid blue;
 	flex: 0 0 100vw;
 	padding: 0 calc(3vw + 10px);
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
-	/*height: calc(
+	height: calc(
 		100vh
 		- clamp(94px, 6.5vw, 106px)
 		- clamp(27px, 6.5vw, 77px)
@@ -97,7 +114,7 @@
 		- clamp(94px, 6.5vw, 106px)
 		- clamp(27px, 6.5vw, 77px)
 		- 112px
-	);*/
+	);
 }
 
 .gallery-lightbox__item img {
@@ -156,5 +173,5 @@
 		width: 65px;
 		height: 65px;
 	}
-  }
+}*/
   

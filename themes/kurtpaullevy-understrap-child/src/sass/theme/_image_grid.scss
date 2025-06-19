@@ -4,7 +4,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
     position: relative;
-    z-index: 10;
   }
 
 @media only screen and (min-width: 1184px) {
@@ -17,7 +16,6 @@
     .content-image-wrapper {
       opacity: 1;
       transition: opacity 0.3s ease;
-      z-index: 20;
     }
 
     /* If any card is hovered, dim all of them */

@@ -21972,9 +21972,6 @@ body:is(.blog) .category-dropdown {
   transition: opacity 0.5s ease, visibility 0s 0.5s;
   /* Support for different viewport height units with fallbacks */
   height: 100vh;
-  height: 100dvh;
-  height: 100svh;
-  height: 100lvh;
 }
 
 .gallery-lightbox.lightbox-gallery--open {
@@ -21987,6 +21984,7 @@ body:is(.blog) .category-dropdown {
 body.lightbox-open {
   margin-top: 0 !important;
   overflow: hidden !important;
+  height: 100% !important;
 }
 
 .gallery-lightbox__controls {
@@ -22054,12 +22052,7 @@ body.lightbox-open {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* Dynamic height with viewport units and clamp for spacing */
-  height: calc(100svh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px);
-  /* Fallbacks for browsers that don't support svh */
-  height: calc(100vh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px);
-  height: calc(100dvh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px);
-  height: calc(100lvh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px);
+  height: 100vh;
 }
 
 .gallery-lightbox__item img {

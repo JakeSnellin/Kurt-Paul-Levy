@@ -7227,6 +7227,24 @@
 	      openGalleryLightbox();
 	    }
 	  });
+	  function setOverlayHeight() {
+	    const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+	    galleryLightbox.css('height', height + 'px');
+	  }
+	  function setLightboxItemHeight() {
+	    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+
+	    // Get computed top and bottom padding from the lightbox content container
+	    const paddingTop = parseFloat(getComputedStyle($('.gallery-lightbox__content')[0]).paddingTop);
+	    const paddingBottom = parseFloat(getComputedStyle($('.gallery-lightbox__content')[0]).paddingBottom);
+
+	    // Any additional fixed height to subtract (you had -112px in your CSS calc)
+	    const additionalOffset = 112;
+	    const itemHeight = viewportHeight - paddingTop - paddingBottom - additionalOffset;
+	    $('.gallery-lightbox__item').each(function () {
+	      $(this).css('height', itemHeight + 'px');
+	    });
+	  }
 	  function createGalleryLightboxItems() {
 	    // Select all articles in the image grid container
 	    lightboxImages = $('#image-grid-container article');
@@ -7304,6 +7322,8 @@
 	    }
 	  });
 	  function openGalleryLightbox() {
+	    setOverlayHeight();
+	    setLightboxItemHeight();
 	    $('body').addClass('lightbox-open');
 	    galleryLightbox.addClass('lightbox-gallery--open');
 	    galleryLightbox.attr('aria-hidden', 'false');
@@ -7312,7 +7332,6 @@
 	  }
 	  closeBtn.on('click', function () {
 	    galleryLightboxTrack.css('transition', 'none');
-	    $(document.body).css('overflow', '');
 	    $('body').removeClass('lightbox-open');
 	    galleryLightbox.removeClass('lightbox-gallery--open');
 	    galleryLightbox.attr('aria-hidden', 'true');
@@ -7322,6 +7341,20 @@
 	    // Return focus to the gallery image or button that opened the carousel
 	    $(this).focus(); // Or store and use the original focus element
 	  });
+	  $(window).on('resize orientationchange', function () {
+	    if (galleryLightbox.hasClass('lightbox-gallery--open')) {
+	      setOverlayHeight();
+	      setLightboxItemHeight();
+	    }
+	  });
+	  if ('visualViewport' in window) {
+	    window.visualViewport.addEventListener('resize', () => {
+	      if (galleryLightbox.hasClass('lightbox-gallery--open')) {
+	        setOverlayHeight();
+	        setLightboxItemHeight();
+	      }
+	    });
+	  }
 	  function cloneGalleryLightboxItems() {
 	    // Save the original content before modifying it
 	    //originalContent = $('.image-grid-container').html();

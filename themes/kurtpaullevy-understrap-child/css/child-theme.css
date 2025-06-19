@@ -21957,7 +21957,6 @@ body:is(.blog) .category-dropdown {
 }
 
 .gallery-lightbox {
-  will-change: height;
   opacity: 0;
   overflow: hidden;
   width: 100%;
@@ -21969,7 +21968,6 @@ body:is(.blog) .category-dropdown {
   transition: opacity 0.5s ease, visibility 0s 0.5s;
   height: 100vh;
   height: 100dvh;
-  height: 100svh;
   height: 100lvh; /* covers largest viewport height */
 }
 
@@ -22043,9 +22041,7 @@ body:is(.blog) .category-dropdown {
   align-items: center;
   flex-direction: column;
   height: calc(100vh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px); /* fallback */
-  height: calc(100dvh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px); /* modern dynamic viewport */
-  height: calc(100svh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px); /* safe when browser UI is visible */
-  height: calc(100lvh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px); /* safe when browser UI is hidden */
+  height: calc(100dvh - clamp(94px, 6.5vw, 106px) - clamp(27px, 6.5vw, 77px) - 112px); /* override */
 }
 
 .gallery-lightbox__item img {

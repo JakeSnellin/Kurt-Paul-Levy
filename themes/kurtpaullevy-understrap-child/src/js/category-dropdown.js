@@ -1,69 +1,94 @@
 import { handleCategoryFilter } from './handleCategoryFilter.js';
 
 export function categoryDropdown($) {
-
     const $toggleBtn = $('.category-dropdown__menu-btn');
     const $menu = $('.category-dropdown-menu');
     const $scrollContainer = $('.scroll-container');
     const $dropdown = $('.category-dropdown');
 
-    function toggleDropdown () {
+    let isDropdownOpen = false; // Tracks dropdown state
+    let backgroundResetTimeout = null; // Tracks background reset timeout
+
+    function toggleDropdown() {
         const caretIcon = $dropdown.find('.icon-caret-down');
         caretIcon.toggleClass('rotated');
-        if ($menu.hasClass('open')) {
-            // Slide up (close)
+
+        if (isDropdownOpen) {
+            // Close dropdown
             $menu.removeClass('open');
-            setTimeout(() => {
-                $dropdown.css('background-color', "")
-            }, 300)
+
+            // Clear any existing background reset timeout
+            if (backgroundResetTimeout) {
+                clearTimeout(backgroundResetTimeout);
+            }
+
+            backgroundResetTimeout = setTimeout(() => {
+                $dropdown.css('background-color', "");
+                backgroundResetTimeout = null;
+            }, 300); // Matches close animation duration
+
             $toggleBtn.attr('aria-expanded', 'false');
+            isDropdownOpen = false;
+            $(document).off('click.dropdown'); // Remove outside click listener
         } else {
-            // Slide down (open)
+            // Open dropdown
             $menu.addClass('open');
+
+            // Clear pending timeout if user reopened quickly
+            if (backgroundResetTimeout) {
+                clearTimeout(backgroundResetTimeout);
+                backgroundResetTimeout = null;
+            }
+
             $dropdown.css('background-color', "#EFEFEF");
             $toggleBtn.attr('aria-expanded', 'true');
+            isDropdownOpen = true;
+
             setTimeout(() => {
-            const simplebarInstance = SimpleBar.instances.get($scrollContainer[0]);
-            if (simplebarInstance) {
-                simplebarInstance.recalculate();
-                simplebarInstance.getScrollElement().scrollTop = 0;
-            }
-        }, 50); // Slight delay to ensure layout has been rendered*/
+                const simplebarInstance = SimpleBar.instances.get($scrollContainer[0]);
+                if (simplebarInstance) {
+                    simplebarInstance.recalculate();
+                    simplebarInstance.getScrollElement().scrollTop = 0;
+                }
+            }, 50); // Delay to ensure DOM is ready
+
             setupOutsideClickListener();
         }
     }
 
+    function setupOutsideClickListener() {
+        function outsideClickHandler(e) {
+            if (isDropdownOpen && !$(e.target).closest('.category-dropdown').length) {
+                toggleDropdown();
+            }
+        }
+
+        $(document).off('click.dropdown'); // Avoid duplicates
+        $(document).on('click.dropdown', outsideClickHandler);
+    }
+
+    // Handle toggle button click
     $('body').on('click', '.category-dropdown__menu-btn', function () {
         toggleDropdown();
     });
 
-     $('body').on('click', '.category-dropdown-menu .menu-item', function (e) {
+    // Handle dropdown item selection
+    $('body').on('click', '.category-dropdown-menu .menu-item', function (e) {
         e.preventDefault();
-
-        $(document).off('click.dropdown');
 
         const $this = $(this);
 
+        // Reset visibility of all menu items
         $('.category-dropdown-menu .menu-item').removeClass('hidden').addClass('visible');
         $this.addClass('hidden').removeClass('visible');
 
+        // Update button text
         const categoryText = $this.text();
         $('#dropdown-btn-text').text(categoryText);
 
         toggleDropdown();
 
+        // Apply category filter
         handleCategoryFilter($, categoryText);
     });
-
-    function setupOutsideClickListener () {
-    function outsideClickHandler (e) {
-            if (!$(e.target).closest('.category-dropdown').length) {
-                toggleDropdown();
-                $(document).off('click.dropdown', outsideClickHandler);
-            }
-        }
-
-        $(document).off('click.dropdown');
-        $(document).on('click.dropdown', outsideClickHandler);
-    }
 }

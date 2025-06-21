@@ -1,0 +1,29 @@
+@use '../child_theme_variables';
+
+body.blog {
+
+    .entry-content p {
+        margin-bottom: child_theme_variables.$entry-content-margin-bottom-sm;
+    }
+
+    .content-image-wrapper {
+        cursor: pointer;
+    }
+
+    article {
+        margin-bottom: 18px;
+    }
+}
+
+@media only screen and (min-width: 1184px) {
+    body.blog {
+
+        .category-pill {
+            background-color: child_theme_variables.$pill-bg-color;
+            border-radius: child_theme_variables.$pill-border-radius;
+            padding: child_theme_variables.$pill-padding-y child_theme_variables.$pill-padding-x;
+            width: fit-content;
+            font-size: child_theme_variables.$pill-font-size;
+        }
+    }
+}

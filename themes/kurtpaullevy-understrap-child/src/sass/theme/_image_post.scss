@@ -5,105 +5,24 @@
 }
 
 .entry-content p {
+    font-size: child_theme_variables.$font-size-xs;
+    margin-top: 1.125rem;
+}
+
+/*.entry-content p {
     margin-top: child_theme_variables.$entry-content-margin-top;
     margin-bottom: child_theme_variables.$entry-content-margin-bottom;
     font-size: child_theme_variables.$font-size-xs;
-}
-
-.home-page .entry-content p {
-   margin-top: child_theme_variables.$entry-content-margin-top-sm;
-   margin-bottom: child_theme_variables.$entry-content-margin-bottom-sm;
-}
-
-.content-image-wrapper.home-page {
-    cursor: pointer;
-}
-
-body.archive .wrapper {
-    padding: 0;
-}
-
-#selected-work {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    margin-top: 10px;
-    gap: 54px;
-}
-
-.content-image-wrapper.category-page img {
-    height: auto;
-    display: block;
-}
-
-@media only screen and (min-width: 480px) {
-    .content-image-wrapper.category-page img {
-        max-width: 480px;
-    }
-
-    .content-image-wrapper {
-        max-width: 507px;
-    }
-
-    #selected-work {
-        max-width: 507px;
-        margin: 10px clamp(30px, 3vw, 181px) 0 auto;
-    }
-}
-
-@media only screen and (min-width: 707px) {
-
-    .content-image-wrapper {
-        max-width: 607px;
-    }
-
-    #selected-work {
-        max-width: 607px;
-    }
-}
+}*/
 
 @media only screen and (min-width: 1184px) {
 
-    .content-image-wrapper {
-        max-width: 707px;
-    }
-
-    #selected-work {
-        max-width: 707px;
-    }
-
-    #selected-work {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        margin-top: 54px;
-        gap: 74px;
-    }
-
-    .content-image-wrapper.category-page {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-
-    .entry-content p {
-        margin: 0;
-    }
-
-    .content-image-wrapper.home-page .entry-content p {
+    /*.entry-content p {
         margin: child_theme_variables.$entry-content-margin-y-lg 0;
-    }
+    }*/
 
     .category-pill-container {
         display: flex;
         gap: child_theme_variables.$pill-gap;
-    }
-
-    .content-image-wrapper.home-page .category-pill-container .category-pill {
-            background-color: child_theme_variables.$pill-bg-color;
-            border-radius: child_theme_variables.$pill-border-radius;
-            padding: child_theme_variables.$pill-padding-y child_theme_variables.$pill-padding-x;
-            width: fit-content;
-            font-size: child_theme_variables.$pill-font-size;
     }
 }

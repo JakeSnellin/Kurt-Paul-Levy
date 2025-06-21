@@ -24,11 +24,9 @@ defined( 'ABSPATH' ) || exit;
 
     <div class="content-image-wrapper <?php echo esc_attr( $content_wrapper_classes ); ?>">
 
-        <?php
-        // Check if the post has a featured image and display it
-        if ( has_post_thumbnail() ) : ?>
+        <?php if ( has_post_thumbnail() ) : ?>
             <div class="entry-thumbnail">
-                <?php echo get_the_post_thumbnail( $post->ID, 'full' ); ?>
+                <?php the_post_thumbnail( 'full' ); ?>
             </div>
         <?php endif; ?>
 

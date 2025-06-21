@@ -1,0 +1,29 @@
+body.archive {
+
+    .entry-thumbnail img {
+        margin: 0 auto 0 0;
+        width: auto;
+        display: block;
+        max-height: 83vh; 
+    }
+
+    article {
+        margin-bottom: 100px;
+    }
+}
+
+@media only screen and (min-width: 1184px) {
+
+    #selected-work {
+        padding-top: 2.125rem;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    body.archive {
+
+        article {
+            margin-bottom: 140px;
+        }
+    }
+}

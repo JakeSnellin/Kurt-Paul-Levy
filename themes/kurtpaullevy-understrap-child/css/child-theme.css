@@ -22212,6 +22212,21 @@ body:is(.blog) .category-dropdown {
     height: auto;
   }
 }
+.book-feature {
+  margin-top: clamp(80px, 5vw, 120px);
+  font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
+  font-size: 1rem;
+  line-height: 179%;
+}
+
+.book-feature a {
+  font-weight: 700;
+  text-decoration: underline;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
 body.home .site-info {
   display: none;
 }

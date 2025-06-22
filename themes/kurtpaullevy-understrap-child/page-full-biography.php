@@ -123,6 +123,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 
                 </div>
 
+                <div class="book-feature">
+                    <p>
+                        <?php esc_html_e("Kurt is to be featured in a new book ‘Deya Heydays - the History of an Artists Community’"); ?>
+                        <a href="https://deyaheydays.com/" target="_blank" rel="noopener noreferrer">
+                            <?php esc_html_e('www.deyaheydays.com', 'understrap'); ?>
+                        </a>
+                    </p>
+                </div>
+
 			</main>
 
 			<?php

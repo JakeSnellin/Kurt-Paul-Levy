@@ -135,11 +135,11 @@ function understrap_child_registration_form() {
 
 	$message = "";
 
-	$to = 'contact@kurtpaullevy.com';
+	$to = get_bloginfo('admin_email');
 	$subject = 'kurt Paul Levy contact form submitted';
 	$message .= 'Hi Tom, <br /><br />';
 	$message .= 'Someone has subscribed. <br /><br />';
-	$message .= 'Thier email is ' . $email . '<br /><br />';
+	$message .= 'Their email is ' . $email . '<br /><br />';
 	$message .= 'Thank you!';
 
 	wp_mail($to, $subject, $message);

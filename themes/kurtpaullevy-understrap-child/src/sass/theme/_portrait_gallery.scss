@@ -24,7 +24,6 @@ $group-widths: (
     display: flex;
     gap: 14px;  // Adjusted gap between columns to 14px
     width: 100%;
-    flex-wrap: wrap; // Allow the images to wrap and maintain responsiveness
 }
 
 .portrait-gallery__group {
@@ -58,6 +57,9 @@ $group-widths: (
 @media only screen and (min-width: 1184px) {
     .portrait-gallery {
         width: 78%;
+    }
+
+    .portrait-gallery__groups {
         gap: 2rem;
     }
 

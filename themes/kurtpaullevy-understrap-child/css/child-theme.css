@@ -22106,7 +22106,6 @@ body:is(.blog) .category-dropdown {
   display: flex;
   gap: 14px;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .portrait-gallery__group {
@@ -22139,6 +22138,8 @@ body:is(.blog) .category-dropdown {
 @media only screen and (min-width: 1184px) {
   .portrait-gallery {
     width: 78%;
+  }
+  .portrait-gallery__groups {
     gap: 2rem;
   }
   .portrait-gallery__group {

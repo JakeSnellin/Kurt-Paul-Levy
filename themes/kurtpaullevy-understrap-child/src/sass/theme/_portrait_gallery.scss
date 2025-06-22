@@ -1,53 +1,63 @@
 @use 'child_theme_variables';
 
 $group-widths: (
-  "first": 78% 100% 74%,
-  "second": 100% 61% 77% 60%
+  "first": 83% 100% 80%,
+  "second": 100% 56% 70% 55%
 );
 
 @each $group, $widths in $group-widths {
+  $i: 0;
   @each $width in $widths {
-    $i: index($widths, $width);
+    $i: $i + 1;
 
-    .portrait-gallery__group--#{$group} img:nth-of-type(#{$i}) {
-      width: $width;
+    .portrait-gallery__group--#{$group} img:nth-child(#{$i}) {
+      width: $width; // Set dynamic widths for each image
     }
   }
 }
 
 .portrait-gallery {
+    width: 100%;
+}
+
+.portrait-gallery__groups {
     display: flex;
-    gap: 0.875rem;
-    width: clamp(100%, calc(56.25vw - 10px), 50rem);
-    max-width: 100%; /* extra safety to prevent overflow */
+    gap: 14px;  // Adjusted gap between columns to 14px
+    width: 100%;
+    flex-wrap: wrap; // Allow the images to wrap and maintain responsiveness
 }
 
 .portrait-gallery__group {
     display: flex;
     flex-direction: column;
-    gap: 0.875rem;
+    width: calc(50% - 7px); // Each column takes 50%, but subtract half the gap (7px) for proper alignment
+    gap: 14px;
 }
 
-.portrait-gallery-title {
+.portrait-gallery__group--first {
+    align-items: flex-end;
+}
+
+.portrait-gallery__group--second {
+    align-items: flex-start;
+    margin-top: clamp(30px, 5vw, 83px);
+}
+
+.portrait-gallery__title {
     font-family: child_theme_variables.$font-family-serif;
     line-height: 141%;
     margin-bottom: 2rem;
 }
 
-.portrait-gallery__group--first {
-    align-items: flex-end;
-    justify-content: flex-start;
-}
-
-.portrait-gallery__group--second {
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin-top: 8vh;
+@media screen and (min-width: 768px) {
+    .portrait-gallery {
+        width: 56%;
+    }
 }
 
 @media only screen and (min-width: 1184px) {
-
     .portrait-gallery {
+        width: 78%;
         gap: 2rem;
     }
 
@@ -55,13 +65,14 @@ $group-widths: (
         gap: 2rem;
     }
 
-    .portrait-gallery-title {
+    .portrait-gallery__title {
         margin-bottom: 3.688rem;
     }
 }
 
 @media only screen and (min-width: 1440px) {
-    .portrait-gallery, .portrait-gallery-title{
+    .portrait-gallery {
         margin-left: 5.75rem;
+        max-width: 787px;
     }
 }

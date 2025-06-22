@@ -22070,78 +22070,88 @@ body:is(.blog) .category-dropdown {
   transition: none !important;
 }
 
-.portrait-gallery__group--first img:nth-of-type(1) {
-  width: 78%;
+.portrait-gallery__group--first img:nth-child(1) {
+  width: 83%;
 }
 
-.portrait-gallery__group--first img:nth-of-type(2) {
+.portrait-gallery__group--first img:nth-child(2) {
   width: 100%;
 }
 
-.portrait-gallery__group--first img:nth-of-type(3) {
-  width: 74%;
+.portrait-gallery__group--first img:nth-child(3) {
+  width: 80%;
 }
 
-.portrait-gallery__group--second img:nth-of-type(1) {
+.portrait-gallery__group--second img:nth-child(1) {
   width: 100%;
 }
 
-.portrait-gallery__group--second img:nth-of-type(2) {
-  width: 61%;
+.portrait-gallery__group--second img:nth-child(2) {
+  width: 56%;
 }
 
-.portrait-gallery__group--second img:nth-of-type(3) {
-  width: 77%;
+.portrait-gallery__group--second img:nth-child(3) {
+  width: 70%;
 }
 
-.portrait-gallery__group--second img:nth-of-type(4) {
-  width: 60%;
+.portrait-gallery__group--second img:nth-child(4) {
+  width: 55%;
 }
 
 .portrait-gallery {
+  width: 100%;
+}
+
+.portrait-gallery__groups {
   display: flex;
-  gap: 0.875rem;
-  width: clamp(100%, 56.25vw - 10px, 50rem);
-  max-width: 100%; /* extra safety to prevent overflow */
+  gap: 14px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .portrait-gallery__group {
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  width: calc(50% - 7px);
+  gap: 14px;
 }
 
-.portrait-gallery-title {
+.portrait-gallery__group--first {
+  align-items: flex-end;
+}
+
+.portrait-gallery__group--second {
+  align-items: flex-start;
+  margin-top: clamp(30px, 5vw, 83px);
+}
+
+.portrait-gallery__title {
   font-family: "AbhayaLibre-Regular", "Times New Roman", Times, serif;
   line-height: 141%;
   margin-bottom: 2rem;
 }
 
-.portrait-gallery__group--first {
-  align-items: flex-end;
-  justify-content: flex-start;
+@media screen and (min-width: 768px) {
+  .portrait-gallery {
+    width: 56%;
+  }
 }
-
-.portrait-gallery__group--second {
-  align-items: flex-start;
-  justify-content: flex-end;
-  margin-top: 8vh;
-}
-
 @media only screen and (min-width: 1184px) {
   .portrait-gallery {
+    width: 78%;
     gap: 2rem;
   }
   .portrait-gallery__group {
     gap: 2rem;
   }
-  .portrait-gallery-title {
+  .portrait-gallery__title {
     margin-bottom: 3.688rem;
   }
 }
 @media only screen and (min-width: 1440px) {
-  .portrait-gallery, .portrait-gallery-title {
+  .portrait-gallery {
     margin-left: 5.75rem;
+    max-width: 787px;
   }
 }
 .bio-intro-text {

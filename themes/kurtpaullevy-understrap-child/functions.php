@@ -135,8 +135,8 @@ function understrap_child_registration_form() {
 
 	$message = "";
 
-	$to = get_bloginfo('admin_email');
-	$subject = 'kurt Paul Levy contact form submitted';
+	$to = 'contact@kurtpaullevy.com';
+	$subject = 'Kurt Paul Levy contact form submitted';
 	$message .= 'Hi Tom, <br /><br />';
 	$message .= 'Someone has subscribed. <br /><br />';
 	$message .= 'Their email is ' . $email . '<br /><br />';

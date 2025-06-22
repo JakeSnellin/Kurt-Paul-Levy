@@ -1,3 +1,18 @@
 @use '../portrait_gallery';
 @use '../biography_intro_text';
 @use '../biography_intro_images';
+@use '../child_theme_variables';
+
+.book-feature {
+    margin-top: clamp(80px, 5vw, 120px);
+    font-family: child_theme_variables.$font-family-serif;
+    font-size: child_theme_variables.$font-size-base;
+    line-height: 179%;
+}
+
+.book-feature a {
+    font-weight: 700;
+    text-decoration: underline;
+    display: block;
+    width: fit-content;
+}

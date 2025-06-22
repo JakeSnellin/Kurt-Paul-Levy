@@ -79,43 +79,47 @@ $container = get_theme_mod( 'understrap_container_type' );
                         <?php endif; ?>
                 </div>
 
-                <?php $portrait_gallery_title = get_field('self_portrait_section_title') ?>
-                <?php if ( $portrait_gallery_title ) : ?>
-                    <h2 class="portrait-gallery-title"><?php echo esc_html( $portrait_gallery_title ) ?></h2>
-                <?php endif; ?>
-
                 <div class="portrait-gallery">
+
+                    <?php $portrait_gallery_title = get_field('self_portrait_section_title') ?>
+                    <?php if ( $portrait_gallery_title ) : ?>
+                        <h2 class="portrait-gallery__title"><?php echo esc_html( $portrait_gallery_title ) ?></h2>
+                    <?php endif; ?>
+
+                    <div class="portrait-gallery__groups">
                     
-                    <?php
-    
-                        $galleryImages = [];
+                        <?php
+        
+                            $galleryImages = [];
 
-                        for($i = 0; $i <= 6; $i++) {
-                            $img = get_field("gallery_image_$i");
-                            if ($img) {
-                                $galleryImages[] = $img;
+                            for($i = 0; $i <= 6; $i++) {
+                                $img = get_field("gallery_image_$i");
+                                if ($img) {
+                                    $galleryImages[] = $img;
+                                }
                             }
-                        }
-                     ?>
+                        ?>
 
-                    <?php for($i = 0; $i < count($galleryImages); $i++) : ?>
+                        <?php for($i = 0; $i < count($galleryImages); $i++) : ?>
 
-                            <?php if($i === 0) : ?>
-                                <div class="portrait-gallery__group portrait-gallery__group--first">
-                            <?php endif; ?>
+                                <?php if($i === 0) : ?>
+                                    <div class="portrait-gallery__group portrait-gallery__group--first">
+                                <?php endif; ?>
 
-                            <?php if($i === 3) : ?>
-                                </div>
-                                <div class="portrait-gallery__group portrait-gallery__group--second">
-                            <?php endif; ?>
+                                <?php if($i === 3) : ?>
+                                    </div>
+                                    <div class="portrait-gallery__group portrait-gallery__group--second">
+                                <?php endif; ?>
 
-                            <?php echo wp_get_attachment_image($galleryImages[$i]['ID'], 'large', false, ['class' => 'img-fluid']); ?>
+                                <?php echo wp_get_attachment_image($galleryImages[$i]['ID'], 'large', false, ['class' => 'img-fluid']); ?>
 
-                            <?php if($i === count($galleryImages) - 1) : ?>
-                                </div>
-                            <?php endif; ?>
+                                <?php if($i === count($galleryImages) - 1) : ?>
+                                    </div>
+                                <?php endif; ?>
 
-                    <?php endfor; ?> 
+                        <?php endfor; ?> 
+
+                    </div>
 
                 </div>
 
